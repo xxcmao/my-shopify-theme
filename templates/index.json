@@ -464,7 +464,7 @@
         "group_xYXBcX"
       ],
       "custom_css": [
-        ".button {background: #000; border-radius: 30px; border-color: #fff503 ;}"
+        ".button{background: #000; border-radius: 30px; border: 2px solid #fff503; color: #fff503; height: 40px; font-size: 15px;}"
       ],
       "name": "t:names.collections_carousel",
       "settings": {
