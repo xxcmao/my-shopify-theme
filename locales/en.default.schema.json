@@ -406,7 +406,8 @@
     "video": "Video",
     "video_section": "Video",
     "view_all_button": "View all",
-    "pills": "Pills"
+    "pills": "Pills",
+    "group_carousel": "Group carousel" 
   },
   "options": {
     "above_carousel": "Above carousel",
@@ -1121,7 +1122,8 @@
     "product_corner_radius": "Product corner radius",
     "card_corner_radius": "Card corner radius",
     "media_type_1": "Media type",
-    "media_type_2": "Media 2 type"
+    "media_type_2": "Media 2 type",
+    "carousel_layout": "Carousel layout"
   },
   "text_defaults": {
     "accordion_heading": "Accordion heading",
