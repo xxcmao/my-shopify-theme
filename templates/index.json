@@ -465,7 +465,7 @@
       ],
       "custom_css": [
         ".button {background: #000; border-radius: 30px; border: 2px solid #fff503; color: #fff503; height: 40px; font-size: 15px;}",
-        "/* 仅当 Collection card 内容在图片上时，改变标题样式 */.section-resource-list .collection-card--image-bg .text-block {background: #000; border-radius: 30px; border: 2px solid #fff503; color: #fff503; height: 40px; font-size: 15px; width: 80px; display: flex; align-items: center; justify-content: center;}"
+        " /* 仅当 Collection card 内容在图片上时，改变标题样式 */.section-resource-list .collection-card--image-bg .text-block {background: #000; border-radius: 30px; border: 2px solid #fff503; color: #fff503 !important; height: 40px; font-size: 15px; width: 80px; display: flex; align-items: center; justify-content: center;}"
       ],
       "name": "t:names.collections_carousel",
       "settings": {
