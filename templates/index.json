@@ -312,8 +312,8 @@
           "type": "group",
           "name": "t:names.header",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
+            "content_direction": "row",
+            "vertical_on_mobile": false,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
             "align_baseline": false,
@@ -356,9 +356,9 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "1.5rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -368,15 +368,31 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 16,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_xLRixU": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Shop All",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
               },
               "blocks": {}
             }
           },
           "block_order": [
-            "text_3QRPtd"
+            "text_3QRPtd",
+            "button_xLRixU"
           ]
         },
         "static-collection-card": {
@@ -403,7 +419,7 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "custom",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -447,12 +463,15 @@
       "block_order": [
         "group_xYXBcX"
       ],
+      "custom_css": [
+        ".button {background: #000; border-radius: 30px; border-block-color: #fff503;}"
+      ],
       "name": "t:names.collections_carousel",
       "settings": {
         "collection_list": [
-          "gift-card",
-          "variety-packs",
-          "flavors"
+          "pots",
+          "knives",
+          "hexmills"
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
