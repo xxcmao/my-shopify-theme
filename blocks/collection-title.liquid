@@ -1,8 +1,7 @@
 {% comment %}
-  collection-title.liquid — vCT-1.2.0 (overlay fix)
-  - 修复: 添加 wrapper 容器处理绝对定位
-  - 修复: 增加 z-index 防止被图片遮挡
-  - 优化: 增加 pointer-events: none 允许点击穿透
+  collection-title.liquid — vCT-1.2.0 (overlay toggle + bugfix)
+  - Adds block.settings.overlay_on_image to optionally float over collection image
+  - Uses .collection-card__title-floating (defined in collection-card.liquid)
 {% endcomment %}
 
 {% liquid
@@ -13,32 +12,18 @@
   endif
 
   assign collection_title = '<p>' | append: text | append: '</p>'
+
+  assign title_class = ''
+  if block.settings.overlay_on_image
+    assign title_class = 'collection-card__title-floating'
+  endif
 %}
 
-<div class="collection-title-wrapper"
-  style="
-    {% if block.settings.overlay_on_image %}
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      pointer-events: none;
-      display: flex;
-      flex-direction: column;
-      /* 根据 padding 设置来决定内容位置，默认利用 text 组件自身的 padding */
-      justify-content: flex-start; 
-    {% else %}
-      position: relative;
-    {% endif %}
-  "
->
-  {% render 'text',
-    fallback_text: collection_title,
-    block: block
-  %}
-</div>
+{% render 'text',
+  class: title_class,
+  fallback_text: collection_title,
+  block: block
+%}
 
 {% schema %}
 {
