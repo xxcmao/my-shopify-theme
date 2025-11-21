@@ -193,11 +193,13 @@
     }
   }
 
+  /* vCC-1.0.1 — support floating collection title */
   .collection-card__title-floating {
     position: absolute;
-    inset-block-start: 0.75rem;
-    inset-inline-start: 0.75rem;
+    inset-block-start: 0.75rem;   /* 相当于 top */
+    inset-inline-start: 0.75rem;  /* 相当于 left，兼容 RTL */
     z-index: 2;
   }
+
 
 {% endstylesheet %}
