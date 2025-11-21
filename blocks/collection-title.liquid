@@ -1,108 +1,13 @@
-{% comment %}
-  collection-title.liquid — vCT-1.4.0 (overlay position controls)
-  - Adds "Display over collection image" toggle
-  - When ON: wraps the text block in an absolutely positioned container
-             with configurable vertical + horizontal positions
-  - When OFF: behaves like the original theme (title in normal flow)
-{% endcomment %}
 
-{% liquid
-  if closest.collection == blank
-    assign text = 'placeholders.collection_title' | t
-  else
-    assign text = closest.collection.title
-  endif
 
-  assign collection_title = '<p>' | append: text | append: '</p>'
-%}
-
-{%- if block.settings.overlay_on_image -%}
-  {%- comment -%}
-    When "Display over collection image" is ON:
-    - We compute inline style based on position settings
-  {%- endcomment -%}
-
-  {% liquid
-    assign float_style = 'position:absolute; z-index:5;'
-
-    assign inset_block_start = ''
-    assign inset_block_end = ''
-    assign inset_inline_start = ''
-    assign inset_inline_end = ''
-    assign translate_x = ''
-    assign translate_y = ''
-
-    # Vertical position
-    case block.settings.overlay_vertical_position
-      when 'top'
-        assign inset_block_start = '0.75rem'
-      when 'center'
-        assign inset_block_start = '50%'
-        assign translate_y = '-50%'
-      when 'bottom'
-        assign inset_block_end = '0.75rem'
-    endcase
-
-    # Horizontal position
-    case block.settings.overlay_horizontal_position
-      when 'left'
-        assign inset_inline_start = '0.75rem'
-      when 'center'
-        assign inset_inline_start = '50%'
-        assign translate_x = '-50%'
-      when 'right'
-        assign inset_inline_end = '0.75rem'
-    endcase
-
-    if inset_block_start != ''
-      assign float_style = float_style | append: ' inset-block-start:' | append: inset_block_start | append: ';'
-    endif
-    if inset_block_end != ''
-      assign float_style = float_style | append: ' inset-block-end:' | append: inset_block_end | append: ';'
-    endif
-    if inset_inline_start != ''
-      assign float_style = float_style | append: ' inset-inline-start:' | append: inset_inline_start | append: ';'
-    endif
-    if inset_inline_end != ''
-      assign float_style = float_style | append: ' inset-inline-end:' | append: inset_inline_end | append: ';'
-    endif
-
-    if translate_x != '' or translate_y != ''
-      assign float_style = float_style | append: ' transform:translate('
-
-      if translate_x == ''
-        assign float_style = float_style | append: '0'
-      else
-        assign float_style = float_style | append: translate_x
-      endif
-
-      assign float_style = float_style | append: ','
-
-      if translate_y == ''
-        assign float_style = float_style | append: '0'
-      else
-        assign float_style = float_style | append: translate_y
-      endif
-
-      assign float_style = float_style | append: ');'
-    endif
-  %}
-
-  <div class="collection-card__title-floating" style="{{ float_style }}">
-    {% render 'text',
-      fallback_text: collection_title,
-      block: block
-    %}
-  </div>
-{%- else -%}
-  {%- comment -%}
-    When OFF: original behavior — title sits in normal flow
-  {%- endcomment -%}
-  {% render 'text',
-    fallback_text: collection_title,
-    block: block
-  %}
-{%- endif %}
+{% if closest.collection == blank %}
+  {% assign text = 'placeholders.collection_title' | t %}
+  {% assign collection_title = '<p>' | append: text | append: '</p>' %}
+  {% render 'text', fallback_text: collection_title, block: block %}
+{% elsif closest.collection != blank %}
+  {% assign collection_title = '<p>' | append: closest.collection.title | append: '</p>' %}
+  {% render 'text', fallback_text: collection_title, block: block %}
+{% endif %}
 
 {% schema %}
 {
@@ -415,61 +320,6 @@
       "type": "header",
       "content": "t:content.appearance"
     },
-
-    {
-      "type": "checkbox",
-      "id": "overlay_on_image",
-      "label": "Display over collection image",
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": "Position over image",
-      "visible_if": "{{ block.settings.overlay_on_image }}"
-    },
-    {
-      "type": "select",
-      "id": "overlay_vertical_position",
-      "label": "Vertical position",
-      "options": [
-        {
-          "value": "top",
-          "label": "Top"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "bottom",
-          "label": "Bottom"
-        }
-      ],
-      "default": "top",
-      "visible_if": "{{ block.settings.overlay_on_image }}"
-    },
-    {
-      "type": "select",
-      "id": "overlay_horizontal_position",
-      "label": "Horizontal position",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ],
-      "default": "left",
-      "visible_if": "{{ block.settings.overlay_on_image }}"
-    },
-
     {
       "type": "checkbox",
       "id": "background",
