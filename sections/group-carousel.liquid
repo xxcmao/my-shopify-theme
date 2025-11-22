@@ -1,7 +1,7 @@
 {% comment %}
-  Group carousel section — vGC-1.1.0
-  - Base on vGC-1.0.1
-  - New: slide_width / slide_height settings to control item size
+  Group carousel section — vGC-1.1.1
+  - Based on vGC-1.1.0
+  - Slide width now作为 max-width，不再破坏 resource-list 的 Horizontal gap
 {% endcomment %}
 
 {% liquid
@@ -33,8 +33,7 @@
           class="resource-list__item group-carousel__item"
           style="
             {% if slide_width > 0 %}
-              width: {{ slide_width }}px;
-              flex: 0 0 {{ slide_width }}px;
+              max-width: {{ slide_width }}px;
             {% endif %}
             {% if slide_height > 0 %}
               min-height: {{ slide_height }}px;
@@ -147,7 +146,7 @@
     {
       "type": "range",
       "id": "slide_width",
-      "label": "Slide width",
+      "label": "Slide width (max)",
       "min": 0,
       "max": 800,
       "step": 10,
