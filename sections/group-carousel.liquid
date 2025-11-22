@@ -1,16 +1,11 @@
 {% comment %}
-  Group carousel section — vGC-1.0.0
-  - Slides are theme Group blocks (blocks/group.liquid)
-  - Each slide = one Group block with its own inner blocks
+  Group carousel section — vGC-1.0.1
+  - Fix: count slides from section.blocks directly
+  - Fix: remove missing translation for empty state (hard-coded message)
 {% endcomment %}
 
 {% liquid
-  assign slide_count = 0
-  for block in section.blocks
-    if block.type == 'group'
-      assign slide_count = slide_count | plus: 1
-    endif
-  endfor
+  assign slide_count = section.blocks.size
 %}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
@@ -31,21 +26,17 @@
 >
   {% if slide_count > 0 %}
     {%- capture list_items -%}
-      {%- assign processed = 0 -%}
       {%- for block in section.blocks -%}
-        {%- if block.type == 'group' -%}
-          <div
-            class="resource-list__item group-carousel__item"
-            {{ block.shopify_attributes }}
-          >
-            {% render block %}
-          </div>
+        <div
+          class="resource-list__item group-carousel__item"
+          {{ block.shopify_attributes }}
+        >
+          {% render block %}
+        </div>
 
-          {%- assign processed = processed | plus: 1 -%}
-          {%- if processed < slide_count -%}
-            <!--@list/split-->
-          {%- endif -%}
-        {%- endif -%}
+        {% unless forloop.last %}
+          <!--@list/split-->
+        {% endunless %}
       {%- endfor -%}
     {%- endcapture -%}
 
@@ -63,7 +54,7 @@
     %}
   {% else %}
     <div class="group-carousel__empty">
-      {{ 'sections.group_carousel.empty' | t | default: 'Add a Group block to create your first slide.' }}
+      Add a Group block to create your first slide.
     </div>
   {% endif %}
 </div>
@@ -87,7 +78,7 @@
   "settings": [
     {
       "type": "header",
-      "content": "Carousel layout"
+      "content": "t:content.carousel_layout"
     },
     {
       "type": "select",
