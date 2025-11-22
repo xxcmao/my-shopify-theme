@@ -1,8 +1,8 @@
 {% comment %}
-  Group carousel section — vGC-2.0.1
+  Group carousel section — vGC-2.0.2
   - Custom flex-based carousel (no dependence on 'resource-list')
   - Slide width / min height / gap fully controllable via settings
-  - Fix: all range steps within Shopify 101-step limit
+  - Range steps adjusted to avoid Shopify 101-step & step-in-range errors
 {% endcomment %}
 
 {% liquid
@@ -136,7 +136,7 @@
       order: 2;
     }
 
-    /* 移动端：可以看到略小一些的 slide */
+    /* 移动端：可以适当看到一点下一张 */
     .section-group-carousel .group-carousel__item {
       flex-basis: var(--gc-slide-width, 80%);
       min-width: var(--gc-slide-width, 80%);
@@ -211,9 +211,9 @@
       "type": "range",
       "id": "slide_width",
       "label": "Slide width",
-      "min": 120,
-      "max": 600,
-      "step": 8,
+      "min": 0,
+      "max": 1000,
+      "step": 10,
       "unit": "px",
       "default": 320
     },
@@ -222,8 +222,8 @@
       "id": "slide_min_height",
       "label": "Slide min height",
       "min": 0,
-      "max": 800,
-      "step": 16,
+      "max": 1000,
+      "step": 10,
       "unit": "px",
       "default": 0
     },
