@@ -1,5 +1,16 @@
+{% comment %}
+  Group carousel section — vGC-1.0.0
+  - Slides are theme Group blocks (blocks/group.liquid)
+  - Each slide = one Group block with its own inner blocks
+{% endcomment %}
+
 {% liquid
-  assign slide_count = section.blocks.size
+  assign slide_count = 0
+  for block in section.blocks
+    if block.type == 'group'
+      assign slide_count = slide_count | plus: 1
+    endif
+  endfor
 %}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
@@ -20,17 +31,21 @@
 >
   {% if slide_count > 0 %}
     {%- capture list_items -%}
+      {%- assign processed = 0 -%}
       {%- for block in section.blocks -%}
-        <div
-          class="resource-list__item group-carousel__item"
-          {{ block.shopify_attributes }}
-        >
-          {% render block %}
-        </div>
+        {%- if block.type == 'group' -%}
+          <div
+            class="resource-list__item group-carousel__item"
+            {{ block.shopify_attributes }}
+          >
+            {% render block %}
+          </div>
 
-        {% unless forloop.last %}
-          <!--@list/split-->
-        {% endunless %}
+          {%- assign processed = processed | plus: 1 -%}
+          {%- if processed < slide_count -%}
+            <!--@list/split-->
+          {%- endif -%}
+        {%- endif -%}
       {%- endfor -%}
     {%- endcapture -%}
 
@@ -60,8 +75,10 @@
   "max_blocks": 16,
   "blocks": [
     {
-      "type": "group",
-      "name": "t:names.group"
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
     }
   ],
   "disabled_on": {
@@ -235,7 +252,12 @@
   "presets": [
     {
       "name": "t:names.group_carousel",
-      "category": "t:categories.layout"
+      "category": "t:categories.layout",
+      "blocks": [
+        {
+          "type": "group"
+        }
+      ]
     }
   ]
 }
