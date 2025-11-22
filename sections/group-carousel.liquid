@@ -1,13 +1,11 @@
 {% comment %}
-  Group carousel section — vGC-1.1.1
-  - Based on vGC-1.1.0
-  - Slide width now作为 max-width，不再破坏 resource-list 的 Horizontal gap
+  Group carousel section — vGC-1.0.1
+  - Fix: count slides from section.blocks directly
+  - Fix: remove missing translation for empty state (hard-coded message)
 {% endcomment %}
 
 {% liquid
   assign slide_count = section.blocks.size
-  assign slide_width = section.settings.slide_width | default: 0
-  assign slide_height = section.settings.slide_height | default: 0
 %}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
@@ -31,14 +29,6 @@
       {%- for block in section.blocks -%}
         <div
           class="resource-list__item group-carousel__item"
-          style="
-            {% if slide_width > 0 %}
-              max-width: {{ slide_width }}px;
-            {% endif %}
-            {% if slide_height > 0 %}
-              min-height: {{ slide_height }}px;
-            {% endif %}
-          "
           {{ block.shopify_attributes }}
         >
           {% render block %}
@@ -88,7 +78,7 @@
   "settings": [
     {
       "type": "header",
-      "content": "Carousel layout"
+      "content": "t:content.carousel_layout"
     },
     {
       "type": "select",
@@ -102,7 +92,6 @@
       ],
       "default": "carousel"
     },
-
     {
       "type": "range",
       "id": "columns",
@@ -138,32 +127,6 @@
       "unit": "px",
       "default": 12
     },
-
-    {
-      "type": "header",
-      "content": "Slide sizing"
-    },
-    {
-      "type": "range",
-      "id": "slide_width",
-      "label": "Slide width (max)",
-      "min": 0,
-      "max": 800,
-      "step": 10,
-      "unit": "px",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "slide_height",
-      "label": "Slide min height",
-      "min": 0,
-      "max": 800,
-      "step": 10,
-      "unit": "px",
-      "default": 0
-    },
-
     {
       "type": "header",
       "content": "t:content.carousel_navigation"
