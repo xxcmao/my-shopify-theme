@@ -493,23 +493,6 @@
         "padding-block-end": 48
       }
     },
-    "group_carousel_Uz8zjy": {
-      "type": "group-carousel",
-      "name": "t:names.group_carousel",
-      "settings": {
-        "layout_type": "carousel",
-        "columns": 1,
-        "mobile_card_size": "60cqw",
-        "columns_gap": 12,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "gap": 28,
-        "color_scheme": "",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
     "product_list_x9Yaab": {
       "type": "product-list",
       "blocks": {
@@ -1510,7 +1493,6 @@
     "hero_RrppHa",
     "section_jPtWet",
     "collection_list_ieYmQG",
-    "group_carousel_Uz8zjy",
     "product_list_x9Yaab",
     "featured_product_yEF9dK",
     "featured_product_kAzr6f",
