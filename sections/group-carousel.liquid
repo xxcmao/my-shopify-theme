@@ -1,16 +1,12 @@
 {% comment %}
-  Group carousel section — vGC-1.0.0
-  - Slides are theme Group blocks (blocks/group.liquid)
-  - Each slide = one Group block with its own inner blocks
+  Group carousel section — vGC-2.0.1
+  - Custom flex-based carousel (no dependence on 'resource-list')
+  - Slide width / min height / gap fully controllable via settings
+  - Fix: all range steps within Shopify 101-step limit
 {% endcomment %}
 
 {% liquid
-  assign slide_count = 0
-  for block in section.blocks
-    if block.type == 'group'
-      assign slide_count = slide_count | plus: 1
-    endif
-  endfor
+  assign slide_count = section.blocks.size
 %}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
@@ -27,46 +23,156 @@
   style="
     {% render 'spacing-style', settings: section.settings %}
     {% render 'gap-style', value: section.settings.gap %}
+    --gc-slide-width: {{ section.settings.slide_width }}px;
+    --gc-slide-min-height: {{ section.settings.slide_min_height }}px;
+    --gc-slide-gap: {{ section.settings.columns_gap }}px;
   "
+  data-group-carousel
 >
   {% if slide_count > 0 %}
-    {%- capture list_items -%}
-      {%- assign processed = 0 -%}
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'group' -%}
-          <div
-            class="resource-list__item group-carousel__item"
-            {{ block.shopify_attributes }}
-          >
-            {% render block %}
-          </div>
+    <div class="group-carousel">
+      {% if section.settings.icons_style != 'none' %}
+        <button
+          type="button"
+          class="group-carousel__nav group-carousel__nav--prev group-carousel__nav-bg--{{ section.settings.icons_shape }}"
+          aria-label="{{ 'accessibility.slideshow_previous' | t }}"
+          data-group-carousel-prev
+        >
+          ‹
+        </button>
+      {% endif %}
 
-          {%- assign processed = processed | plus: 1 -%}
-          {%- if processed < slide_count -%}
-            <!--@list/split-->
-          {%- endif -%}
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endcapture -%}
+      <div class="group-carousel__viewport" data-group-carousel-viewport>
+        <div class="group-carousel__track">
+          {%- for block in section.blocks -%}
+            <div
+              class="group-carousel__item"
+              {{ block.shopify_attributes }}
+            >
+              {% render block %}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
 
-    {% liquid
-      assign list_items_array = list_items | strip | split: '<!--@list/split-->'
-    %}
-
-    {% render 'resource-list',
-      list_items: list_items,
-      list_items_array: list_items_array,
-      settings: section.settings,
-      slide_count: slide_count,
-      content_type: 'groups',
-      test_id: 'group-carousel'
-    %}
+      {% if section.settings.icons_style != 'none' %}
+        <button
+          type="button"
+          class="group-carousel__nav group-carousel__nav--next group-carousel__nav-bg--{{ section.settings.icons_shape }}"
+          aria-label="{{ 'accessibility.slideshow_next' | t }}"
+          data-group-carousel-next
+        >
+          ›
+        </button>
+      {% endif %}
+    </div>
   {% else %}
     <div class="group-carousel__empty">
-      {{ 'sections.group_carousel.empty' | t | default: 'Add a Group block to create your first slide.' }}
+      Add a Group block to create your first slide.
     </div>
   {% endif %}
 </div>
+
+<style>
+  /* 外层布局：左右箭头 + 中间视口 */
+  .section-group-carousel .group-carousel {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  /* 滑动视口 */
+  .section-group-carousel .group-carousel__viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 横向 track：真正控制间距和宽度的地方 */
+  .section-group-carousel .group-carousel__track {
+    display: flex;
+    gap: var(--gc-slide-gap, 0px);
+  }
+
+  /* 每一张 slide（一个 Group block） */
+  .section-group-carousel .group-carousel__item {
+    flex: 0 0 var(--gc-slide-width, 100%);
+    min-width: var(--gc-slide-width, 100%);
+    min-height: var(--gc-slide-min-height, 0px);
+    scroll-snap-align: start;
+  }
+
+  /* 导航按钮 */
+  .section-group-carousel .group-carousel__nav {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0.5rem;
+    line-height: 1;
+    font-size: 1.5rem;
+  }
+
+  .section-group-carousel .group-carousel__nav-bg--circle {
+    border-radius: 999px;
+  }
+
+  .section-group-carousel .group-carousel__nav-bg--square {
+    border-radius: 4px;
+  }
+
+  @media (max-width: 749px) {
+    .section-group-carousel .group-carousel {
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+    }
+
+    .section-group-carousel .group-carousel__viewport {
+      order: 1;
+    }
+
+    .section-group-carousel .group-carousel__nav--prev,
+    .section-group-carousel .group-carousel__nav--next {
+      order: 2;
+    }
+
+    /* 移动端：可以看到略小一些的 slide */
+    .section-group-carousel .group-carousel__item {
+      flex-basis: var(--gc-slide-width, 80%);
+      min-width: var(--gc-slide-width, 80%);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-group-carousel]').forEach(function (section) {
+      var viewport = section.querySelector('[data-group-carousel-viewport]');
+      var prevButton = section.querySelector('[data-group-carousel-prev]');
+      var nextButton = section.querySelector('[data-group-carousel-next]');
+
+      if (!viewport || !prevButton || !nextButton) return;
+
+      function getSlideStep () {
+        var firstSlide = viewport.querySelector('.group-carousel__item');
+        if (!firstSlide) return viewport.clientWidth;
+
+        var styles = getComputedStyle(firstSlide);
+        var width = firstSlide.getBoundingClientRect().width;
+        var marginRight = parseFloat(styles.marginRight || '0');
+        return width + marginRight;
+      }
+
+      prevButton.addEventListener('click', function () {
+        viewport.scrollBy({ left: -getSlideStep(), behavior: 'smooth' });
+      });
+
+      nextButton.addEventListener('click', function () {
+        viewport.scrollBy({ left: getSlideStep(), behavior: 'smooth' });
+      });
+    });
+  });
+</script>
 
 {% schema %}
 {
@@ -75,10 +181,8 @@
   "max_blocks": 16,
   "blocks": [
     {
-      "type": "@theme"
-    },
-    {
-      "type": "@app"
+      "type": "group",
+      "name": "t:names.group"
     }
   ],
   "disabled_on": {
@@ -90,43 +194,6 @@
       "content": "t:content.carousel_layout"
     },
     {
-      "type": "select",
-      "id": "layout_type",
-      "label": "t:settings.layout_type",
-      "options": [
-        {
-          "value": "carousel",
-          "label": "t:options.carousel"
-        }
-      ],
-      "default": "carousel"
-    },
-    {
-      "type": "range",
-      "id": "columns",
-      "label": "t:settings.columns",
-      "min": 1,
-      "max": 4,
-      "step": 1,
-      "default": 1
-    },
-    {
-      "type": "select",
-      "id": "mobile_card_size",
-      "label": "t:settings.mobile_columns",
-      "options": [
-        {
-          "value": "60cqw",
-          "label": "t:options.one_number"
-        },
-        {
-          "value": "44cqw",
-          "label": "t:options.two_number"
-        }
-      ],
-      "default": "60cqw"
-    },
-    {
       "type": "range",
       "id": "columns_gap",
       "label": "t:settings.horizontal_gap",
@@ -134,7 +201,31 @@
       "max": 100,
       "step": 1,
       "unit": "px",
-      "default": 12
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Slide sizing"
+    },
+    {
+      "type": "range",
+      "id": "slide_width",
+      "label": "Slide width",
+      "min": 120,
+      "max": 600,
+      "step": 8,
+      "unit": "px",
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "slide_min_height",
+      "label": "Slide min height",
+      "min": 0,
+      "max": 800,
+      "step": 16,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "header",
@@ -148,18 +239,6 @@
         {
           "value": "arrow",
           "label": "t:options.arrows"
-        },
-        {
-          "value": "chevron",
-          "label": "t:options.chevrons"
-        },
-        {
-          "value": "arrows_large",
-          "label": "t:options.arrows_large"
-        },
-        {
-          "value": "chevron_large",
-          "label": "t:options.chevron_large"
         },
         {
           "value": "none",
