@@ -1142,6 +1142,29 @@
     "section_7PPpjk": {
       "type": "section",
       "blocks": {
+        "video_K96nPB": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/f236567731064a27a1de2f3243dcffa6.HD-1080p-3.3Mbps-54356545.mp4",
+            "video_autoplay": false,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 100,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "auto",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "group_KfULfM": {
           "type": "group",
           "name": "t:names.column",
@@ -1186,13 +1209,13 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Quality first</h2>",
+                "text": "<p>Gordon Ramsay–<br/> Approved</p>",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-accent--family)",
+                "font_size": "1.5rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -1212,13 +1235,13 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>We obsess over the details and strive to deliver the best products at the best prices, every time.</p>",
+                "text": "<p>“Home cooks, you deserve better pans!” Listen to multi-Michelin-starred chef Gordon Ramsay: “The sear I can get with these pans is incredible, with absolutely no stick. The cleanup is effortless. I love using HexClad at home.”</p>",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "rte",
+                "alignment": "left",
+                "type_preset": "custom",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "font_size": "0.875rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -1233,11 +1256,35 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "image_m3D3V6": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/gordon-signature-min.gif",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "text_UhUekM",
-            "text_Vrd4Rw"
+            "text_Vrd4Rw",
+            "image_m3D3V6"
           ]
         },
         "group_jbHqbX": {
@@ -1340,6 +1387,7 @@
         }
       },
       "block_order": [
+        "video_K96nPB",
         "group_KfULfM",
         "group_jbHqbX"
       ],
