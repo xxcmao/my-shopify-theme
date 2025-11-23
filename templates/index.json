@@ -3126,28 +3126,22 @@
         "padding-block-end": 48
       }
     },
-    "benefits_marquee_inKqk8": {
+    "benefits_marquee_Aggb8h": {
       "type": "benefits-marquee",
       "blocks": {
-        "item_q4pf6G": {
+        "item_K6N6Vf": {
           "type": "item",
           "settings": {
             "text": "Lifetime Warranty"
           }
         },
-        "item_mDbkmy": {
-          "type": "item",
-          "settings": {
-            "text": "Lifetime Warranty"
-          }
-        },
-        "item_7RxcCM": {
+        "item_THPAKi": {
           "type": "item",
           "settings": {
             "text": "Free Shipping"
           }
         },
-        "item_EbDBeX": {
+        "item_aKjetw": {
           "type": "item",
           "settings": {
             "text": "30-Day Return Guarantee"
@@ -3155,10 +3149,9 @@
         }
       },
       "block_order": [
-        "item_q4pf6G",
-        "item_mDbkmy",
-        "item_7RxcCM",
-        "item_EbDBeX"
+        "item_K6N6Vf",
+        "item_THPAKi",
+        "item_aKjetw"
       ],
       "name": "Selling points marquee",
       "settings": {
@@ -4016,7 +4009,7 @@
     "section_kAna7T",
     "group_carousel_fPEXmN",
     "section_q678nz",
-    "benefits_marquee_inKqk8",
+    "benefits_marquee_Aggb8h",
     "featured_product_yEF9dK",
     "featured_product_kAzr6f",
     "product_list_nQbyNK",
