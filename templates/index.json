@@ -1431,8 +1431,8 @@
             "background_image": "shopify://shop_images/Searing_Power_Hover.jpg",
             "background_image_position": "cover",
             "border": "solid",
-            "border_width": 1,
-            "border_opacity": 0,
+            "border_width": 2,
+            "border_opacity": 27,
             "border_radius": 15,
             "toggle_overlay": true,
             "overlay_color": "#000000",
@@ -2071,7 +2071,7 @@
         "group_qfijpy"
       ],
       "custom_css": [
-        ".section-group-carousel .group-carousel__item > .group {border-radius: 24px; border: 1px solid transparent; /* 让背景露出当作边框 */ background: /* 内层背景，保持原本的黑色/卡片背景，根据你实际需要改 */ linear-gradient(#000000, #000000) padding-box, /* 外层“边框”渐变：从亮白到透明 */ linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0)) border-box;}"
+        ".section-group-carousel .group-carousel__item > .group {border-radius: 24px; border: 1px solid transparent; /* 让背景露出当作边框 */ background: /* 内层背景，保持原本的黑色/卡片背景，根据你实际需要改 */ linear-gradient( #000000, #000000 ) padding-box, /* 外层“边框”渐变：从亮白到透明 */ linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)) border-box;}"
       ],
       "name": "t:names.group_carousel",
       "settings": {
