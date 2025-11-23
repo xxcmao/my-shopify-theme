@@ -1,4 +1,4 @@
-<section class="section section-benefits-marquee benefits-marquee--{{ section.id }}">
+<section class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }}">
   <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
     <div class="benefits-marquee__track">
       {%- comment -%}
@@ -45,7 +45,7 @@
   padding-block: 1.25rem;
 }
 
-/* 外层容器：只负责裁剪和居中 */
+/* 外层容器：只负责裁剪和宽度 */
 .benefits-marquee--{{ section.id }} .benefits-marquee__wrapper {
   overflow: hidden;
   width: 100%;
@@ -86,7 +86,7 @@
   animation-name: benefits-marquee-scroll-{{ section.id }};
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 24s;
+  animation-duration: {% if section.settings.speed == 'slow' %}36s{% elsif section.settings.speed == 'fast' %}16s{% else %}24s{% endif %};
 }
 
 @keyframes benefits-marquee-scroll-{{ section.id }} {
@@ -126,10 +126,36 @@
   "class": "section-benefits-marquee",
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
       "type": "checkbox",
       "id": "enable_animation",
       "label": "Enable scrolling animation (mobile)",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "speed",
+      "label": "Scroll speed",
+      "default": "medium",
+      "options": [
+        {
+          "value": "slow",
+          "label": "Slow"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "fast",
+          "label": "Fast"
+        }
+      ]
     }
   ],
   "blocks": [
