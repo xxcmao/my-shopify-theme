@@ -1,3 +1,8 @@
+{%- comment -%}
+Selling points marquee — v1.0.0
+- 初始版本：支持 Color scheme + 动画开关 + 滚动速度设置 + temp 占位文案
+{%- endcomment -%}
+
 <section class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }}">
   <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
     <div class="benefits-marquee__track">
