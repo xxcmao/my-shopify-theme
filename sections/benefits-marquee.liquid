@@ -1,0 +1,179 @@
+<section class="section section-benefits-marquee benefits-marquee--{{ section.id }}">
+  <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
+    {%- comment -%}
+      为了实现无缝滚动，这里复制两条 track
+    {%- endcomment -%}
+    {% for i in (1..2) %}
+      <div class="benefits-marquee__track">
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            <div class="benefits-marquee__item" {{ block.shopify_attributes }}>
+              {% if block.settings.icon != blank %}
+                <div class="benefits-marquee__icon">
+                  {{ block.settings.icon | image_url: width: 80 | image_tag: loading: 'lazy', alt: block.settings.text }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.text != blank %}
+                <span class="benefits-marquee__text">
+                  {{ block.settings.text }}
+                </span>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% else %}
+          {%- comment -%} 没有配置 block 时的默认文案 {%- endcomment -%}
+          <div class="benefits-marquee__item">
+            <span class="benefits-marquee__text">Lifetime Warranty</span>
+          </div>
+          <div class="benefits-marquee__item">
+            <span class="benefits-marquee__text">Free Shipping</span>
+          </div>
+          <div class="benefits-marquee__item">
+            <span class="benefits-marquee__text">30-Day Return Guarantee</span>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% style %}
+.benefits-marquee--{{ section.id }} {
+  padding-block: 1.25rem;
+}
+
+.benefits-marquee--{{ section.id }} .benefits-marquee__wrapper {
+  display: flex;
+  overflow: hidden;
+}
+
+.benefits-marquee--{{ section.id }} .benefits-marquee__track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 1.5rem;
+  min-width: 100%;
+}
+
+.benefits-marquee--{{ section.id }} .benefits-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.benefits-marquee--{{ section.id }} .benefits-marquee__icon img {
+  display: block;
+  width: 37px;
+  height: 43px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.benefits-marquee--{{ section.id }} .benefits-marquee__text {
+  display: inline-block;
+}
+
+/* 滚动动画（移动端为主） */
+.benefits-marquee--{{ section.id }} .benefits-marquee__wrapper--animated .benefits-marquee__track {
+  animation-name: benefits-marquee-scroll-{{ section.id }};
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 24s;
+}
+
+.benefits-marquee--{{ section.id }} .benefits-marquee__wrapper--animated .benefits-marquee__track:nth-child(2) {
+  animation-delay: -12s; /* 一半的时长，形成无缝衔接 */
+}
+
+@keyframes benefits-marquee-scroll-{{ section.id }} {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* PC 端：不滚动，居中一行展示 */
+@media (min-width: 768px) {
+  .benefits-marquee--{{ section.id }} .benefits-marquee__wrapper {
+    justify-content: center;
+  }
+
+  .benefits-marquee--{{ section.id }} .benefits-marquee__wrapper--animated .benefits-marquee__track {
+    animation: none;
+  }
+
+  .benefits-marquee--{{ section.id }} .benefits-marquee__track:nth-child(2) {
+    display: none;
+  }
+
+  .benefits-marquee--{{ section.id }} .benefits-marquee__item {
+    font-size: 1rem;
+  }
+}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Selling points marquee",
+  "class": "section-benefits-marquee",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "Enable scrolling animation (mobile)",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Benefit item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Lifetime Warranty"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Selling points marquee",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "text": "Lifetime Warranty"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Free Shipping"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "30-Day Return Guarantee"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
