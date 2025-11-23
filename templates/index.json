@@ -3126,6 +3126,43 @@
         "padding-block-end": 48
       }
     },
+    "benefits_marquee_dgnNzt": {
+      "type": "benefits-marquee",
+      "blocks": {
+        "item_4yXVLn": {
+          "type": "item",
+          "settings": {
+            "text": "Temp benefit #1"
+          }
+        },
+        "item_yzJRNR": {
+          "type": "item",
+          "settings": {
+            "text": "Temp benefit #2"
+          }
+        },
+        "item_YGXPCd": {
+          "type": "item",
+          "settings": {
+            "text": "Temp benefit #3"
+          }
+        }
+      },
+      "block_order": [
+        "item_4yXVLn",
+        "item_yzJRNR",
+        "item_YGXPCd"
+      ],
+      "custom_css": [
+        ".section-benefits-marquee.color-inverse{background: #000}"
+      ],
+      "name": "Selling points marquee",
+      "settings": {
+        "color_scheme": "inverse",
+        "enable_animation": true,
+        "speed": "medium"
+      }
+    },
     "featured_product_yEF9dK": {
       "type": "featured-product",
       "blocks": {
@@ -3977,6 +4014,7 @@
     "section_kAna7T",
     "group_carousel_fPEXmN",
     "section_q678nz",
+    "benefits_marquee_dgnNzt",
     "featured_product_yEF9dK",
     "featured_product_kAzr6f",
     "product_list_nQbyNK",
