@@ -1,6 +1,7 @@
 {%- comment -%}
-Selling points marquee — v1.0.0
-- 初始版本：支持 Color scheme + 动画开关 + 滚动速度设置 + temp 占位文案
+Selling points marquee — v1.0.1
+- v1.0.0 初始版本：支持 Color scheme + 动画开关 + 滚动速度设置 + temp 占位文案
+- v1.0.1 将 color_scheme 设置改为 select，以提高主题兼容性
 {%- endcomment -%}
 
 <section class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }}">
@@ -131,9 +132,23 @@ Selling points marquee — v1.0.0
   "class": "section-benefits-marquee",
   "settings": [
     {
-      "type": "color_scheme",
+      "type": "select",
       "id": "color_scheme",
       "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
       "default": "background-1"
     },
     {
