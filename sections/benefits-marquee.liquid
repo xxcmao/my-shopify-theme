@@ -1,12 +1,10 @@
 {%- comment -%}
-Selling points marquee — v1.1.0
+Selling points marquee — v1.1.1
 - v1.0.0 初始版本：Color scheme + 动画开关 + 速度设置 + temp 占位文案
 - v1.0.1 将 color_scheme 改为 select 提升兼容
 - v1.0.2 使用原生 color_scheme 类型（Scheme 1/2/3 UI）
-- v1.1.0 应用主题常规外观结构：
-  - color-{{ section.settings.color_scheme }} + gradient 外壳
-  - page-width 宽度容器
-  - padding_top / padding_bottom 动态上下留白
+- v1.1.0 应用主题常规外观结构：color-scheme + gradient + page-width + padding_top/bottom
+- v1.1.1 显式把当前 color scheme 的背景/前景色应用到组件容器
 {%- endcomment -%}
 
 <section class="section section-benefits-marquee color-{{ section.settings.color_scheme }} gradient">
@@ -65,6 +63,17 @@ Selling points marquee — v1.1.0
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+}
+
+/* 关键补丁：把当前 Color scheme 的背景/文字色应用到组件外层 */
+.section-benefits-marquee.color-{{ section.settings.color_scheme }} {
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}
+
+/* 如果主题给 gradient 设置了渐变，这里沿用它 */
+.section-benefits-marquee.color-{{ section.settings.color_scheme }}.gradient {
+  background: var(--gradient-background);
 }
 
 /* 外层容器：只负责裁剪和宽度 */
