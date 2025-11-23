@@ -380,9 +380,9 @@
       },
       "scheme-dfdc5110-dd03-4802-9ba3-16583a0692a4": {
         "settings": {
-          "background": "#f9f8f6",
-          "foreground_heading": "#000000",
-          "foreground": "#000000",
+          "background": "#000000",
+          "foreground_heading": "#d09963",
+          "foreground": "#f9f8f6",
           "primary": "#000000",
           "primary_hover": "#000000",
           "border": "#00000047",
