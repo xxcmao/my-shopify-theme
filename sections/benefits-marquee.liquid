@@ -1,11 +1,11 @@
 <section class="section section-benefits-marquee benefits-marquee--{{ section.id }}">
   <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
-    {%- comment -%}
-      为了实现无缝滚动，这里复制两条 track
-    {%- endcomment -%}
-    {% for i in (1..2) %}
-      <div class="benefits-marquee__track">
-        {% if section.blocks.size > 0 %}
+    <div class="benefits-marquee__track">
+      {%- comment -%}
+        为了实现无缝滚动，这里在同一条 track 里把内容重复两遍
+      {%- endcomment -%}
+      {% if section.blocks.size > 0 %}
+        {% for n in (1..2) %}
           {% for block in section.blocks %}
             <div class="benefits-marquee__item" {{ block.shopify_attributes }}>
               {% if block.settings.icon != blank %}
@@ -21,8 +21,10 @@
               {% endif %}
             </div>
           {% endfor %}
-        {% else %}
-          {%- comment -%} 没有配置 block 时的默认文案 {%- endcomment -%}
+        {% endfor %}
+      {% else %}
+        {%- comment -%} 没有配置 block 时的默认文案（同样重复两遍） {%- endcomment -%}
+        {% for n in (1..2) %}
           <div class="benefits-marquee__item">
             <span class="benefits-marquee__text">Lifetime Warranty</span>
           </div>
@@ -32,9 +34,9 @@
           <div class="benefits-marquee__item">
             <span class="benefits-marquee__text">30-Day Return Guarantee</span>
           </div>
-        {% endif %}
-      </div>
-    {% endfor %}
+        {% endfor %}
+      {% endif %}
+    </div>
   </div>
 </section>
 
@@ -43,17 +45,19 @@
   padding-block: 1.25rem;
 }
 
+/* 外层容器：只负责裁剪和居中 */
 .benefits-marquee--{{ section.id }} .benefits-marquee__wrapper {
-  display: flex;
   overflow: hidden;
+  width: 100%;
 }
 
+/* 跑马灯轨道：一条 track，里边内容重复两遍 */
 .benefits-marquee--{{ section.id }} .benefits-marquee__track {
   display: flex;
-  flex-shrink: 0;
   align-items: center;
   gap: 1.5rem;
-  min-width: 100%;
+  flex-wrap: nowrap;
+  width: max-content;
 }
 
 .benefits-marquee--{{ section.id }} .benefits-marquee__item {
@@ -85,22 +89,20 @@
   animation-duration: 24s;
 }
 
-.benefits-marquee--{{ section.id }} .benefits-marquee__wrapper--animated .benefits-marquee__track:nth-child(2) {
-  animation-delay: -12s; /* 一半的时长，形成无缝衔接 */
-}
-
 @keyframes benefits-marquee-scroll-{{ section.id }} {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    /* 内容在 track 中重复了两遍，这里往左移动 50% 的宽度，刚好无缝衔接 */
+    transform: translateX(-50%);
   }
 }
 
 /* PC 端：不滚动，居中一行展示 */
 @media (min-width: 768px) {
   .benefits-marquee--{{ section.id }} .benefits-marquee__wrapper {
+    display: flex;
     justify-content: center;
   }
 
@@ -108,8 +110,8 @@
     animation: none;
   }
 
-  .benefits-marquee--{{ section.id }} .benefits-marquee__track:nth-child(2) {
-    display: none;
+  .benefits-marquee--{{ section.id }} .benefits-marquee__track {
+    transform: none;
   }
 
   .benefits-marquee--{{ section.id }} .benefits-marquee__item {
