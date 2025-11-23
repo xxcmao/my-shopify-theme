@@ -1,11 +1,23 @@
 {%- comment -%}
-Selling points marquee — v1.0.2
+Selling points marquee — v1.0.3
 - v1.0.0 初始版本：支持 Color scheme + 动画开关 + 滚动速度设置 + temp 占位文案
 - v1.0.1 将 color_scheme 设置改为 select，以提高主题兼容性
-- v1.0.2 为 color-background-1 / 2 / inverse 添加背景与文字颜色样式
+- v1.0.3 使用内联 style 根据 color_scheme 设置背景色和文字色，避免被主题样式覆盖
 {%- endcomment -%}
 
-<section class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }}">
+{%- assign bg_color = '#ffffff' -%}
+{%- assign text_color = '#111111' -%}
+{%- if section.settings.color_scheme == 'background-2' -%}
+  {%- assign bg_color = '#f5f5f5' -%}
+{%- elsif section.settings.color_scheme == 'inverse' -%}
+  {%- assign bg_color = '#111111' -%}
+  {%- assign text_color = '#ffffff' -%}
+{%- endif -%}
+
+<section
+  class="section section-benefits-marquee benefits-marquee--{{ section.id }}"
+  style="background-color: {{ bg_color }}; color: {{ text_color }};"
+>
   <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
     <div class="benefits-marquee__track">
       {%- comment -%}
@@ -48,23 +60,6 @@ Selling points marquee — v1.0.2
 </section>
 
 {% style %}
-/* 不同 color_scheme 的背景 / 字体颜色 */
-.section-benefits-marquee.color-background-1 {
-  background-color: #ffffff;
-  color: #111111;
-}
-
-.section-benefits-marquee.color-background-2 {
-  background-color: #f5f5f5;
-  color: #111111;
-}
-
-.section-benefits-marquee.color-inverse {
-  background-color: #111111;
-  color: #ffffff;
-}
-
-/* 组件自身的内边距 */
 .benefits-marquee--{{ section.id }} {
   padding-block: 1.25rem;
 }
