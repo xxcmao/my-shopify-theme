@@ -1,73 +1,83 @@
 {%- comment -%}
-  Group carousel (block) — vGCB-1.1.0
-  - 用作「容器型」Block：可以添加任意子 Block（Product card / Heading / Text / Image…）
-  - 每一个子 Block = 一页 slide，横向滑动查看
-  - 放在任意支持 Block 的 Section 里使用
+  Group carousel block — vG-Carousel-1.1.0
+  - 基于原来的 group block，增加横向滑动能力
+  - 使用方式：
+    1）在 Section 里添加 block：Group carousel
+    2）在 Group carousel 里面继续添加 Text / Product card / Image 等子 block
+    3）每一个子 block 就是一页 slide，左右滑动查看
 {%- endcomment -%}
 
 {%- capture children -%}
-  <div class="group-carousel-block">
+  <div class="group-carousel__viewport">
     <div
-      class="group-carousel-block__track"
-      style="--group-carousel-gap: {{ block.settings.slide_gap }}px;"
+      class="group-carousel__track group-carousel__track--force"
+      style="--group-carousel-gap: {{ block.settings.gap }}px;"
     >
       {% content_for 'blocks' %}
     </div>
   </div>
 {%- endcapture -%}
 
-{%- render 'group',
-  children: children,
-  settings: block.settings,
-  shopify_attributes: block.shopify_attributes
--%}
+<div class="group-carousel-block" {{ block.shopify_attributes }}>
+  {% render 'group',
+    children: children,
+    settings: block.settings,
+    shopify_attributes: block.shopify_attributes
+  %}
+</div>
 
-{% style %}
-  /* ====== 只作用于 Group carousel（block） 内部 ====== */
-
+{% stylesheet %}
   .group-carousel-block {
+    width: 100%;
+  }
+
+  .group-carousel__viewport {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
   }
 
-  /* 用 Grid 做水平滑动，每个子 block 占一整屏宽度 */
-  .group-carousel-block__track {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(0, 100%);
-    column-gap: var(--group-carousel-gap, 16px);
+  .group-carousel__track {
+    display: flex;
+    gap: var(--group-carousel-gap, 16px);
     padding-block: 0.25rem;
   }
 
-  /* 每个直接子元素 = 一页 slide */
-  .group-carousel-block__track > * {
+  /* 强制不换行，超出才产生横向滚动 */
+  .group-carousel__track--force {
+    flex-wrap: nowrap !important;
+  }
+
+  /* 直接子 block = 每一个 slide，占满容器宽度 */
+  .group-carousel__track--force > * {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
     scroll-snap-align: start;
-    width: 100%;
-    max-width: 100%;
   }
 
   /* 尽量让常见卡片类控件铺满 slide */
-  .group-carousel-block__track .product-card,
-  .group-carousel-block__track .product-card-custom,
-  .group-carousel-block__track .group,
-  .group-carousel-block__track .resource-list__item {
+  .group-carousel__track--force .product-card,
+  .group-carousel__track--force .product-card-custom,
+  .group-carousel__track--force .resource-list__item,
+  .group-carousel__track--force .group {
     width: 100% !important;
     max-width: 100% !important;
     margin-inline: 0 !important;
   }
 
   @media (max-width: 749px) {
-    .group-carousel-block {
-      scroll-snap-type: x mandatory;
+    .group-carousel__track--force > * {
+      flex-basis: 100% !important;
+      min-width: 100% !important;
     }
   }
-{% endstyle %}
+{% endstylesheet %}
 
 {% schema %}
 {
-  "name": "Group carousel (block)",
+  "name": "Group carousel",
   "tag": null,
   "blocks": [
     {
@@ -207,22 +217,16 @@
       "default": "center",
       "visible_if": "{{ block.settings.content_direction == 'column' }}"
     },
-
-    {
-      "type": "header",
-      "content": "Slide layout"
-    },
     {
       "type": "range",
-      "id": "slide_gap",
-      "label": "Horizontal gap between slides",
+      "id": "gap",
+      "label": "t:settings.gap",
       "min": 0,
       "max": 100,
       "step": 1,
       "unit": "px",
       "default": 12
     },
-
     {
       "type": "header",
       "content": "t:content.size"
@@ -320,7 +324,6 @@
       "default": 100,
       "visible_if": "{{ block.settings.height == 'custom' }}"
     },
-
     {
       "type": "header",
       "content": "t:content.appearance"
@@ -515,6 +518,12 @@
       "default": false
     },
     {
+      "type": "text",
+      "id": "placeholder",
+      "label": "t:settings.image",
+      "visible_if": "{{ false }}"
+    },
+    {
       "type": "header",
       "content": "t:content.padding"
     },
@@ -561,7 +570,7 @@
   ],
   "presets": [
     {
-      "name": "Group carousel (block)",
+      "name": "Group carousel",
       "category": "t:categories.layout"
     }
   ]
