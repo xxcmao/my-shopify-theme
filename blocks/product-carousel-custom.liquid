@@ -1,26 +1,20 @@
 {% comment %}
-  Group carousel (block) — vGCB-1.1.1
-  - 用在任意 section 里，作为容器横向滑动内部子 block
-  - 每一个「子 block」就是一个 slide（例如 Product card）
-  - 修正：schema 中增加 blocks，使该 block 可以包含子 block
+  Group carousel (block) — vGCB-1.0.2
+  - 容器 block：把内部子 block 变成横向滑动的 slides
+  - 使用方式：在任意支持自定义 blocks 的 section 里「Add block」→ 选择本控件
 {% endcomment %}
 
 {%- capture children -%}
   {% content_for 'blocks' %}
 {%- endcapture -%}
 
-{%- assign has_children = children | strip | size -%}
-
 <div
   class="group-carousel-block"
-  style="
-    --gcb-slide-width: {{ block.settings.slide_width }}px;
-    --gcb-gap: {{ block.settings.columns_gap }}px;
-  "
+  style="--gcb-gap: {{ block.settings.columns_gap }}px;"
   {{ block.shopify_attributes }}
 >
   {%- if block.settings.show_heading and block.settings.heading != blank -%}
-    <div class="group-carousel-block__header">
+    <div class="group-carousel-block__heading">
       <h3 class="group-carousel-block__title">
         {{ block.settings.heading }}
       </h3>
@@ -29,13 +23,7 @@
 
   <div class="group-carousel-block__viewport">
     <div class="group-carousel-block__track">
-      {%- if has_children > 0 -%}
-        {{ children }}
-      {%- else -%}
-        <div class="group-carousel-block__empty">
-          <p>Add blocks inside this carousel.</p>
-        </div>
-      {%- endif -%}
+      {{ children }}
     </div>
   </div>
 </div>
@@ -45,6 +33,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    width: 100%;
+  }
+
+  .group-carousel-block__heading {
     width: 100%;
   }
 
@@ -63,24 +55,26 @@
     display: flex;
     gap: var(--gcb-gap, 16px);
     padding-block: 0.25rem;
-    min-width: 100%;
   }
 
-  /* 关键：把每个子 block 当成一个 slide */
+  /* 每个内部 block == 一个 slide，填满容器宽度 */
   .group-carousel-block__track > * {
-    flex: 0 0 min(var(--gcb-slide-width, 300px), 100%);
-    min-width: min(var(--gcb-slide-width, 300px), 100%);
+    flex: 0 0 100%;
+    min-width: 100%;
     scroll-snap-align: start;
   }
 
-  .group-carousel-block__empty {
-    opacity: .6;
+  /* 让 Product card 之类的内容也铺满 */
+  .group-carousel-block .product-card,
+  .group-carousel-block .resource-list__item {
+    width: 100%;
+    max-width: none;
   }
 
   @media (max-width: 749px) {
     .group-carousel-block__track > * {
-      flex-basis: 80%;
-      min-width: 80%;
+      flex-basis: 100%;
+      min-width: 100%;
     }
   }
 {% endstyle %}
@@ -88,19 +82,11 @@
 {% schema %}
 {
   "name": "Group carousel (block)",
-
   "blocks": [
-    {
-      "type": "@theme"
-    },
-    {
-      "type": "@app"
-    },
-    {
-      "type": "_divider"
-    }
+    { "type": "@theme" },
+    { "type": "@app" },
+    { "type": "_divider" }
   ],
-
   "settings": [
     {
       "type": "checkbox",
@@ -112,22 +98,12 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Group carousel",
+      "default": "Featured",   // 不能是空字符串
       "placeholder": "Heading"
     },
     {
       "type": "header",
       "content": "Layout"
-    },
-    {
-      "type": "range",
-      "id": "slide_width",
-      "label": "Slide width",
-      "min": 150,
-      "max": 600,
-      "step": 10,
-      "unit": "px",
-      "default": 260
     },
     {
       "type": "range",
