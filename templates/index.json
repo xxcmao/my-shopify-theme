@@ -3139,27 +3139,22 @@
         "item_YcX6hz": {
           "type": "item",
           "settings": {
-            "text": "Temp benefit #1"
+            "icon": "shopify://shop_images/home-free-shipping.svg",
+            "text": "Free Shipping"
           }
         },
         "item_4kyjMh": {
           "type": "item",
           "settings": {
-            "text": "Temp benefit #2"
-          }
-        },
-        "item_VaMMkd": {
-          "type": "item",
-          "settings": {
-            "text": "Temp benefit #3"
+            "icon": "shopify://shop_images/home-return-guarantee.svg",
+            "text": "30-Day Return Guarantee"
           }
         }
       },
       "block_order": [
         "item_mcVEeU",
         "item_YcX6hz",
-        "item_4kyjMh",
-        "item_VaMMkd"
+        "item_4kyjMh"
       ],
       "custom_css": [
         "section {background-color: #11322c !important; color: #ffffff !important;}",
