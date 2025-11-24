@@ -1,5 +1,5 @@
 {%- comment -%}
-  Group carousel block — vG-Carousel-1.0.1
+  Group carousel block — vG-Carousel-1.1.0
   - 基于原来的 group block，增加横向滑动能力
   - 使用方式：
     1）在 Section 里添加 block：Group carousel
@@ -9,16 +9,27 @@
 
 {%- capture children -%}
   <div class="group-carousel__viewport">
-    <div class="group-carousel__track group-carousel__track--force" style="--group-carousel-gap: {{ block.settings.gap }}px;">
+    <div
+      class="group-carousel__track group-carousel__track--force"
+      style="--group-carousel-gap: {{ block.settings.gap }}px;"
+    >
       {% content_for 'blocks' %}
     </div>
   </div>
 {%- endcapture -%}
 
-{% render 'group', children: children, settings: block.settings, shopify_attributes: block.shopify_attributes %}
+<div class="group-carousel-block" {{ block.shopify_attributes }}>
+  {% render 'group',
+    children: children,
+    settings: block.settings,
+    shopify_attributes: block.shopify_attributes
+  %}
+</div>
 
-{% style %}
-  /* 只作用于 Group carousel 这个新 block 内部 */
+{% stylesheet %}
+  .group-carousel-block {
+    width: 100%;
+  }
 
   .group-carousel__viewport {
     width: 100%;
@@ -38,7 +49,7 @@
     flex-wrap: nowrap !important;
   }
 
-  /* 直接子 block = 每一个 slide */
+  /* 直接子 block = 每一个 slide，占满容器宽度 */
   .group-carousel__track--force > * {
     flex: 0 0 100% !important;
     min-width: 100% !important;
@@ -46,7 +57,7 @@
     scroll-snap-align: start;
   }
 
-  /* 尽量让常见卡片铺满 slide 区域 */
+  /* 尽量让常见卡片类控件铺满 slide */
   .group-carousel__track--force .product-card,
   .group-carousel__track--force .product-card-custom,
   .group-carousel__track--force .resource-list__item,
@@ -62,7 +73,7 @@
       min-width: 100% !important;
     }
   }
-{% endstyle %}
+{% endstylesheet %}
 
 {% schema %}
 {
