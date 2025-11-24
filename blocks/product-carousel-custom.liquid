@@ -1,14 +1,144 @@
-<div class="debug-product-carousel" {{ block.shopify_attributes }}>
-  <p>✅ Custom block loaded: Debug product carousel</p>
-</div>
+{%- comment -%}
+  Product carousel block — vBPC-1.0.1
+  - 手动选择多个产品，在 block 内横向滑动展示
+  - 适合放在 Group、Multicolumn 等容器里作为子 block 使用
+{%- endcomment -%}
+
+{%- liquid
+  assign selected_products = block.settings.products
+-%}
+
+{%- if selected_products != blank and selected_products.size > 0 -%}
+  <div
+    class="block-product-carousel"
+    style="
+      --bpc-slide-width: {{ block.settings.slide_width }}px;
+      --bpc-gap: {{ block.settings.columns_gap }}px;
+    "
+    {{ block.shopify_attributes }}
+  >
+    {%- if block.settings.show_heading and block.settings.heading != blank -%}
+      <div class="block-product-carousel__heading">
+        <h3 class="block-product-carousel__title">
+          {{ block.settings.heading }}
+        </h3>
+      </div>
+    {%- endif -%}
+
+    <div class="block-product-carousel__viewport">
+      <div class="block-product-carousel__track">
+        {%- for product in selected_products -%}
+          <div class="block-product-carousel__item">
+            {%- comment -%}复用主题内置 _product-card 卡片{%- endcomment -%}
+            {%- # theme-check-disable UniqueStaticBlockId -%}
+              {%- content_for 'block',
+                type: '_product-card',
+                id: 'static-product-card',
+                closest.product: product
+              -%}
+            {%- # theme-check-enable UniqueStaticBlockId -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- else -%}
+  <div class="block-product-carousel block-product-carousel--empty" {{ block.shopify_attributes }}>
+    <p style="opacity:.6;">Select products in block settings.</p>
+  </div>
+{%- endif -%}
+
+{% style %}
+  .block-product-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .block-product-carousel__title {
+    margin: 0;
+  }
+
+  .block-product-carousel__viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .block-product-carousel__track {
+    display: flex;
+    gap: var(--bpc-gap, 16px);
+    padding-block: 0.25rem;
+  }
+
+  .block-product-carousel__item {
+    flex: 0 0 var(--bpc-slide-width, 260px);
+    min-width: var(--bpc-slide-width, 260px);
+    scroll-snap-align: start;
+  }
+
+  .block-product-carousel--empty {
+    opacity: .7;
+  }
+
+  @media (max-width: 749px) {
+    .block-product-carousel__item {
+      flex-basis: 80%;
+      min-width: 80%;
+    }
+  }
+{% endstyle %}
 
 {% schema %}
 {
-  "name": "Debug product carousel",
-  "settings": [],
+  "name": "Product carousel",
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Products"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured products",
+      "placeholder": "Heading"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "slide_width",
+      "label": "Slide width",
+      "min": 150,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 260
+    },
+    {
+      "type": "range",
+      "id": "columns_gap",
+      "label": "Horizontal gap",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    }
+  ],
   "presets": [
     {
-      "name": "Debug product carousel"
+      "name": "Product carousel (custom)"
     }
   ]
 }
