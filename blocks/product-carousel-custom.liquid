@@ -1,71 +1,83 @@
 {% comment %}
-  Group carousel (block) — vGCB-1.0.0
-  - 在一个 block 里面横向展示多个子 block（如 Product card）
-  - 使用原生横向滚动 + scroll-snap
+  Group carousel (block) — vGCB-1.1.0
+  - 用在任意 section 里，作为容器横向滑动内部子 block
+  - 每一个「子 block」就是一个 slide（例如 Product card）
 {% endcomment %}
 
+{%- capture children -%}
+  {% content_for 'blocks' %}
+{%- endcapture -%}
+
+{%- assign has_children = children | strip | size -%}
+
 <div
-  class="block-group-carousel"
+  class="group-carousel-block"
   style="
-    --group-carousel-slide-width: {{ block.settings.slide_width }}px;
-    --group-carousel-gap: {{ block.settings.gap }}px;
+    --gcb-slide-width: {{ block.settings.slide_width }}px;
+    --gcb-gap: {{ block.settings.columns_gap }}px;
   "
   {{ block.shopify_attributes }}
 >
-  {% if block.settings.show_heading and block.settings.heading != blank %}
-    <div class="block-group-carousel__heading">
-      <h3 class="block-group-carousel__title">
+  {%- if block.settings.show_heading and block.settings.heading != blank -%}
+    <div class="group-carousel-block__header">
+      <h3 class="group-carousel-block__title">
         {{ block.settings.heading }}
       </h3>
     </div>
-  {% endif %}
+  {%- endif -%}
 
-  <div class="block-group-carousel__viewport">
-    <div class="block-group-carousel__track">
-      {%- comment -%}
-        这里会输出所有“子 block”的 HTML：
-        比如 Product card、Image、Text 等。
-        它们会作为 .block-group-carousel__track 的直接子元素，
-        被 flex 横向排列。
-      {%- endcomment -%}
-      {% content_for 'blocks' %}
+  <div class="group-carousel-block__viewport">
+    <div class="group-carousel-block__track">
+      {%- if has_children > 0 -%}
+        {{ children }}
+      {%- else -%}
+        <div class="group-carousel-block__empty">
+          <p>Add blocks inside this carousel.</p>
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </div>
 
 {% style %}
-  .block-group-carousel {
+  .group-carousel-block {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    width: 100%;
   }
 
-  .block-group-carousel__title {
+  .group-carousel-block__title {
     margin: 0;
   }
 
-  .block-group-carousel__viewport {
+  .group-carousel-block__viewport {
+    width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
   }
 
-  .block-group-carousel__track {
+  .group-carousel-block__track {
     display: flex;
-    gap: var(--group-carousel-gap, 16px);
+    gap: var(--gcb-gap, 16px);
     padding-block: 0.25rem;
+    min-width: 100%;
   }
 
-  /* 每一个子 block（例如 Product card）变成一张 slide */
-  .block-group-carousel__track > * {
-    flex: 0 0 var(--group-carousel-slide-width, 260px);
-    min-width: var(--group-carousel-slide-width, 260px);
+  /* 关键：把每个子 block 当成一个 slide */
+  .group-carousel-block__track > * {
+    flex: 0 0 min(var(--gcb-slide-width, 300px), 100%);
+    min-width: min(var(--gcb-slide-width, 300px), 100%);
     scroll-snap-align: start;
   }
 
-  /* 移动端：一屏大约一张卡 */
+  .group-carousel-block__empty {
+    opacity: .6;
+  }
+
   @media (max-width: 749px) {
-    .block-group-carousel__track > * {
+    .group-carousel-block__track > * {
       flex-basis: 80%;
       min-width: 80%;
     }
@@ -75,10 +87,6 @@
 {% schema %}
 {
   "name": "Group carousel (block)",
-  "blocks": [
-    { "type": "@theme" },
-    { "type": "@app" }
-  ],
   "settings": [
     {
       "type": "checkbox",
@@ -90,17 +98,18 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Group carousel"
+      "default": "Group carousel",
+      "placeholder": "Heading"
     },
     {
       "type": "header",
-      "content": "Slide layout"
+      "content": "Layout"
     },
     {
       "type": "range",
       "id": "slide_width",
       "label": "Slide width",
-      "min": 180,
+      "min": 150,
       "max": 600,
       "step": 10,
       "unit": "px",
@@ -108,18 +117,13 @@
     },
     {
       "type": "range",
-      "id": "gap",
+      "id": "columns_gap",
       "label": "Horizontal gap",
       "min": 0,
       "max": 64,
       "step": 2,
       "unit": "px",
       "default": 16
-    }
-  ],
-  "presets": [
-    {
-      "name": "Group carousel (block)"
     }
   ]
 }
