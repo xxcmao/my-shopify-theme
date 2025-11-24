@@ -1,52 +1,67 @@
 {%- comment -%}
-  Product carousel block — vBPC-1.0.1
-  - 手动选择多个产品，在 block 内横向滑动展示
-  - 适合放在 Group、Multicolumn 等容器里作为子 block 使用
+  Product carousel block — vBPC-1.1.0
+  - 改用 8 个独立 product 选择器，避免 product_list 在 theme block 中取值为 blank 的问题
+  - 仍然复用主题内置 _product-card，保持和 Recommended products 同样的卡片样式
 {%- endcomment -%}
 
 {%- liquid
-  assign selected_products = block.settings.products
+  assign has_products = false
+
+  # 先检查 8 个 product 槽位里是否至少选了一个
+  for i in (1..8)
+    assign key = 'product_' | append: i
+    assign product_candidate = block.settings[key]
+    if product_candidate != blank
+      assign has_products = true
+      break
+    endif
+  endfor
 -%}
 
-{%- if selected_products != blank and selected_products.size > 0 -%}
-  <div
-    class="block-product-carousel"
-    style="
-      --bpc-slide-width: {{ block.settings.slide_width }}px;
-      --bpc-gap: {{ block.settings.columns_gap }}px;
-    "
-    {{ block.shopify_attributes }}
-  >
-    {%- if block.settings.show_heading and block.settings.heading != blank -%}
-      <div class="block-product-carousel__heading">
-        <h3 class="block-product-carousel__title">
-          {{ block.settings.heading }}
-        </h3>
-      </div>
-    {%- endif -%}
+<div
+  class="block-product-carousel"
+  style="
+    --bpc-slide-width: {{ block.settings.slide_width }}px;
+    --bpc-gap: {{ block.settings.columns_gap }}px;
+  "
+  {{ block.shopify_attributes }}
+>
+  {%- if block.settings.show_heading and block.settings.heading != blank -%}
+    <div class="block-product-carousel__heading">
+      <h3 class="block-product-carousel__title">
+        {{ block.settings.heading }}
+      </h3>
+    </div>
+  {%- endif -%}
 
+  {%- if has_products -%}
     <div class="block-product-carousel__viewport">
       <div class="block-product-carousel__track">
-        {%- for product in selected_products -%}
-          <div class="block-product-carousel__item">
-            {%- comment -%}复用主题内置 _product-card 卡片{%- endcomment -%}
-            {%- # theme-check-disable UniqueStaticBlockId -%}
-              {%- content_for 'block',
-                type: '_product-card',
-                id: 'static-product-card',
-                closest.product: product
-              -%}
-            {%- # theme-check-enable UniqueStaticBlockId -%}
-          </div>
+        {%- for i in (1..8) -%}
+          {%- assign key = 'product_' | append: i -%}
+          {%- assign product = block.settings[key] -%}
+
+          {%- if product != blank -%}
+            <div class="block-product-carousel__item">
+              {%- comment -%} 复用主题内置产品卡片 {%- endcomment -%}
+              {%- # theme-check-disable UniqueStaticBlockId -%}
+                {%- content_for 'block',
+                  type: '_product-card',
+                  id: 'static-product-card',
+                  closest.product: product
+                -%}
+              {%- # theme-check-enable UniqueStaticBlockId -%}
+            </div>
+          {%- endif -%}
         {%- endfor -%}
       </div>
     </div>
-  </div>
-{%- else -%}
-  <div class="block-product-carousel block-product-carousel--empty" {{ block.shopify_attributes }}>
-    <p style="opacity:.6;">Select products in block settings.</p>
-  </div>
-{%- endif -%}
+  {%- else -%}
+    <div class="block-product-carousel__empty">
+      <p style="opacity:.6; margin:0;">Select products in block settings.</p>
+    </div>
+  {%- endif -%}
+</div>
 
 {% style %}
   .block-product-carousel {
@@ -77,7 +92,7 @@
     scroll-snap-align: start;
   }
 
-  .block-product-carousel--empty {
+  .block-product-carousel__empty {
     opacity: .7;
   }
 
@@ -94,9 +109,48 @@
   "name": "Product carousel custom",
   "settings": [
     {
-      "type": "product_list",
-      "id": "products",
-      "label": "Products"
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "Product 3"
+    },
+    {
+      "type": "product",
+      "id": "product_4",
+      "label": "Product 4"
+    },
+    {
+      "type": "product",
+      "id": "product_5",
+      "label": "Product 5"
+    },
+    {
+      "type": "product",
+      "id": "product_6",
+      "label": "Product 6"
+    },
+    {
+      "type": "product",
+      "id": "product_7",
+      "label": "Product 7"
+    },
+    {
+      "type": "product",
+      "id": "product_8",
+      "label": "Product 8"
     },
     {
       "type": "checkbox",
