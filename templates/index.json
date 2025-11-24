@@ -3157,7 +3157,7 @@
         "item_4kyjMh"
       ],
       "custom_css": [
-        "section {background-color: #11322c !important; color: #ffffff !important; padding-bottom: 50px;}",
+        "section {background-color: #11322c !important; color: #ffffff !important; padding-bottom: 30px;}",
         ".benefits-marquee__wrapper {background-color: transparent !important;}",
         ".benefits-marquee__text {color: #ffffff !important; font-weight: 600;}"
       ],
