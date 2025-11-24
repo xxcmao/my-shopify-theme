@@ -3157,7 +3157,7 @@
         "item_4kyjMh"
       ],
       "custom_css": [
-        "section {background-color: #11322c !important; color: #ffffff !important;}",
+        "section {background-color: #11322c !important; color: #ffffff !important; padding-bottom: 50px;}",
         ".benefits-marquee__wrapper {background-color: transparent !important;}",
         ".benefits-marquee__text {color: #ffffff !important; font-weight: 600;}"
       ],
@@ -3166,8 +3166,9 @@
         "color_scheme": "background-1",
         "enable_animation": true,
         "speed": "medium",
-        "icon_size": 20,
-        "icon_text_gap": 4
+        "icon_size": 26,
+        "icon_text_gap": 4,
+        "uppercase_text": true
       }
     },
     "featured_product_yEF9dK": {
