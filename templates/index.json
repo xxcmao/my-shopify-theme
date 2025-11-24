@@ -3378,13 +3378,13 @@
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
             "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "flex-start",
             "gap": 8,
             "width": "fill",
             "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
+            "width_mobile": "custom",
+            "custom_width_mobile": 90,
             "height": "fit",
             "custom_height": 100,
             "inherit_color_scheme": true,
@@ -3413,15 +3413,15 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Customer care</h2>",
+                "text": "<p>Talk about a sharp idea</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
-                "type_preset": "h4",
+                "type_preset": "custom",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "font_size": "2rem",
                 "line_height": "normal",
-                "letter_spacing": "normal",
+                "letter_spacing": "tight",
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
@@ -3439,7 +3439,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>We're always on your side: keeping our loyal customers happy is our top priority and number one goal.</p>",
+                "text": "<p><strong>Combining fundamental Japanese knife-making techniques with durable German engineering principles, our stunning Damascus steel knives are the upgrade your cooking needs.</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -3460,29 +3460,69 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "button_Rf7aGc": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Shop now",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "text_LHREGf",
-            "text_PhF77i"
+            "text_PhF77i",
+            "button_Rf7aGc"
           ]
+        },
+        "image_zqfij8": {
+          "type": "image",
+          "name": "t:names.image",
+          "settings": {
+            "image": "shopify://shop_images/chef-knife.png",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "group_3W8NwL"
+        "group_3W8NwL",
+        "image_zqfij8"
       ],
       "name": "t:names.multicolumn",
       "settings": {
         "visibility": "",
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "flex-start",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
-        "section_width": "page-width",
+        "section_width": "full-width",
         "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "",
