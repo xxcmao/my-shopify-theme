@@ -3170,7 +3170,9 @@
       "settings": {
         "color_scheme": "background-1",
         "enable_animation": true,
-        "speed": "medium"
+        "speed": "medium",
+        "icon_size": 20,
+        "icon_text_gap": 4
       }
     },
     "featured_product_yEF9dK": {
