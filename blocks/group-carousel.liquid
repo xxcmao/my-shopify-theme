@@ -1,14 +1,15 @@
 {%- comment -%}
-  Group carousel block — vG-Carousel-1.0.0
-  - 复用现有 `group` snippet 的所有布局 / 外观设置
-  - 只是把内部 children 包了一层横向滑动的 track
-  - 用法：在 section 里「Add block」→ 选择 “Group carousel”
-    然后在这个 block 里面继续添加普通 block，每个子 block 就是一页 slide
+  Group carousel block — vG-Carousel-1.0.1
+  - 基于原来的 group block，增加横向滑动能力
+  - 使用方式：
+    1）在 Section 里添加 block：Group carousel
+    2）在 Group carousel 里面继续添加 Text / Product card / Image 等子 block
+    3）每一个子 block 就是一页 slide，左右滑动查看
 {%- endcomment -%}
 
 {%- capture children -%}
   <div class="group-carousel__viewport">
-    <div class="group-carousel__track" style="--group-carousel-gap: {{ block.settings.gap }}px;">
+    <div class="group-carousel__track group-carousel__track--force" style="--group-carousel-gap: {{ block.settings.gap }}px;">
       {% content_for 'blocks' %}
     </div>
   </div>
@@ -17,7 +18,8 @@
 {% render 'group', children: children, settings: block.settings, shopify_attributes: block.shopify_attributes %}
 
 {% style %}
-  /* 只针对新的 Group carousel 里的内部结构 */
+  /* 只作用于 Group carousel 这个新 block 内部 */
+
   .group-carousel__viewport {
     width: 100%;
     overflow-x: auto;
@@ -31,25 +33,33 @@
     padding-block: 0.25rem;
   }
 
-  /* 直接子 block = 每一页 slide，默认一屏一个，左右滑 */
-  .group-carousel__track > * {
-    flex: 0 0 100%;
-    min-width: 100%;
+  /* 强制不换行，超出才产生横向滚动 */
+  .group-carousel__track--force {
+    flex-wrap: nowrap !important;
+  }
+
+  /* 直接子 block = 每一个 slide */
+  .group-carousel__track--force > * {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
     scroll-snap-align: start;
   }
 
-  /* 让常见内容块尽量铺满 slide */
-  .group-carousel__track .resource-list__item,
-  .group-carousel__track .product-card,
-  .group-carousel__track .group {
-    width: 100%;
-    max-width: none;
+  /* 尽量让常见卡片铺满 slide 区域 */
+  .group-carousel__track--force .product-card,
+  .group-carousel__track--force .product-card-custom,
+  .group-carousel__track--force .resource-list__item,
+  .group-carousel__track--force .group {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
   }
 
   @media (max-width: 749px) {
-    .group-carousel__track > * {
-      flex-basis: 100%;
-      min-width: 100%;
+    .group-carousel__track--force > * {
+      flex-basis: 100% !important;
+      min-width: 100% !important;
     }
   }
 {% endstyle %}
