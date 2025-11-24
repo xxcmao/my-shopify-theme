@@ -1,7 +1,8 @@
 {% comment %}
-  Group carousel (block) — vGCB-1.1.0
+  Group carousel (block) — vGCB-1.1.1
   - 用在任意 section 里，作为容器横向滑动内部子 block
   - 每一个「子 block」就是一个 slide（例如 Product card）
+  - 修正：schema 中增加 blocks，使该 block 可以包含子 block
 {% endcomment %}
 
 {%- capture children -%}
@@ -87,6 +88,19 @@
 {% schema %}
 {
   "name": "Group carousel (block)",
+
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "_divider"
+    }
+  ],
+
   "settings": [
     {
       "type": "checkbox",
