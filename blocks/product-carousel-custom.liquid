@@ -1,43 +1,36 @@
 {% comment %}
-  Group carousel block — vGCB-1.0.0
-  - 用作「容器型」Block，可以放在任意 Section 里
-  - 这个 Block 里面可以继续添加子 block（@theme / @app / _divider）
-  - 每一个子 block 会作为一张横向滑动的 Slide 展示
+  Group carousel (block) — vGCB-1.0.0
+  - 在一个 block 里面横向展示多个子 block（如 Product card）
+  - 使用原生横向滚动 + scroll-snap
 {% endcomment %}
-
-{%- capture children -%}
-  {% content_for 'blocks' %}
-{%- endcapture -%}
-
-{%- assign has_children = children | strip | size -%}
 
 <div
   class="block-group-carousel"
   style="
     --group-carousel-slide-width: {{ block.settings.slide_width }}px;
-    --group-carousel-gap: {{ block.settings.columns_gap }}px;
+    --group-carousel-gap: {{ block.settings.gap }}px;
   "
   {{ block.shopify_attributes }}
 >
-  {%- if block.settings.show_heading and block.settings.heading != blank -%}
+  {% if block.settings.show_heading and block.settings.heading != blank %}
     <div class="block-group-carousel__heading">
       <h3 class="block-group-carousel__title">
         {{ block.settings.heading }}
       </h3>
     </div>
-  {%- endif -%}
+  {% endif %}
 
-  {%- if has_children > 0 -%}
-    <div class="block-group-carousel__viewport">
-      <div class="block-group-carousel__track">
-        {{ children }}
-      </div>
+  <div class="block-group-carousel__viewport">
+    <div class="block-group-carousel__track">
+      {%- comment -%}
+        这里会输出所有“子 block”的 HTML：
+        比如 Product card、Image、Text 等。
+        它们会作为 .block-group-carousel__track 的直接子元素，
+        被 flex 横向排列。
+      {%- endcomment -%}
+      {% content_for 'blocks' %}
     </div>
-  {%- else -%}
-    <div class="block-group-carousel__empty">
-      <p style="opacity:.6;">Add blocks inside this Group carousel to create slides.</p>
-    </div>
-  {%- endif -%}
+  </div>
 </div>
 
 {% style %}
@@ -45,7 +38,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    width: 100%;
   }
 
   .block-group-carousel__title {
@@ -64,17 +56,14 @@
     padding-block: 0.25rem;
   }
 
-  /* 每一个子 block 的根元素都会变成一张 slide */
+  /* 每一个子 block（例如 Product card）变成一张 slide */
   .block-group-carousel__track > * {
     flex: 0 0 var(--group-carousel-slide-width, 260px);
     min-width: var(--group-carousel-slide-width, 260px);
     scroll-snap-align: start;
   }
 
-  .block-group-carousel__empty {
-    opacity: .7;
-  }
-
+  /* 移动端：一屏大约一张卡 */
   @media (max-width: 749px) {
     .block-group-carousel__track > * {
       flex-basis: 80%;
@@ -86,17 +75,9 @@
 {% schema %}
 {
   "name": "Group carousel (block)",
-  "tag": null,
   "blocks": [
-    {
-      "type": "@theme"
-    },
-    {
-      "type": "@app"
-    },
-    {
-      "type": "_divider"
-    }
+    { "type": "@theme" },
+    { "type": "@app" }
   ],
   "settings": [
     {
@@ -109,18 +90,17 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Group carousel",
-      "placeholder": "Heading"
+      "default": "Group carousel"
     },
     {
       "type": "header",
-      "content": "Layout"
+      "content": "Slide layout"
     },
     {
       "type": "range",
       "id": "slide_width",
       "label": "Slide width",
-      "min": 150,
+      "min": 180,
       "max": 600,
       "step": 10,
       "unit": "px",
@@ -128,7 +108,7 @@
     },
     {
       "type": "range",
-      "id": "columns_gap",
+      "id": "gap",
       "label": "Horizontal gap",
       "min": 0,
       "max": 64,
