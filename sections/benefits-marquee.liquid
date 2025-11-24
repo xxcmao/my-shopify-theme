@@ -1,8 +1,11 @@
 {%- comment -%}
-Selling points marquee — v1.0.3
-- v1.0.0 初始版本：支持 Color scheme + 动画开关 + 滚动速度设置 + temp 占位文案
+Selling points marquee — v1.1.0
+- v1.0.0 初始版本：支持 Color scheme + 动画开关 + 速度设置 + temp 占位文案
 - v1.0.1 将 color_scheme 设置改为 select，以提高主题兼容性
-- v1.0.3 使用内联 style 根据 color_scheme 设置背景色和文字色，避免被主题样式覆盖
+- v1.0.3 使用内联 style 根据 color_scheme 设置背景/文字颜色
+- v1.1.0 新增设置：
+  - Icon size：图标尺寸（宽度，保持原始比例）
+  - Space between icon and text：图标与文字之间的间距
 {%- endcomment -%}
 
 {%- assign bg_color = '#ffffff' -%}
@@ -79,19 +82,21 @@ Selling points marquee — v1.0.3
   width: max-content;
 }
 
+/* 单个卖点块：这里用设置控制图标和文字之间的 gap */
 .benefits-marquee--{{ section.id }} .benefits-marquee__item {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: {{ section.settings.icon_text_gap | default: 8 }}px;
   white-space: nowrap;
   font-size: 0.875rem;
   line-height: 1.4;
 }
 
+/* 图标尺寸：用设置控制宽度，高度自适应保持比例 */
 .benefits-marquee--{{ section.id }} .benefits-marquee__icon img {
   display: block;
-  width: 37px;
-  height: 43px;
+  width: {{ section.settings.icon_size | default: 37 }}px;
+  height: auto;
   object-fit: contain;
   object-position: center;
 }
@@ -189,6 +194,26 @@ Selling points marquee — v1.0.3
           "label": "Fast"
         }
       ]
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size (width)",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "icon_text_gap",
+      "label": "Space between icon and text",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 8
     }
   ],
   "blocks": [
