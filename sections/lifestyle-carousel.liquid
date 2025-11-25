@@ -1,7 +1,7 @@
 {%- comment -%}
-  Lifestyle carousel — v1.2
+  Lifestyle carousel — v1.3
   - Main image 作为整个 slide 的 background-image
-  - 不再使用绝对定位的 <img> 叠层，避免遮挡文字和小卡片
+  - 修复：在 theme editor / 动态加载时箭头 & 圆点无法切换（改用即时初始化 + shopify:section:load）
   - autoplay_interval max = 9000（符合 Shopify 校验）
 {%- endcomment -%}
 
@@ -453,6 +453,9 @@
 <script>
   (function() {
     function initLifestyleCarousel(root) {
+      if (!root || root.dataset.carouselInitialized === 'true') return;
+      root.dataset.carouselInitialized = 'true';
+
       var slides = root.querySelectorAll('[data-slide]');
       if (!slides.length) return;
 
@@ -468,13 +471,20 @@
         if (!slides.length) return;
         index = (i + slides.length) % slides.length;
 
-        slides.forEach(function(slide, idx) {
-          slide.classList.toggle('is-active', idx === index);
-        });
+        for (var s = 0; s < slides.length; s++) {
+          slides[s].classList.toggle('is-active', s === index);
+        }
 
-        bullets.forEach(function(bullet, idx) {
-          bullet.classList.toggle('is-active', idx === index);
-        });
+        for (var b = 0; b < bullets.length; b++) {
+          bullets[b].classList.toggle('is-active', b === index);
+        }
+      }
+
+      function stopAutoplay() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
       }
 
       function startAutoplay() {
@@ -483,13 +493,6 @@
         timer = setInterval(function() {
           showSlide(index + 1);
         }, interval);
-      }
-
-      function stopAutoplay() {
-        if (timer) {
-          clearInterval(timer);
-          timer = null;
-        }
       }
 
       if (prev) {
@@ -506,13 +509,15 @@
         });
       }
 
-      bullets.forEach(function(bullet) {
-        bullet.addEventListener('click', function() {
-          var i = parseInt(bullet.getAttribute('data-bullet'), 10) || 0;
-          showSlide(i);
-          startAutoplay();
-        });
-      });
+      for (var i = 0; i < bullets.length; i++) {
+        (function(bulletIndex) {
+          var bullet = bullets[bulletIndex];
+          bullet.addEventListener('click', function() {
+            showSlide(bulletIndex);
+            startAutoplay();
+          });
+        })(i);
+      }
 
       root.addEventListener('mouseenter', stopAutoplay);
       root.addEventListener('mouseleave', startAutoplay);
@@ -521,8 +526,20 @@
       startAutoplay();
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('[data-lifestyle-carousel]').forEach(initLifestyleCarousel);
+    function initAllCarousels() {
+      var roots = document.querySelectorAll('[data-lifestyle-carousel]');
+      for (var i = 0; i < roots.length; i++) {
+        initLifestyleCarousel(roots[i]);
+      }
+    }
+
+    // 普通页面：脚本执行时就可以初始化当前文档中已有的 section
+    initAllCarousels();
+
+    // Theme editor 中：section 被动态加载时
+    document.addEventListener('shopify:section:load', function(event) {
+      var root = event.target.querySelector('[data-lifestyle-carousel]');
+      if (root) initLifestyleCarousel(root);
     });
   })();
 </script>
