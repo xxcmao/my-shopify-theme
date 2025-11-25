@@ -1,5 +1,5 @@
 {%- comment -%}
-  Group carousel block — vG-Carousel-1.5.0
+  Group carousel block — vG-Carousel-1.6.0
   - 基于原来的 group block，增加横向滑动能力
   - slide_width：控制每个 slide 占视口宽度的百分比
   - show_scrollbar：开关滚动条显示
@@ -148,6 +148,8 @@
       var interval = intervalSec * 1000;
 
       var slidePositions = [];
+      var currentIndex = 0;
+      var pausedAtEnd = false; // 是否已经在最后一张“暂停过一轮”
 
       function computePositions() {
         slidePositions = [];
@@ -158,7 +160,6 @@
 
       computePositions();
 
-      var currentIndex = 0;
       if (slidePositions.length) {
         viewport.scrollLeft = slidePositions[0];
       }
@@ -195,14 +196,23 @@
         }
 
         currentIndex = closestIndex;
+        var lastIndex = slidePositions.length - 1;
 
-        // 计算下一个 index：
-        // - 如果还没到最后一张，就 +1
-        // - 如果已经是最后一张，下一个就是 0（回到开头）
-        if (currentIndex < slidePositions.length - 1) {
-          currentIndex++;
+        // —— 关键逻辑：最后一张多停一轮 ——
+        if (currentIndex >= lastIndex) {
+          if (!pausedAtEnd) {
+            // 第一次到达最后一张：先记一次暂停，这一轮什么都不动
+            pausedAtEnd = true;
+            return;
+          } else {
+            // 第二次轮到最后一张：回到第一张，并清除暂停状态
+            pausedAtEnd = false;
+            currentIndex = 0;
+          }
         } else {
-          currentIndex = 0;
+          // 中间的卡片正常往后走，并确保不处于“暂停末尾”状态
+          pausedAtEnd = false;
+          currentIndex++;
         }
 
         var target = slidePositions[currentIndex];
