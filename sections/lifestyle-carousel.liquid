@@ -1,7 +1,8 @@
 {%- comment -%}
-  Lifestyle carousel — v1.3
+  Lifestyle carousel — v1.4
   - Main image 作为整个 slide 的 background-image
-  - 修复：在 theme editor / 动态加载时箭头 & 圆点无法切换（改用即时初始化 + shopify:section:load）
+  - 新增：track 使用 transform 平移 + CSS transition，实现丝滑切换
+  - 支持 theme editor 动态加载 (shopify:section:load)
   - autoplay_interval max = 9000（符合 Shopify 校验）
 {%- endcomment -%}
 
@@ -21,13 +22,15 @@
     position: relative;
     display: flex;
     width: 100%;
+    will-change: transform;
+    transition: transform 0.5s ease; /* 平滑滑动关键 */
   }
 
   .lifestyle-carousel__slide {
     width: 100%;
     height: auto;
     min-height: 34.125rem;
-    display: none;
+    display: flex;        /* 始终参与布局，通过 track 位移来切换可见性 */
     position: relative;
 
     /* Main image 直接作为 slide 背景 */
@@ -37,9 +40,8 @@
     background-repeat: no-repeat;
   }
 
-  .lifestyle-carousel__slide.is-active {
-    display: flex;
-  }
+  /* is-active 仅用于标记当前 slide（目前不做样式控制，保留给以后需要） */
+  .lifestyle-carousel__slide.is-active { }
 
   .lifestyle-carousel__slide-big {
     flex-direction: column;
@@ -456,8 +458,9 @@
       if (!root || root.dataset.carouselInitialized === 'true') return;
       root.dataset.carouselInitialized = 'true';
 
+      var track = root.querySelector('.lifestyle-carousel__track');
       var slides = root.querySelectorAll('[data-slide]');
-      if (!slides.length) return;
+      if (!track || !slides.length) return;
 
       var bullets = root.querySelectorAll('[data-bullet]');
       var prev = root.querySelector('[data-prev]');
@@ -466,6 +469,17 @@
       var autoplay = root.getAttribute('data-autoplay') === 'true';
       var interval = parseInt(root.getAttribute('data-interval'), 10) || 5000;
       var timer = null;
+      var slideWidth = slides[0].offsetWidth || root.offsetWidth || 0;
+
+      function applyTranslate() {
+        var offset = -index * slideWidth;
+        track.style.transform = 'translate3d(' + offset + 'px, 0, 0)';
+      }
+
+      function updateSlideWidth() {
+        slideWidth = slides[0].offsetWidth || root.offsetWidth || 0;
+        applyTranslate();
+      }
 
       function showSlide(i) {
         if (!slides.length) return;
@@ -478,6 +492,8 @@
         for (var b = 0; b < bullets.length; b++) {
           bullets[b].classList.toggle('is-active', b === index);
         }
+
+        applyTranslate();
       }
 
       function stopAutoplay() {
@@ -522,6 +538,9 @@
       root.addEventListener('mouseenter', stopAutoplay);
       root.addEventListener('mouseleave', startAutoplay);
 
+      window.addEventListener('resize', updateSlideWidth);
+
+      updateSlideWidth();
       showSlide(0);
       startAutoplay();
     }
@@ -533,7 +552,7 @@
       }
     }
 
-    // 普通页面：脚本执行时就可以初始化当前文档中已有的 section
+    // 普通页面：脚本执行时初始化
     initAllCarousels();
 
     // Theme editor 中：section 被动态加载时
