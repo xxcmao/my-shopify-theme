@@ -1,12 +1,12 @@
 {%- comment -%}
-  Group carousel block — vG-Carousel-1.6.0
+  Group carousel block — vG-Carousel-1.7.0
   - 基于原来的 group block，增加横向滑动能力
   - slide_width：控制每个 slide 占视口宽度的百分比
   - show_scrollbar：开关滚动条显示
   - auto_scroll_enabled + auto_scroll_interval：可选自动轮播（一次移动一个卡片宽度）
   - 自动轮播行为：
     * 每次移动 1 个卡片距离
-    * 播放到最后一张后，停留一个间隔，再回到第 1 张，循环
+    * 播放到最后一屏后，停留一个间隔，再回到第 1 屏，循环
 {%- endcomment -%}
 
 {%- capture children -%}
@@ -148,21 +148,31 @@
       var interval = intervalSec * 1000;
 
       var slidePositions = [];
+      var maxScrollLeft = 0;
       var currentIndex = 0;
-      var pausedAtEnd = false; // 是否已经在最后一张“暂停过一轮”
+      var pausedAtEnd = false; // 是否已经在最后一屏“暂停过一轮”
 
       function computePositions() {
         slidePositions = [];
+        maxScrollLeft = Math.max(0, track.scrollWidth - viewport.clientWidth);
+
+        // 如果没有横向滚动空间，就不启用自动轮播
+        if (maxScrollLeft <= 0) {
+          slidePositions = [];
+          return;
+        }
+
         for (var i = 0; i < slides.length; i++) {
           slidePositions.push(slides[i].offsetLeft);
         }
       }
 
       computePositions();
-
-      if (slidePositions.length) {
-        viewport.scrollLeft = slidePositions[0];
+      if (!slidePositions.length) {
+        return; // 没可滚动空间，直接退出
       }
+
+      viewport.scrollLeft = slidePositions[0];
 
       var timer;
 
@@ -177,13 +187,42 @@
           return;
         }
 
-        if (!slidePositions.length) {
+        // 如果因为响应式变化导致之前的计算失效，重新计算
+        if (!slidePositions.length || maxScrollLeft <= 0) {
           computePositions();
-          if (!slidePositions.length) return;
+          if (!slidePositions.length || maxScrollLeft <= 0) {
+            return;
+          }
         }
 
-        // 根据当前 scrollLeft 找到最近的 slide 作为基准（兼容用户手动拖动）
         var scrollLeft = viewport.scrollLeft;
+        var atEnd = Math.abs(scrollLeft - maxScrollLeft) < 2; // 接近最右端视为“末尾”
+
+        // —— 末尾逻辑：先停一轮，再回到第 1 屏 ——
+        if (atEnd) {
+          if (!pausedAtEnd) {
+            // 第一次到达末尾：记录一次暂停，这一轮什么都不动
+            pausedAtEnd = true;
+            return;
+          } else {
+            // 第二次轮到末尾：回到第 1 屏，并清除暂停状态
+            pausedAtEnd = false;
+            currentIndex = 0;
+
+            var targetStart = slidePositions[0];
+            if (viewport.scrollTo) {
+              viewport.scrollTo({
+                left: targetStart,
+                behavior: 'smooth'
+              });
+            } else {
+              viewport.scrollLeft = targetStart;
+            }
+            return;
+          }
+        }
+
+        // —— 非末尾：根据当前 scrollLeft 找最近的 slide，向后移动一张 ——
         var closestIndex = 0;
         var minDiff = Math.abs(slidePositions[0] - scrollLeft);
 
@@ -195,27 +234,17 @@
           }
         }
 
-        currentIndex = closestIndex;
-        var lastIndex = slidePositions.length - 1;
-
-        // —— 关键逻辑：最后一张多停一轮 ——
-        if (currentIndex >= lastIndex) {
-          if (!pausedAtEnd) {
-            // 第一次到达最后一张：先记一次暂停，这一轮什么都不动
-            pausedAtEnd = true;
-            return;
-          } else {
-            // 第二次轮到最后一张：回到第一张，并清除暂停状态
-            pausedAtEnd = false;
-            currentIndex = 0;
-          }
-        } else {
-          // 中间的卡片正常往后走，并确保不处于“暂停末尾”状态
-          pausedAtEnd = false;
-          currentIndex++;
+        currentIndex = closestIndex + 1;
+        if (currentIndex >= slidePositions.length) {
+          currentIndex = slidePositions.length - 1;
         }
 
         var target = slidePositions[currentIndex];
+
+        // 目标不要超过最大可滚动值，否则会追一个“到不了”的位置
+        if (target > maxScrollLeft) {
+          target = maxScrollLeft;
+        }
 
         if (viewport.scrollTo) {
           viewport.scrollTo({
