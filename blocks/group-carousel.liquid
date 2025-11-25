@@ -1,9 +1,12 @@
 {%- comment -%}
-  Group carousel block — vG-Carousel-1.4.0
+  Group carousel block — vG-Carousel-1.5.0
   - 基于原来的 group block，增加横向滑动能力
-  - 新增 slide_width 设置：控制每个 slide 占视口宽度的百分比
-  - 自定义滚动条样式：只保留小灰块，横条背景透明
-  - 新增 show_scrollbar 开关：可在编辑器中隐藏/显示滚动条
+  - slide_width：控制每个 slide 占视口宽度的百分比
+  - show_scrollbar：开关滚动条显示
+  - auto_scroll_enabled + auto_scroll_interval：可选自动轮播（一次移动一个卡片宽度）
+  - 自动轮播行为：
+    * 每次移动 1 个卡片距离
+    * 播放到最后一张后，停留一个间隔，再回到第 1 张，循环
 {%- endcomment -%}
 
 {%- capture children -%}
@@ -20,7 +23,12 @@
   </div>
 {%- endcapture -%}
 
-<div class="group-carousel-block" {{ block.shopify_attributes }}>
+<div
+  class="group-carousel-block"
+  data-auto-scroll="{{ block.settings.auto_scroll_enabled }}"
+  data-auto-scroll-interval="{{ block.settings.auto_scroll_interval | default: 4 }}"
+  {{ block.shopify_attributes }}
+>
   {% render 'group',
     children: children,
     settings: block.settings,
@@ -115,6 +123,134 @@
     display: none;               /* WebKit */
   }
 {% endstylesheet %}
+
+{% javascript %}
+  (function() {
+    function initAutoScrollForCarousel(container) {
+      // 防止重复初始化
+      if (container._groupCarouselAutoScrollInitialized) return;
+      container._groupCarouselAutoScrollInitialized = true;
+
+      var autoScrollAttr = container.getAttribute('data-auto-scroll');
+      if (!(autoScrollAttr === 'true' || autoScrollAttr === '1')) {
+        return;
+      }
+
+      var viewport = container.querySelector('.group-carousel__viewport');
+      var track = container.querySelector('.group-carousel__track');
+      if (!viewport || !track) return;
+
+      var slides = track.children;
+      if (!slides || slides.length <= 1) return; // 一张卡就没必要自动滚
+
+      var intervalSec = parseFloat(container.getAttribute('data-auto-scroll-interval') || '4');
+      if (isNaN(intervalSec) || intervalSec <= 0) intervalSec = 4;
+      var interval = intervalSec * 1000;
+
+      var slidePositions = [];
+
+      function computePositions() {
+        slidePositions = [];
+        for (var i = 0; i < slides.length; i++) {
+          slidePositions.push(slides[i].offsetLeft);
+        }
+      }
+
+      computePositions();
+
+      var currentIndex = 0;
+      if (slidePositions.length) {
+        viewport.scrollLeft = slidePositions[0];
+      }
+
+      var timer;
+
+      function step() {
+        // 如果这个 block 已经被移出 DOM，就清理定时器
+        if (!document.body.contains(container)) {
+          clearInterval(timer);
+          if (container._groupCarouselResizeObserver) {
+            container._groupCarouselResizeObserver.disconnect();
+          }
+          window.removeEventListener('resize', computePositions);
+          return;
+        }
+
+        if (!slidePositions.length) {
+          computePositions();
+          if (!slidePositions.length) return;
+        }
+
+        // 根据当前 scrollLeft 找到最近的 slide 作为基准（兼容用户手动拖动）
+        var scrollLeft = viewport.scrollLeft;
+        var closestIndex = 0;
+        var minDiff = Math.abs(slidePositions[0] - scrollLeft);
+
+        for (var i = 1; i < slidePositions.length; i++) {
+          var diff = Math.abs(slidePositions[i] - scrollLeft);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = i;
+          }
+        }
+
+        currentIndex = closestIndex;
+
+        // 计算下一个 index：
+        // - 如果还没到最后一张，就 +1
+        // - 如果已经是最后一张，下一个就是 0（回到开头）
+        if (currentIndex < slidePositions.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+
+        var target = slidePositions[currentIndex];
+
+        if (viewport.scrollTo) {
+          viewport.scrollTo({
+            left: target,
+            behavior: 'smooth'
+          });
+        } else {
+          viewport.scrollLeft = target;
+        }
+      }
+
+      timer = setInterval(step, interval);
+      container._groupCarouselAutoScrollTimer = timer;
+
+      // 监听尺寸变化，重新计算 slide 位置（防止响应式宽度改变）
+      if ('ResizeObserver' in window) {
+        var ro = new ResizeObserver(function() {
+          computePositions();
+        });
+        ro.observe(track);
+        container._groupCarouselResizeObserver = ro;
+      } else {
+        window.addEventListener('resize', computePositions);
+      }
+    }
+
+    function initAllGroupCarousels(root) {
+      var scope = root || document;
+      var containers = scope.querySelectorAll('.group-carousel-block');
+      if (!containers || !containers.length) return;
+
+      for (var i = 0; i < containers.length; i++) {
+        initAutoScrollForCarousel(containers[i]);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initAllGroupCarousels();
+    });
+
+    document.addEventListener('shopify:section:load', function(event) {
+      initAllGroupCarousels(event.target);
+    });
+  })();
+{% endjavascript %}
 
 {% schema %}
 {
@@ -283,6 +419,23 @@
       "id": "show_scrollbar",
       "label": "Show scrollbar",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_scroll_enabled",
+      "label": "Enable auto scroll",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "auto_scroll_interval",
+      "label": "Auto scroll interval (seconds)",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "s",
+      "default": 4,
+      "visible_if": "{{ block.settings.auto_scroll_enabled }}"
     },
 
     {
