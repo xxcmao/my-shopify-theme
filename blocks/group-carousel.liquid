@@ -1,8 +1,8 @@
 {%- comment -%}
-  Group carousel block — vG-Carousel-1.3.0
+  Group carousel block — vG-Carousel-1.3.1
   - 基于原来的 group block，增加横向滑动能力
   - 新增 slide_width 设置：控制每个 slide 占视口宽度的百分比
-  - 新增自定义滚动条样式（细灰条），在系统允许时一直可见
+  - 自定义滚动条样式：只保留小灰块，横条背景透明
   - 使用方式：
     1）在 Section 里添加 block：Group carousel
     2）在 Group carousel 里面继续添加 Text / Product card / Image 等子 block
@@ -54,9 +54,9 @@
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
 
-    /* Firefox 滚动条样式 */
+    /* Firefox 滚动条样式：thumb 灰色，track 透明 */
     scrollbar-width: thin;
-    scrollbar-color: #a6a6a6 #d8d8d8;
+    scrollbar-color: #a6a6a6 transparent;
   }
 
   .group-carousel__track {
@@ -102,7 +102,7 @@
   }
 
   .group-carousel__viewport::-webkit-scrollbar-track {
-    background-color: transparent; /* 不要单独的底条 */
+    background-color: transparent; /* 横条背景透明 */
   }
 
   .group-carousel__viewport::-webkit-scrollbar-thumb {
