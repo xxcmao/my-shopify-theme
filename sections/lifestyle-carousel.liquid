@@ -1,14 +1,15 @@
 {%- comment -%}
-  Lifestyle carousel section
-  - 多 slide 轮播
-  - 每个 slide = 大图 + 标题 + 描述 + CTA 按钮 + 小图卡片 + 小卡按钮 + 引用 + 作者 + 星星
-  - 不依赖第三方库，使用原生 JS 实现轮播
+  Lifestyle carousel — v1.1
+  - 原 HexClad lifestyle carousel 复刻版
+  - 修复：主图 z-index 导致看不到的问题
+  - 修复：schema range max 必须小于 10000（autoplay_interval = 9000）
 {%- endcomment -%}
 
 <style>
   .lifestyle-carousel {
     position: relative;
   }
+
   .lifestyle-carousel__container {
     position: relative;
     overflow: hidden;
@@ -41,15 +42,17 @@
     padding: .9375rem;
     display: flex;
     position: relative;
+    z-index: 1; /* 确保文字层在图片上面 */
   }
 
   .lifestyle-carousel__slide-big-image {
-    z-index: -1;
+    /* 不再使用 z-index:-1，避免被外层背景盖住 */
     background-color: #757575;
     width: 100%;
     height: 100%;
     position: absolute;
     inset: 0;
+    z-index: 0;
   }
 
   .lifestyle-carousel__slide-big-image img {
@@ -273,15 +276,18 @@
       max-width: 43.75rem;
       height: 43.75rem;
     }
+
     .lifestyle-carousel__slide-big {
       width: 62%;
       padding: 2.5rem;
     }
+
     .lifestyle-carousel__slide-small {
       width: 38%;
       padding: 2.5rem;
       position: relative;
     }
+
     .lifestyle-carousel__slide-small-card {
       width: 15.625rem;
       height: 15.625rem;
@@ -289,9 +295,11 @@
       right: unset;
       top: 2.5rem;
     }
+
     .lifestyle-carousel__slide-small-card-button {
       font-size: 1.125rem;
     }
+
     .lifestyle-carousel__slide-small-quote {
       top: unset;
       width: unset;
@@ -300,9 +308,11 @@
       margin: 6.25rem auto;
       position: relative;
     }
+
     .lifestyle-carousel__slide-small-quote-text {
       font-size: 2.25rem;
     }
+
     .lifestyle-carousel__navigation {
       bottom: 1.875rem;
     }
@@ -312,9 +322,11 @@
   .lifestyle-carousel__slide--content-bottom .lifestyle-carousel__slide-big {
     justify-content: flex-start;
   }
+
   .lifestyle-carousel__slide--content-bottom .lifestyle-carousel__slide-small {
     flex-direction: column;
   }
+
   .lifestyle-carousel__slide--content-bottom .lifestyle-carousel__slide-small-card {
     top: unset;
     bottom: 2.5rem;
@@ -322,7 +334,12 @@
 </style>
 
 {% capture children %}
-  <div class="lifestyle-carousel" data-lifestyle-carousel data-autoplay="{{ section.settings.enable_autoplay }}" data-interval="{{ section.settings.autoplay_interval | default: 5000 }}">
+  <div
+    class="lifestyle-carousel"
+    data-lifestyle-carousel
+    data-autoplay="{{ section.settings.enable_autoplay }}"
+    data-interval="{{ section.settings.autoplay_interval | default: 5000 }}"
+  >
     <div class="lifestyle-carousel__container">
       {% if section.blocks.size > 0 %}
         <div class="lifestyle-carousel__track">
@@ -351,6 +368,7 @@
                   {% if block.settings.heading != blank %}
                     <h2>{{ block.settings.heading }}</h2>
                   {% endif %}
+
                   {% if block.settings.subheading != blank %}
                     <p class="lifestyle-carousel__slide-big-text">
                       {{ block.settings.subheading }}
@@ -445,8 +463,6 @@
             </button>
           </div>
         {% endif %}
-      {% else %}
-        <!-- 没有 block 时什么也不渲染 -->
       {% endif %}
     </div>
   </div>
@@ -475,6 +491,7 @@
         slides.forEach(function(slide, idx) {
           slide.classList.toggle('is-active', idx === index);
         });
+
         bullets.forEach(function(bullet, idx) {
           bullet.classList.toggle('is-active', idx === index);
         });
