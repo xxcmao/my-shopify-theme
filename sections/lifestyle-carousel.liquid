@@ -1,8 +1,8 @@
 {%- comment -%}
-  Lifestyle carousel — v1.1
-  - 原 HexClad lifestyle carousel 复刻版
-  - 修复：主图 z-index 导致看不到的问题
-  - 修复：schema range max 必须小于 10000（autoplay_interval = 9000）
+  Lifestyle carousel — v1.2
+  - Main image 作为整个 slide 的 background-image
+  - 不再使用绝对定位的 <img> 叠层，避免遮挡文字和小卡片
+  - autoplay_interval max = 9000（符合 Shopify 校验）
 {%- endcomment -%}
 
 <style>
@@ -29,6 +29,12 @@
     min-height: 34.125rem;
     display: none;
     position: relative;
+
+    /* Main image 直接作为 slide 背景 */
+    background-color: #757575;      /* 没上传图时的底色 */
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .lifestyle-carousel__slide.is-active {
@@ -42,23 +48,6 @@
     padding: .9375rem;
     display: flex;
     position: relative;
-    z-index: 1; /* 确保文字层在图片上面 */
-  }
-
-  .lifestyle-carousel__slide-big-image {
-    /* 不再使用 z-index:-1，避免被外层背景盖住 */
-    background-color: #757575;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .lifestyle-carousel__slide-big-image img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
   }
 
   .lifestyle-carousel__slide-big-text {
@@ -349,21 +338,12 @@
               class="lifestyle-carousel__slide{% if block.settings.content_position == 'bottom' %} lifestyle-carousel__slide--content-bottom{% endif %}{% if forloop.first %} is-active{% endif %}"
               data-slide
               data-index="{{ forloop.index0 }}"
+              {% if block.settings.big_image != blank %}
+                style="background-image:url('{{ block.settings.big_image | image_url: width: 1400 }}');"
+              {% endif %}
               {{ block.shopify_attributes }}
             >
               <div class="lifestyle-carousel__slide-big" style="color: {{ text_color }};">
-                <div class="lifestyle-carousel__slide-big-image">
-                  {% if block.settings.big_image != blank %}
-                    {{ block.settings.big_image
-                      | image_url: width: 1400
-                      | image_tag:
-                        loading: 'lazy',
-                        sizes: '100vw',
-                        alt: block.settings.heading | escape
-                    }}
-                  {% endif %}
-                </div>
-
                 <div class="lifestyle-carousel__slide-big-text">
                   {% if block.settings.heading != blank %}
                     <h2>{{ block.settings.heading }}</h2>
