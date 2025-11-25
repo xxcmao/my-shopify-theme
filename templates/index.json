@@ -3903,7 +3903,7 @@
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
             "slide_width": 40,
-            "show_scrollbar": true,
+            "show_scrollbar": false,
             "auto_scroll_enabled": true,
             "auto_scroll_interval": 2,
             "width": "fill",
