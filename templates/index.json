@@ -5726,7 +5726,7 @@
       ],
       "name": "Icon text strip",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "scheme-4",
         "enable_animation": true,
         "speed": "medium",
         "icon_size": 36,
