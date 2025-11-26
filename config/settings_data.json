@@ -461,7 +461,7 @@
           "background": "#f9f8f6",
           "foreground_heading": "#af9963",
           "foreground": "#af9963",
-          "primary": "#af9963",
+          "primary": "#ffffff",
           "primary_hover": "#000000",
           "border": "#00000047",
           "shadow": "#000000",
