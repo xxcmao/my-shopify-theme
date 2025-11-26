@@ -4204,6 +4204,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
+                "image": "shopify://shop_images/HexClad_HybridPizzaSteel_CWPS16-C_Pizza_011525_GIF.gif",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -4258,7 +4259,7 @@
             "overlay_color": "#afdb1726",
             "overlay_style": "solid",
             "gradient_direction": "to top",
-            "position_mode": "relative",
+            "position_mode": "static",
             "position_top": 0,
             "position_left": 0,
             "position_right": 0,
@@ -4277,6 +4278,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
+                "image": "shopify://shop_images/HexClad_HybridPizzaSteel_CWPS16-C_Pizza_011525_GIF.gif",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -4331,8 +4333,8 @@
         "overlay_color": "#00000047",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     }
   },
