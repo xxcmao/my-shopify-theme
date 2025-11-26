@@ -5703,28 +5703,33 @@
       "blocks": {
         "item_x9T6zt": {
           "type": "item",
+          "name": "item",
           "settings": {
             "icon": "shopify://shop_images/Paul-Hex-Gold.png",
             "text": "Paul Ainsworth"
           }
         },
-        "item_XdF7qP": {
+        "item_tTWbAD": {
           "type": "item",
+          "name": "item",
           "settings": {
-            "text": "Temp benefit #2"
+            "icon": "shopify://shop_images/Paul-Hex-Gold.png",
+            "text": "Paul Ainsworth"
           }
         },
-        "item_DdinEX": {
+        "item_GD9zYg": {
           "type": "item",
+          "name": "item",
           "settings": {
-            "text": "Temp benefit #3"
+            "icon": "shopify://shop_images/Paul-Hex-Gold.png",
+            "text": "Paul Ainsworth"
           }
         }
       },
       "block_order": [
         "item_x9T6zt",
-        "item_XdF7qP",
-        "item_DdinEX"
+        "item_tTWbAD",
+        "item_GD9zYg"
       ],
       "custom_css": [],
       "name": "Icon text strip",
