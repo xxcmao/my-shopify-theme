@@ -1,47 +1,20 @@
 {%- comment -%}
-Icon text strip — v1.3.0
+Icon text strip — v1.4.0
 - v1.0.0 初始版本：支持 Color scheme + 动画开关 + 速度设置 + temp 占位文案
 - v1.0.1 将 color_scheme 设置改为 select，以提高主题兼容性
 - v1.0.3 使用内联 style 根据 color_scheme 设置背景/文字颜色
 - v1.1.0 新增设置：Icon size、Space between icon and text
 - v1.1.1 新增设置：Uppercase text（启用时将文本转为大写）
-- v1.3.0 使用 type: color_scheme，背景 & 字体颜色从当前 Scheme 的 background / background_gradient / text 读取
+- v1.2.x 开始使用 type: color_scheme + 主题配色变量
+- v1.4.0 新增 layout_mode：图标+文字（横向）、图+文（上下）、仅图标、仅文字
 {%- endcomment -%}
 
 {%- liquid
-  assign cs = section.settings.color_scheme
-
-  assign bg_color = ''
-  assign bg_gradient = ''
-  assign text_color = ''
-
-  if cs and cs.settings
-    if cs.settings.background != blank
-      assign bg_color = cs.settings.background
-    endif
-
-    if cs.settings.background_gradient != blank
-      assign bg_gradient = cs.settings.background_gradient
-    endif
-
-    if cs.settings.text != blank
-      assign text_color = cs.settings.text
-    endif
-  endif
+  assign layout_mode = section.settings.layout_mode | default: 'icon-text'
 -%}
 
 <section
-  class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }}"
-  style="
-    {% if bg_gradient != blank %}
-      background: {{ bg_gradient }};
-    {% elsif bg_color != blank %}
-      background-color: {{ bg_color }};
-    {% endif %}
-    {% if text_color != blank %}
-      color: {{ text_color }};
-    {% endif %}
-  "
+  class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }} benefits-marquee--layout-{{ layout_mode }}"
 >
   <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
     <div class="benefits-marquee__track">
@@ -52,13 +25,15 @@ Icon text strip — v1.3.0
         {% for n in (1..2) %}
           {% for block in section.blocks %}
             <div class="benefits-marquee__item" {{ block.shopify_attributes }}>
-              {% if block.settings.icon != blank %}
+              {%- comment -%} 图标（在“仅文字”模式下不渲染） {%- endcomment -%}
+              {% if layout_mode != 'text-only' and block.settings.icon != blank %}
                 <div class="benefits-marquee__icon">
                   {{ block.settings.icon | image_url: width: 80 | image_tag: loading: 'lazy', alt: block.settings.text }}
                 </div>
               {% endif %}
 
-              {% if block.settings.text != blank %}
+              {%- comment -%} 文本（在“仅图标”模式下不渲染） {%- endcomment -%}
+              {% if layout_mode != 'icon-only' and block.settings.text != blank %}
                 <span class="benefits-marquee__text">
                   {{ block.settings.text }}
                 </span>
@@ -70,13 +45,28 @@ Icon text strip — v1.3.0
         {%- comment -%} 没有配置 block 时的占位示例文案（同样重复两遍） {%- endcomment -%}
         {% for n in (1..2) %}
           <div class="benefits-marquee__item">
-            <span class="benefits-marquee__text">Temp benefit #1</span>
+            {% if layout_mode != 'text-only' %}
+              <div class="benefits-marquee__icon"></div>
+            {% endif %}
+            {% if layout_mode != 'icon-only' %}
+              <span class="benefits-marquee__text">Temp benefit #1</span>
+            {% endif %}
           </div>
           <div class="benefits-marquee__item">
-            <span class="benefits-marquee__text">Temp benefit #2</span>
+            {% if layout_mode != 'text-only' %}
+              <div class="benefits-marquee__icon"></div>
+            {% endif %}
+            {% if layout_mode != 'icon-only' %}
+              <span class="benefits-marquee__text">Temp benefit #2</span>
+            {% endif %}
           </div>
           <div class="benefits-marquee__item">
-            <span class="benefits-marquee__text">Temp benefit #3</span>
+            {% if layout_mode != 'text-only' %}
+              <div class="benefits-marquee__icon"></div>
+            {% endif %}
+            {% if layout_mode != 'icon-only' %}
+              <span class="benefits-marquee__text">Temp benefit #3</span>
+            {% endif %}
           </div>
         {% endfor %}
       {% endif %}
@@ -86,8 +76,10 @@ Icon text strip — v1.3.0
 
 {% style %}
 .benefits-marquee--{{ section.id }} {
-  /* 只控制内边距，颜色全交给 color scheme */
+  /* 内边距，颜色由主题 Scheme 控制 */
   padding-block: 1.25rem;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
 }
 
 /* 外层容器：只负责裁剪和宽度 */
@@ -105,7 +97,7 @@ Icon text strip — v1.3.0
   width: max-content;
 }
 
-/* 单个卖点块：用设置控制图标和文字之间的 gap */
+/* 单个卖点块：默认是横向“图标 + 文本” */
 .benefits-marquee--{{ section.id }} .benefits-marquee__item {
   display: inline-flex;
   align-items: center;
@@ -131,6 +123,25 @@ Icon text strip — v1.3.0
   text-transform: uppercase;
   {% endif %}
 }
+
+/* —— 布局模式：图 + 文 上下结构 —— */
+.benefits-marquee--{{ section.id }}.benefits-marquee--layout-icon-text-vertical .benefits-marquee__item {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 布局模式：仅图标（让内容居中一点） */
+.benefits-marquee--{{ section.id }}.benefits-marquee--layout-icon-only .benefits-marquee__item {
+  justify-content: center;
+}
+
+/* 布局模式：仅文字（gap 对单个元素其实没有影响，这里不特别处理也 OK） */
+/* 如需特别样式可以在这里加 */
+/*
+.benefits-marquee--{{ section.id }}.benefits-marquee--layout-text-only .benefits-marquee__item {
+}
+*/
 
 /* 滚动动画（移动端为主） */
 .benefits-marquee--{{ section.id }} .benefits-marquee__wrapper--animated .benefits-marquee__track {
@@ -180,7 +191,31 @@ Icon text strip — v1.3.0
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
-      "default": "scheme_1"
+      "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "layout_mode",
+      "label": "Layout mode",
+      "default": "icon-text",
+      "options": [
+        {
+          "value": "icon-text",
+          "label": "Icon + text (row)"
+        },
+        {
+          "value": "icon-text-vertical",
+          "label": "Image + text (stacked)"
+        },
+        {
+          "value": "icon-only",
+          "label": "Icon only"
+        },
+        {
+          "value": "text-only",
+          "label": "Text only"
+        }
+      ]
     },
     {
       "type": "checkbox",
