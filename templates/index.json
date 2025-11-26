@@ -4198,7 +4198,7 @@
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
-            "position_mode": "static",
+            "position_mode": "relative",
             "position_top": 0,
             "position_left": 0,
             "position_right": 0,
@@ -4240,7 +4240,7 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 10,
+                "padding-block-start": 15,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 20
@@ -4293,7 +4293,7 @@
                       "settings": {
                         "size": "pixel",
                         "percent_size": 100,
-                        "pixel_size": 400,
+                        "pixel_size": 288,
                         "custom_mobile_size": false,
                         "size_mobile": "percent",
                         "percent_size_mobile": 100,
@@ -4305,13 +4305,13 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<p>Steel Yourself for Pizza Glory</p>",
+                        "text": "<h1><strong>Steel Yourself for Pizza Glory</strong></h1>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
-                        "type_preset": "rte",
+                        "type_preset": "custom",
                         "font": "var(--font-body--family)",
-                        "font_size": "1rem",
+                        "font_size": "1.25rem",
                         "line_height": "normal",
                         "letter_spacing": "normal",
                         "case": "none",
@@ -4335,7 +4335,7 @@
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
-                        "type_preset": "rte",
+                        "type_preset": "custom",
                         "font": "var(--font-body--family)",
                         "font_size": "1rem",
                         "line_height": "normal",
@@ -4347,7 +4347,7 @@
                         "background_color": "#00000026",
                         "corner_radius": 0,
                         "padding-block-start": 0,
-                        "padding-block-end": 0,
+                        "padding-block-end": 13,
                         "padding-inline-start": 10,
                         "padding-inline-end": 0
                       },
@@ -4425,15 +4425,67 @@
               "block_order": [
                 "group_PKxjbT"
               ]
+            },
+            "group_pro_4YVJrK": {
+              "type": "group-pro",
+              "name": "Group pro",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "image",
+                "video_position": "cover",
+                "background_image": "shopify://shop_images/Pizza_Steel_Accesories_93636082-b3fd-4db2-a20b-47dac1bbd1bb.jpg",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0,
+                "position_mode": "static",
+                "position_top": 0,
+                "position_left": 0,
+                "position_right": 0,
+                "position_bottom": 0,
+                "position_z_index": 1
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "group_gBWdhT"
+            "group_gBWdhT",
+            "group_pro_4YVJrK"
           ]
         }
       },
       "block_order": [
         "group_pro_QMBD8m"
+      ],
+      "custom_css": [
+        ".button {background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 13px; font-weight: 600;}"
       ],
       "name": "t:names.multicolumn",
       "settings": {
