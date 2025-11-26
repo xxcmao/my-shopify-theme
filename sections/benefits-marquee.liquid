@@ -1,15 +1,47 @@
 {%- comment -%}
-Icon text strip — v1.2.1
+Icon text strip — v1.3.0
 - v1.0.0 初始版本：支持 Color scheme + 动画开关 + 速度设置 + temp 占位文案
 - v1.0.1 将 color_scheme 设置改为 select，以提高主题兼容性
 - v1.0.3 使用内联 style 根据 color_scheme 设置背景/文字颜色
 - v1.1.0 新增设置：Icon size、Space between icon and text
 - v1.1.1 新增设置：Uppercase text（启用时将文本转为大写）
-- v1.2.1 使用 type: color_scheme，并通过 color-{{ section.settings.color_scheme }} 完全继承主题配色（背景 + 字体颜色）
+- v1.3.0 使用 type: color_scheme，背景 & 字体颜色从当前 Scheme 的 background / background_gradient / text 读取
 {%- endcomment -%}
+
+{%- liquid
+  assign cs = section.settings.color_scheme
+
+  assign bg_color = ''
+  assign bg_gradient = ''
+  assign text_color = ''
+
+  if cs and cs.settings
+    if cs.settings.background != blank
+      assign bg_color = cs.settings.background
+    endif
+
+    if cs.settings.background_gradient != blank
+      assign bg_gradient = cs.settings.background_gradient
+    endif
+
+    if cs.settings.text != blank
+      assign text_color = cs.settings.text
+    endif
+  endif
+-%}
 
 <section
   class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }}"
+  style="
+    {% if bg_gradient != blank %}
+      background: {{ bg_gradient }};
+    {% elsif bg_color != blank %}
+      background-color: {{ bg_color }};
+    {% endif %}
+    {% if text_color != blank %}
+      color: {{ text_color }};
+    {% endif %}
+  "
 >
   <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
     <div class="benefits-marquee__track">
@@ -54,13 +86,8 @@ Icon text strip — v1.2.1
 
 {% style %}
 .benefits-marquee--{{ section.id }} {
-  /* 只控制内边距，不碰颜色，颜色交给 color-scheme */
+  /* 只控制内边距，颜色全交给 color scheme */
   padding-block: 1.25rem;
-
-
-  /* 用主题当前 Scheme 的背景 / 前景变量 */
-  background-color: rgb(var(--color-background));
-  color: rgb(var(--color-foreground));
 }
 
 /* 外层容器：只负责裁剪和宽度 */
@@ -86,7 +113,6 @@ Icon text strip — v1.2.1
   white-space: nowrap;
   font-size: 0.875rem;
   line-height: 1.4;
-  /* 不设 color，让它继承 scheme 的文字颜色 */
 }
 
 /* 图标尺寸：用设置控制宽度，高度自适应保持比例 */
@@ -154,7 +180,7 @@ Icon text strip — v1.2.1
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
-      "default": "scheme-1"
+      "default": "scheme_1"
     },
     {
       "type": "checkbox",
