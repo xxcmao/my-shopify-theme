@@ -5530,7 +5530,7 @@
             "link": "",
             "open_in_new_tab": false,
             "placeholder": "",
-            "padding-block-start": 10,
+            "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -5583,7 +5583,7 @@
             "height": "fit",
             "custom_height": 100,
             "inherit_color_scheme": false,
-            "color_scheme": "scheme-6",
+            "color_scheme": "scheme-dfdc5110-dd03-4802-9ba3-16583a0692a4",
             "background_media": "none",
             "video_position": "cover",
             "background_image_position": "cover",
@@ -5634,7 +5634,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>We're always on your side: keeping our loyal customers happy is our top priority and number one goal.</p>",
+                "text": "<p>Meet HexClad’s Culinary Council. Michelin-starred chefs, innovators and crown jewels of the culinary world, these icons work with us to test products, develop recipes and strengthen our commitment to the culinary arts.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -5651,8 +5651,8 @@
                 "corner_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-start": 10,
+                "padding-inline-end": 10
               },
               "blocks": {}
             }
@@ -5677,7 +5677,7 @@
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
+        "gap": 0,
         "section_width": "full-width",
         "section_height": "",
         "section_height_custom": 50,
@@ -5695,6 +5695,43 @@
         "gradient_direction": "to top",
         "padding-block-start": 0,
         "padding-block-end": 48
+      }
+    },
+    "benefits_marquee_JRAN3B": {
+      "type": "benefits-marquee",
+      "blocks": {
+        "item_nKkbUh": {
+          "type": "item",
+          "settings": {
+            "text": "Temp benefit #1"
+          }
+        },
+        "item_BKPaFN": {
+          "type": "item",
+          "settings": {
+            "text": "Temp benefit #2"
+          }
+        },
+        "item_BtqYKm": {
+          "type": "item",
+          "settings": {
+            "text": "Temp benefit #3"
+          }
+        }
+      },
+      "block_order": [
+        "item_nKkbUh",
+        "item_BKPaFN",
+        "item_BtqYKm"
+      ],
+      "name": "Icon text strip",
+      "settings": {
+        "color_scheme": "background-1",
+        "enable_animation": true,
+        "speed": "medium",
+        "icon_size": 36,
+        "icon_text_gap": 8,
+        "uppercase_text": false
       }
     }
   },
@@ -5715,6 +5752,7 @@
     "section_TEYQyD",
     "section_Ywzn3n",
     "group_carousel_pro_bRTtPH",
-    "section_nJYdpG"
+    "section_nJYdpG",
+    "benefits_marquee_JRAN3B"
   ]
 }
