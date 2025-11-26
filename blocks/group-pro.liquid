@@ -1,12 +1,14 @@
 {%- comment -%}
-  Group Pro block — vGP-block-1.0.0
+  Group Pro block — vGP-block-1.1.0
   基于原生 group block：
     - 内容 & 外观设置完全复用 group
-    - 额外增加 Position (pro)：
-        position_mode: static / relative / absolute
-        position_top / left / right / bottom
-        position_z_index
-  渲染时调用 snippets/group-pro.liquid
+    - Position (pro)：static / relative / absolute + 偏移 + z-index
+    - Absolute size (pro)：
+        - 仅在 Position mode = absolute 时显示
+        - absolute_size_enabled 开关
+        - absolute_width_mode: fit / fill / custom（相对于父容器宽度）
+        - absolute_width_custom: 自定义百分比（0–100%）
+        - absolute_aspect_ratio: 若干预设比例（1:1 / 4:3 / 3:4 / 16:9 / 9:16）
 {%- endcomment -%}
 
 {%- capture children %}
@@ -508,7 +510,6 @@
       "default": 0
     },
 
-    /* --- Position (pro) --- */
     {
       "type": "header",
       "content": "Position (pro)"
@@ -586,6 +587,84 @@
       "step": 1,
       "default": 1,
       "visible_if": "{{ block.settings.position_mode != 'static' }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Absolute size (pro)",
+      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "absolute_size_enabled",
+      "label": "Enable absolute size control",
+      "default": false,
+      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
+    },
+    {
+      "type": "select",
+      "id": "absolute_width_mode",
+      "label": "Width mode",
+      "options": [
+        {
+          "value": "fit",
+          "label": "Fit content"
+        },
+        {
+          "value": "fill",
+          "label": "Fill (100% of container)"
+        },
+        {
+          "value": "custom",
+          "label": "Custom (%)"
+        }
+      ],
+      "default": "fit",
+      "visible_if": "{{ block.settings.position_mode == 'absolute' and block.settings.absolute_size_enabled }}"
+    },
+    {
+      "type": "range",
+      "id": "absolute_width_custom",
+      "label": "Custom width",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 60,
+      "visible_if": "{{ block.settings.position_mode == 'absolute' and block.settings.absolute_size_enabled and block.settings.absolute_width_mode == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "absolute_aspect_ratio",
+      "label": "Aspect ratio",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "1_1",
+          "label": "1:1"
+        },
+        {
+          "value": "4_3",
+          "label": "4:3"
+        },
+        {
+          "value": "3_4",
+          "label": "3:4"
+        },
+        {
+          "value": "16_9",
+          "label": "16:9"
+        },
+        {
+          "value": "9_16",
+          "label": "9:16"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ block.settings.position_mode == 'absolute' and block.settings.absolute_size_enabled }}"
     }
   ],
   "presets": [
