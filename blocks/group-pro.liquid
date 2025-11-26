@@ -1,16 +1,11 @@
 {%- comment -%}
-  Group Pro block — vGP-block-1.2.0
-  基于原生 group block：
-    - 内容 & 外观设置完全复用 group
-    - Position (pro)：static / relative / absolute + 偏移 + z-index
-    - Absolute size (pro)：仅在 Absolute 时显示
-        - absolute_size_enabled 开关
-        - absolute_width_mode: fit / fill / custom（相对于父容器宽度）
-        - absolute_width_custom: 自定义百分比（0–100%）
-        - absolute_aspect_ratio: 1:1 / 4:3 / 3:4 / 16:9 / 9:16
-    - Outer glow (pro)：
-        - outer_glow_enabled 开关
-        - outer_glow_color / outer_glow_blur / outer_glow_spread
+  Group pro block — vGP-1.3.0
+  - 基于原生 group block，扩展：
+    - Position mode: static / relative / absolute
+    - Absolute size (pro): 通过 Fit / Fill / Custom(%) + Aspect ratio 控制宽高
+    - Outer glow (pro): 外发光效果
+  - 本版改动：
+    - Absolute size (pro) 不再只限制在 absolute 模式，static / relative 也可用
 {%- endcomment -%}
 
 {%- capture children %}
@@ -446,6 +441,171 @@
       "default": "to top",
       "visible_if": "{{ block.settings.toggle_overlay and block.settings.overlay_style == 'gradient' }}"
     },
+
+    {
+      "type": "header",
+      "content": "Position (pro)"
+    },
+    {
+      "type": "select",
+      "id": "position_mode",
+      "label": "Position mode (pro)",
+      "options": [
+        {
+          "value": "static",
+          "label": "Static"
+        },
+        {
+          "value": "relative",
+          "label": "Relative"
+        },
+        {
+          "value": "absolute",
+          "label": "Absolute"
+        }
+      ],
+      "default": "static"
+    },
+    {
+      "type": "range",
+      "id": "position_top",
+      "label": "Top offset",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
+    },
+    {
+      "type": "range",
+      "id": "position_left",
+      "label": "Left offset",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Absolute size (pro)"
+    },
+    {
+      "type": "checkbox",
+      "id": "absolute_size_enabled",
+      "label": "Use Absolute size (pro)",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "absolute_width_mode",
+      "label": "Absolute width",
+      "options": [
+        {
+          "value": "fit",
+          "label": "Fit to content"
+        },
+        {
+          "value": "fill",
+          "label": "Fill container"
+        },
+        {
+          "value": "custom",
+          "label": "Custom (%)"
+        }
+      ],
+      "default": "fill",
+      "visible_if": "{{ block.settings.absolute_size_enabled }}"
+    },
+    {
+      "type": "range",
+      "id": "absolute_width_custom",
+      "label": "Custom width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50,
+      "visible_if": "{{ block.settings.absolute_size_enabled and block.settings.absolute_width_mode == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "absolute_aspect_ratio",
+      "label": "Aspect ratio",
+      "options": [
+        {
+          "value": "none",
+          "label": "No lock"
+        },
+        {
+          "value": "1-1",
+          "label": "1:1"
+        },
+        {
+          "value": "4-3",
+          "label": "4:3"
+        },
+        {
+          "value": "3-4",
+          "label": "3:4"
+        },
+        {
+          "value": "16-9",
+          "label": "16:9"
+        },
+        {
+          "value": "9-16",
+          "label": "9:16"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ block.settings.absolute_size_enabled }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Outer glow (pro)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_glow",
+      "label": "Enable outer glow",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "glow_color",
+      "label": "Glow color",
+      "alpha": true,
+      "default": "#00000033",
+      "visible_if": "{{ block.settings.enable_glow }}"
+    },
+    {
+      "type": "range",
+      "id": "glow_blur",
+      "label": "Glow blur",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 30,
+      "visible_if": "{{ block.settings.enable_glow }}"
+    },
+    {
+      "type": "range",
+      "id": "glow_spread",
+      "label": "Glow spread",
+      "min": -50,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.enable_glow }}"
+    },
+
     {
       "type": "header",
       "content": "t:content.block_link"
@@ -510,204 +670,6 @@
       "step": 1,
       "unit": "px",
       "default": 0
-    },
-
-    {
-      "type": "header",
-      "content": "Position (pro)"
-    },
-    {
-      "type": "select",
-      "id": "position_mode",
-      "label": "Position mode",
-      "options": [
-        {
-          "value": "static",
-          "label": "Static (default)"
-        },
-        {
-          "value": "relative",
-          "label": "Relative"
-        },
-        {
-          "value": "absolute",
-          "label": "Absolute"
-        }
-      ],
-      "default": "static"
-    },
-    {
-      "type": "range",
-      "id": "position_top",
-      "label": "Top offset",
-      "min": -250,
-      "max": 250,
-      "step": 10,
-      "unit": "px",
-      "default": 0,
-      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
-    },
-    {
-      "type": "range",
-      "id": "position_left",
-      "label": "Left offset",
-      "min": -250,
-      "max": 250,
-      "step": 10,
-      "unit": "px",
-      "default": 0,
-      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
-    },
-    {
-      "type": "range",
-      "id": "position_right",
-      "label": "Right offset",
-      "min": -250,
-      "max": 250,
-      "step": 10,
-      "unit": "px",
-      "default": 0,
-      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
-    },
-    {
-      "type": "range",
-      "id": "position_bottom",
-      "label": "Bottom offset",
-      "min": -250,
-      "max": 250,
-      "step": 10,
-      "unit": "px",
-      "default": 0,
-      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
-    },
-    {
-      "type": "range",
-      "id": "position_z_index",
-      "label": "Z-index",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 1,
-      "visible_if": "{{ block.settings.position_mode != 'static' }}"
-    },
-
-    {
-      "type": "header",
-      "content": "Absolute size (pro)",
-      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
-    },
-    {
-      "type": "checkbox",
-      "id": "absolute_size_enabled",
-      "label": "Enable absolute size control",
-      "default": false,
-      "visible_if": "{{ block.settings.position_mode == 'absolute' }}"
-    },
-    {
-      "type": "select",
-      "id": "absolute_width_mode",
-      "label": "Width mode",
-      "options": [
-        {
-          "value": "fit",
-          "label": "Fit content"
-        },
-        {
-          "value": "fill",
-          "label": "Fill (100% of container)"
-        },
-        {
-          "value": "custom",
-          "label": "Custom (%)"
-        }
-      ],
-      "default": "fit",
-      "visible_if": "{{ block.settings.position_mode == 'absolute' and block.settings.absolute_size_enabled }}"
-    },
-    {
-      "type": "range",
-      "id": "absolute_width_custom",
-      "label": "Custom width",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "%",
-      "default": 60,
-      "visible_if": "{{ block.settings.position_mode == 'absolute' and block.settings.absolute_size_enabled and block.settings.absolute_width_mode == 'custom' }}"
-    },
-    {
-      "type": "select",
-      "id": "absolute_aspect_ratio",
-      "label": "Aspect ratio",
-      "options": [
-        {
-          "value": "none",
-          "label": "None"
-        },
-        {
-          "value": "1_1",
-          "label": "1:1"
-        },
-        {
-          "value": "4_3",
-          "label": "4:3"
-        },
-        {
-          "value": "3_4",
-          "label": "3:4"
-        },
-        {
-          "value": "16_9",
-          "label": "16:9"
-        },
-        {
-          "value": "9_16",
-          "label": "9:16"
-        }
-      ],
-      "default": "none",
-      "visible_if": "{{ block.settings.position_mode == 'absolute' and block.settings.absolute_size_enabled }}"
-    },
-
-    {
-      "type": "header",
-      "content": "Outer glow (pro)"
-    },
-    {
-      "type": "checkbox",
-      "id": "outer_glow_enabled",
-      "label": "Enable outer glow",
-      "default": false
-    },
-    {
-      "type": "color",
-      "id": "outer_glow_color",
-      "label": "Glow color",
-      "alpha": true,
-      "default": "#AF996380",
-      "visible_if": "{{ block.settings.outer_glow_enabled }}"
-    },
-    {
-      "type": "range",
-      "id": "outer_glow_blur",
-      "label": "Glow blur",
-      "min": 0,
-      "max": 60,
-      "step": 2,
-      "unit": "px",
-      "default": 20,
-      "visible_if": "{{ block.settings.outer_glow_enabled }}"
-    },
-    {
-      "type": "range",
-      "id": "outer_glow_spread",
-      "label": "Glow spread",
-      "min": 0,
-      "max": 40,
-      "step": 1,
-      "unit": "px",
-      "default": 0,
-      "visible_if": "{{ block.settings.outer_glow_enabled }}"
     }
   ],
   "presets": [
