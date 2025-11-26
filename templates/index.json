@@ -3169,6 +3169,10 @@
         "speed": "medium",
         "icon_size": 26,
         "icon_text_gap": 4,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 16,
+        "padding_right": 16,
         "uppercase_text": true
       }
     },
@@ -5731,15 +5735,21 @@
         "item_tTWbAD",
         "item_GD9zYg"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".strip-marquee__text {color: #ffffff !important; font-weight: 600;}"
+      ],
       "name": "Icon text strip",
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-4",
         "layout_mode": "icon-text-vertical",
         "enable_animation": true,
         "speed": "medium",
         "icon_size": 50,
         "icon_text_gap": 8,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 16,
+        "padding_right": 16,
         "uppercase_text": false
       }
     }
