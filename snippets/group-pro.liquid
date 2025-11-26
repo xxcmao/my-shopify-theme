@@ -1,9 +1,10 @@
 {%- doc -%}
-  Group Pro block — vGP-1.1.0
+  Group Pro block — vGP-1.2.0
   基于 group-block，增加：
     - position_mode: static / relative / absolute
     - position_* 偏移 + z-index
     - absolute_size_enabled + absolute_width_mode + absolute_width_custom + absolute_aspect_ratio
+    - outer_glow_enabled + outer_glow_color + outer_glow_blur + outer_glow_spread
 {%- enddoc -%}
 
 {%- assign position_mode = settings.position_mode | default: 'static' -%}
@@ -54,8 +55,15 @@
   {%- endif -%}
 {%- endcapture -%}
 
+{%- capture pro_glow_style -%}
+  {%- if settings.outer_glow_enabled -%}
+    box-shadow: 0 0 {{ settings.outer_glow_blur | default: 20 }}px {{ settings.outer_glow_spread | default: 0 }}px {{ settings.outer_glow_color | default: '#00000033' }};
+  {%- endif -%}
+{%- endcapture -%}
+
 {%- assign pro_position_style_stripped = pro_position_style | strip -%}
 {%- assign pro_size_style_stripped = pro_size_style | strip -%}
+{%- assign pro_glow_style_stripped = pro_glow_style | strip -%}
 
 <div
   class="
@@ -75,6 +83,7 @@
     {% render 'size-style', settings: settings %}
     {{ pro_position_style_stripped }}
     {{ pro_size_style_stripped }}
+    {{ pro_glow_style_stripped }}
     {{ style }}
   "
   {{ shopify_attributes }}
@@ -82,8 +91,7 @@
 >
   {%- if settings.link != blank -%}
     <a
-      href="{{ settings.link }}
-"
+      href="{{ settings.link }}"
       class="group-block__link"
       {% if settings.open_in_new_tab %}
         target="_blank" rel="noopener"
