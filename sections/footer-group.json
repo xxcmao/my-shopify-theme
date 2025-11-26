@@ -63,9 +63,9 @@
             "width": "fill",
             "custom_width": 100,
             "inherit_color_scheme": false,
+            "color_scheme": "scheme-1",
             "heading": "Get your seat at the table",
             "heading_preset": "h5",
-            "color_scheme": "scheme-1",
             "border_style": "all",
             "border_width": 2,
             "border_radius": 0,
@@ -92,7 +92,7 @@
       "settings": {
         "section_width": "page-width",
         "gap": 24,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-4",
         "padding-block-start": 32,
         "padding-block-end": 64
       }
