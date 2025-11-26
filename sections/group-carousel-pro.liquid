@@ -1,5 +1,5 @@
 {% comment %}
-  Lifestyle carousel — vLC-2.0.1
+  Group carousel pro — vGCP-2.1.0
   - 每个 slide = 一个 block（建议使用 Group / Group pro）
   - 只保留圆点 + 左右箭头导航
   - 导航条整体 absolute 居中，支持宽度 / 大小 / 纵向位置控制
@@ -18,7 +18,7 @@
     section
     section--{{ section.settings.section_width }}
     color-{{ section.settings.color_scheme }}
-    section-lifestyle-carousel
+    section-group-carousel-pro
     spacing-style
     gap-style
   "
@@ -114,26 +114,26 @@
 </div>
 
 {% stylesheet %}
-  .section-lifestyle-carousel .lifestyle-carousel {
+  .section-group-carousel-pro .lifestyle-carousel {
     position: relative;
   }
 
-  .section-lifestyle-carousel .lifestyle-carousel__viewport {
+  .section-group-carousel-pro .lifestyle-carousel__viewport {
     overflow: hidden;
   }
 
-  .section-lifestyle-carousel .lifestyle-carousel__track {
+  .section-group-carousel-pro .lifestyle-carousel__track {
     display: flex;
     transition: transform 400ms ease;
     will-change: transform;
   }
 
-  .section-lifestyle-carousel .lifestyle-carousel__slide {
+  .section-group-carousel-pro .lifestyle-carousel__slide {
     flex: 0 0 100%;
   }
 
   /* 导航整体：absolute 居中，颜色金色 */
-  .section-lifestyle-carousel .lifestyle-carousel__nav {
+  .section-group-carousel-pro .lifestyle-carousel__nav {
     position: absolute;
     display: flex;
     align-items: center;
@@ -143,13 +143,13 @@
     color: #AF9963;
   }
 
-  .section-lifestyle-carousel .lifestyle-carousel__dots {
+  .section-group-carousel-pro .lifestyle-carousel__dots {
     display: flex;
     gap: 0.5rem;
   }
 
   /* 圆点：完全复刻 HexClad swiper-pagination-bullet */
-  .section-lifestyle-carousel .lifestyle-carousel__dot {
+  .section-group-carousel-pro .lifestyle-carousel__dot {
     cursor: pointer;
     opacity: 1;
     background-color: transparent;
@@ -159,12 +159,12 @@
     border-radius: 999px;
   }
 
-  .section-lifestyle-carousel .lifestyle-carousel__dot.is-active {
+  .section-group-carousel-pro .lifestyle-carousel__dot.is-active {
     background-color: #AF9963;
   }
 
   /* 箭头按钮容器：尺寸和原站一致 */
-  .section-lifestyle-carousel .lifestyle-carousel__arrow {
+  .section-group-carousel-pro .lifestyle-carousel__arrow {
     border: 0;
     width: 1.875rem;
     height: 1.875rem;
@@ -175,13 +175,13 @@
     padding: 0;
   }
 
-  .section-lifestyle-carousel .lifestyle-carousel__arrow-iconPlaceholder {
+  .section-group-carousel-pro .lifestyle-carousel__arrow-iconPlaceholder {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .section-lifestyle-carousel .lifestyle-carousel__arrow-iconPlaceholder svg {
+  .section-group-carousel-pro .lifestyle-carousel__arrow-iconPlaceholder svg {
     width: 1.25rem;
     height: 1.25rem;
     margin: 0;
@@ -193,7 +193,7 @@
     transform: translate(-50%, -50%);
   }
 
-  .section-lifestyle-carousel .lifestyle-carousel__empty {
+  .section-group-carousel-pro .lifestyle-carousel__empty {
     text-align: center;
     padding: 2rem 0;
     opacity: 0.7;
@@ -265,8 +265,8 @@
 
 {% schema %}
 {
-  "name": "Lifestyle carousel",
-  "class": "section-lifestyle-carousel",
+  "name": "Group carousel pro",
+  "class": "section-group-carousel-pro",
   "max_blocks": 16,
   "blocks": [
     {
@@ -377,7 +377,7 @@
   ],
   "presets": [
     {
-      "name": "Lifestyle carousel",
+      "name": "Group carousel pro",
       "category": "t:categories.layout",
       "blocks": [
         {
