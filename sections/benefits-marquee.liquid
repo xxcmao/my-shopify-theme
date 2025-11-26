@@ -56,6 +56,11 @@ Icon text strip — v1.2.1
 .benefits-marquee--{{ section.id }} {
   /* 只控制内边距，不碰颜色，颜色交给 color-scheme */
   padding-block: 1.25rem;
+
+
+  /* 用主题当前 Scheme 的背景 / 前景变量 */
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
 }
 
 /* 外层容器：只负责裁剪和宽度 */
