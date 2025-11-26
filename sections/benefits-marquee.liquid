@@ -1,24 +1,15 @@
 {%- comment -%}
-Icon text strip — v1.1.1
+Icon text strip — v1.2.0
 - v1.0.0 初始版本：支持 Color scheme + 动画开关 + 速度设置 + temp 占位文案
 - v1.0.1 将 color_scheme 设置改为 select，以提高主题兼容性
 - v1.0.3 使用内联 style 根据 color_scheme 设置背景/文字颜色
 - v1.1.0 新增设置：Icon size、Space between icon and text
 - v1.1.1 新增设置：Uppercase text（启用时将文本转为大写）
+- v1.2.0 使用主题内置 color_scheme 控件（Scheme 1/2…），通过 color-{{ section.settings.color_scheme }} 继承主题配色
 {%- endcomment -%}
 
-{%- assign bg_color = '#ffffff' -%}
-{%- assign text_color = '#111111' -%}
-{%- if section.settings.color_scheme == 'background-2' -%}
-  {%- assign bg_color = '#f5f5f5' -%}
-{%- elsif section.settings.color_scheme == 'inverse' -%}
-  {%- assign bg_color = '#111111' -%}
-  {%- assign text_color = '#ffffff' -%}
-{%- endif -%}
-
 <section
-  class="section section-benefits-marquee benefits-marquee--{{ section.id }}"
-  style="background-color: {{ bg_color }}; color: {{ text_color }};"
+  class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }}"
 >
   <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
     <div class="benefits-marquee__track">
@@ -64,6 +55,10 @@ Icon text strip — v1.1.1
 {% style %}
 .benefits-marquee--{{ section.id }} {
   padding-block: 1.25rem;
+
+  /* 继承主题当前 color scheme 的背景和前景色 */
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
 }
 
 /* 外层容器：只负责裁剪和宽度 */
@@ -153,24 +148,10 @@ Icon text strip — v1.1.1
   "class": "section-benefits-marquee",
   "settings": [
     {
-      "type": "select",
+      "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
-      "options": [
-        {
-          "value": "background-1",
-          "label": "Background 1"
-        },
-        {
-          "value": "background-2",
-          "label": "Background 2"
-        },
-        {
-          "value": "inverse",
-          "label": "Inverse"
-        }
-      ],
-      "default": "background-1"
+      "default": "scheme-1"
     },
     {
       "type": "checkbox",
