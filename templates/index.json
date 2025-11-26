@@ -4078,86 +4078,6 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
-    },
-    "lifestyle_carousel_hqjega": {
-      "type": "lifestyle-carousel",
-      "blocks": {
-        "slide_z3qtWX": {
-          "type": "slide",
-          "settings": {
-            "content_position": "default",
-            "big_image": "shopify://shop_images/HexClad_HybridPizzaSteel_CWPS16-C_Pizza_011525_GIF.gif",
-            "text_color": "#0e0e0e",
-            "heading": "Steel Yourself for Pizza Glory",
-            "subheading": "Crispier crust plus no pre-heating required. Boom.",
-            "primary_button_label": "Shop now",
-            "primary_button_link": "",
-            "small_image": "shopify://shop_images/Pizza_Steel_Accesories_93636082-b3fd-4db2-a20b-47dac1bbd1bb.jpg",
-            "secondary_button_label": "Learn more",
-            "secondary_button_link": "",
-            "quote_text": "Throw away your pizza stones!",
-            "quote_author": "-Customer name"
-          }
-        },
-        "slide_CKxUnx": {
-          "type": "slide",
-          "settings": {
-            "content_position": "default",
-            "text_color": "#0e0e0e",
-            "heading": "Steel Yourself for Pizza Glory",
-            "subheading": "Crispier crust plus no pre-heating required. Boom.",
-            "primary_button_label": "Shop now",
-            "primary_button_link": "",
-            "secondary_button_label": "Learn more",
-            "secondary_button_link": "",
-            "quote_text": "Throw away your pizza stones!",
-            "quote_author": "-Customer name"
-          }
-        },
-        "slide_GrnnMa": {
-          "type": "slide",
-          "settings": {
-            "content_position": "default",
-            "text_color": "#0e0e0e",
-            "heading": "Steel Yourself for Pizza Glory",
-            "subheading": "Crispier crust plus no pre-heating required. Boom.",
-            "primary_button_label": "Shop now",
-            "primary_button_link": "",
-            "secondary_button_label": "Learn more",
-            "secondary_button_link": "",
-            "quote_text": "Throw away your pizza stones!",
-            "quote_author": "-Customer name"
-          }
-        },
-        "slide_XrmtCk": {
-          "type": "slide",
-          "settings": {
-            "content_position": "default",
-            "text_color": "#0e0e0e",
-            "heading": "Steel Yourself for Pizza Glory",
-            "subheading": "Crispier crust plus no pre-heating required. Boom.",
-            "primary_button_label": "Shop now",
-            "primary_button_link": "",
-            "secondary_button_label": "Learn more",
-            "secondary_button_link": "",
-            "quote_text": "Throw away your pizza stones!",
-            "quote_author": "-Customer name"
-          }
-        }
-      },
-      "block_order": [
-        "slide_z3qtWX",
-        "slide_CKxUnx",
-        "slide_GrnnMa",
-        "slide_XrmtCk"
-      ],
-      "name": "Lifestyle carousel",
-      "settings": {
-        "background_color": "#ffffff",
-        "accent_color": "#af9963",
-        "enable_autoplay": false,
-        "autoplay_interval": 5000
-      }
     }
   },
   "order": [
@@ -4175,7 +4095,6 @@
     "benefits_marquee_YhQYdM",
     "product_list_YGAkfA",
     "section_TEYQyD",
-    "section_Ywzn3n",
-    "lifestyle_carousel_hqjega"
+    "section_Ywzn3n"
   ]
 }
