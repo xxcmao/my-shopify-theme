@@ -4079,10 +4079,10 @@
         "padding-block-end": 48
       }
     },
-    "lifestyle_carousel_h7DMQt": {
-      "type": "lifestyle-carousel",
+    "section_wnnYzX": {
+      "type": "section",
       "blocks": {
-        "group_pro_V9Bzza": {
+        "group_pro_QMBD8m": {
           "type": "group-pro",
           "name": "Group pro",
           "settings": {
@@ -4136,7 +4136,7 @@
             "outer_glow_spread": 0
           },
           "blocks": {
-            "group_FUdg7A": {
+            "group_gBWdhT": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -4176,7 +4176,7 @@
                 "padding-inline-end": 20
               },
               "blocks": {
-                "group_T7cK4m": {
+                "group_PKxjbT": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
@@ -4217,7 +4217,7 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {
-                    "spacer_yAff3r": {
+                    "spacer_pYmNQG": {
                       "type": "spacer",
                       "name": "t:names.spacer",
                       "settings": {
@@ -4231,7 +4231,7 @@
                       },
                       "blocks": {}
                     },
-                    "text_MyaQRC": {
+                    "text_NhUz8J": {
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
@@ -4257,7 +4257,7 @@
                       },
                       "blocks": {}
                     },
-                    "text_UhQ8qY": {
+                    "text_VUT4eh": {
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
@@ -4283,7 +4283,7 @@
                       },
                       "blocks": {}
                     },
-                    "group_6XCBHq": {
+                    "group_Mmjbw4": {
                       "type": "group",
                       "name": "t:names.group",
                       "settings": {
@@ -4323,7 +4323,7 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {
-                        "button_6H9UbJ": {
+                        "button_EGVct9": {
                           "type": "button",
                           "name": "t:names.button",
                           "settings": {
@@ -4340,23 +4340,23 @@
                         }
                       },
                       "block_order": [
-                        "button_6H9UbJ"
+                        "button_EGVct9"
                       ]
                     }
                   },
                   "block_order": [
-                    "spacer_yAff3r",
-                    "text_MyaQRC",
-                    "text_UhQ8qY",
-                    "group_6XCBHq"
+                    "spacer_pYmNQG",
+                    "text_NhUz8J",
+                    "text_VUT4eh",
+                    "group_Mmjbw4"
                   ]
                 }
               },
               "block_order": [
-                "group_T7cK4m"
+                "group_PKxjbT"
               ]
             },
-            "group_pro_H8YLac": {
+            "group_pro_4YVJrK": {
               "type": "group-pro",
               "name": "Group pro",
               "settings": {
@@ -4406,12 +4406,12 @@
                 "absolute_width_custom": 57,
                 "absolute_aspect_ratio": "1_1",
                 "outer_glow_enabled": true,
-                "outer_glow_color": "#00000054",
-                "outer_glow_blur": 8,
+                "outer_glow_color": "#00000080",
+                "outer_glow_blur": 16,
                 "outer_glow_spread": 5
               },
               "blocks": {
-                "button_GJUETN": {
+                "button_3JFWtC": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
@@ -4428,10 +4428,10 @@
                 }
               },
               "block_order": [
-                "button_GJUETN"
+                "button_3JFWtC"
               ]
             },
-            "group_HHEXnp": {
+            "group_UW6Cir": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -4465,13 +4465,13 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 71,
+                "padding-block-start": 43,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_aPkYiw": {
+                "text_iNixmp": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -4497,7 +4497,7 @@
                   },
                   "blocks": {}
                 },
-                "text_BhcaRd": {
+                "text_tiiYqa": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -4523,7 +4523,7 @@
                   },
                   "blocks": {}
                 },
-                "custom_liquid_mFUXDG": {
+                "custom_liquid_HJ8nKJ": {
                   "type": "custom-liquid",
                   "name": "t:names.custom_liquid",
                   "settings": {
@@ -4533,964 +4533,50 @@
                 }
               },
               "block_order": [
-                "text_aPkYiw",
-                "text_BhcaRd",
-                "custom_liquid_mFUXDG"
+                "text_iNixmp",
+                "text_tiiYqa",
+                "custom_liquid_HJ8nKJ"
               ]
             }
           },
           "block_order": [
-            "group_FUdg7A",
-            "group_pro_H8YLac",
-            "group_HHEXnp"
-          ]
-        },
-        "group_pro_V4hmB6": {
-          "type": "group-pro",
-          "name": "Group pro",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "position_mode": "relative",
-            "position_top": 0,
-            "position_left": 0,
-            "position_right": 0,
-            "position_bottom": 0,
-            "position_z_index": 1,
-            "absolute_size_enabled": false,
-            "absolute_width_mode": "fit",
-            "absolute_width_custom": 60,
-            "absolute_aspect_ratio": "none",
-            "outer_glow_enabled": false,
-            "outer_glow_color": "#af996380",
-            "outer_glow_blur": 20,
-            "outer_glow_spread": 0
-          },
-          "blocks": {
-            "group_pU6adf": {
-              "type": "group",
-              "name": "t:names.group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 15,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 20
-              },
-              "blocks": {
-                "group_FxxGxq": {
-                  "type": "group",
-                  "name": "t:names.group",
-                  "settings": {
-                    "content_direction": "column",
-                    "vertical_on_mobile": true,
-                    "horizontal_alignment": "flex-start",
-                    "vertical_alignment": "center",
-                    "align_baseline": false,
-                    "horizontal_alignment_flex_direction_column": "flex-start",
-                    "vertical_alignment_flex_direction_column": "center",
-                    "gap": 0,
-                    "width": "fill",
-                    "custom_width": 100,
-                    "width_mobile": "fill",
-                    "custom_width_mobile": 100,
-                    "height": "fill",
-                    "custom_height": 100,
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
-                    "background_media": "image",
-                    "video_position": "cover",
-                    "background_image": "shopify://shop_images/HexClad_HybridPizzaSteel_CWPS16-C_Pizza_011525_GIF.gif",
-                    "background_image_position": "cover",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_radius": 0,
-                    "toggle_overlay": true,
-                    "overlay_color": "#00000005",
-                    "overlay_style": "solid",
-                    "gradient_direction": "to top",
-                    "link": "",
-                    "open_in_new_tab": false,
-                    "placeholder": "",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {
-                    "spacer_X7w46B": {
-                      "type": "spacer",
-                      "name": "t:names.spacer",
-                      "settings": {
-                        "size": "pixel",
-                        "percent_size": 100,
-                        "pixel_size": 324,
-                        "custom_mobile_size": false,
-                        "size_mobile": "percent",
-                        "percent_size_mobile": 100,
-                        "pixel_size_mobile": 120
-                      },
-                      "blocks": {}
-                    },
-                    "text_JJ3WNC": {
-                      "type": "text",
-                      "name": "t:names.heading",
-                      "settings": {
-                        "text": "<h1><strong>Steel Yourself for Pizza Glory</strong></h1>",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1.125rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    },
-                    "text_DjcMNV": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<p>Crispier crust plus no pre-heating required. Boom.</p>",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "0.875rem",
-                        "line_height": "tight",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 13,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    },
-                    "group_ABh9ke": {
-                      "type": "group",
-                      "name": "t:names.group",
-                      "settings": {
-                        "content_direction": "column",
-                        "vertical_on_mobile": true,
-                        "horizontal_alignment": "flex-start",
-                        "vertical_alignment": "center",
-                        "align_baseline": false,
-                        "horizontal_alignment_flex_direction_column": "flex-start",
-                        "vertical_alignment_flex_direction_column": "center",
-                        "gap": 12,
-                        "width": "fill",
-                        "custom_width": 100,
-                        "width_mobile": "fill",
-                        "custom_width_mobile": 100,
-                        "height": "fit",
-                        "custom_height": 100,
-                        "inherit_color_scheme": true,
-                        "color_scheme": "",
-                        "background_media": "none",
-                        "video_position": "cover",
-                        "background_image_position": "cover",
-                        "border": "none",
-                        "border_width": 1,
-                        "border_opacity": 100,
-                        "border_radius": 0,
-                        "toggle_overlay": false,
-                        "overlay_color": "#00000026",
-                        "overlay_style": "solid",
-                        "gradient_direction": "to top",
-                        "link": "",
-                        "open_in_new_tab": false,
-                        "placeholder": "",
-                        "padding-block-start": 0,
-                        "padding-block-end": 10,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {
-                        "button_ie8dDT": {
-                          "type": "button",
-                          "name": "t:names.button",
-                          "settings": {
-                            "label": "Shop Pizza Steel",
-                            "link": "shopify://collections/all",
-                            "open_in_new_tab": false,
-                            "style_class": "button",
-                            "width": "fit-content",
-                            "custom_width": 100,
-                            "width_mobile": "fit-content",
-                            "custom_width_mobile": 100
-                          },
-                          "blocks": {}
-                        }
-                      },
-                      "block_order": [
-                        "button_ie8dDT"
-                      ]
-                    }
-                  },
-                  "block_order": [
-                    "spacer_X7w46B",
-                    "text_JJ3WNC",
-                    "text_DjcMNV",
-                    "group_ABh9ke"
-                  ]
-                }
-              },
-              "block_order": [
-                "group_FxxGxq"
-              ]
-            },
-            "group_pro_KeDJFU": {
-              "type": "group-pro",
-              "name": "Group pro",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "center",
-                "vertical_alignment_flex_direction_column": "flex-end",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "scheme-58084d4c-a86e-4d0a-855e-a0966e5043f7",
-                "background_media": "image",
-                "video_position": "cover",
-                "background_image": "shopify://shop_images/Pizza_Steel_Accesories_93636082-b3fd-4db2-a20b-47dac1bbd1bb.jpg",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 15,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "position_mode": "absolute",
-                "position_top": 50,
-                "position_left": 130,
-                "position_right": 0,
-                "position_bottom": 0,
-                "position_z_index": 3,
-                "absolute_size_enabled": true,
-                "absolute_width_mode": "custom",
-                "absolute_width_custom": 57,
-                "absolute_aspect_ratio": "1_1",
-                "outer_glow_enabled": true,
-                "outer_glow_color": "#00000054",
-                "outer_glow_blur": 8,
-                "outer_glow_spread": 5
-              },
-              "blocks": {
-                "button_iqwpNy": {
-                  "type": "button",
-                  "name": "t:names.button",
-                  "settings": {
-                    "label": "Pizza Steel Accessory Set",
-                    "link": "shopify://collections/all",
-                    "open_in_new_tab": false,
-                    "style_class": "button-secondary",
-                    "width": "fit-content",
-                    "custom_width": 100,
-                    "width_mobile": "fit-content",
-                    "custom_width_mobile": 100
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "button_iqwpNy"
-              ]
-            },
-            "group_rjp8dR": {
-              "type": "group",
-              "name": "t:names.group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "center",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-2c121584-e3b0-4e2d-967e-6bda20e0d930",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 71,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_tLgtiH": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p>Throw away your pizza stones!</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-accent--family)",
-                    "font_size": "1.125rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_XFh7aC": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>-Terence F. </p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-accent--family)",
-                    "font_size": "0.875rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "custom_liquid_43M9kN": {
-                  "type": "custom-liquid",
-                  "name": "t:names.custom_liquid",
-                  "settings": {
-                    "custom_liquid": "<svg width=\"90\" height=\"16\" viewBox=\"0 0 90 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M8.44299 0.689901C8.5202 0.464657 8.83876 0.464658 8.91597 0.689902L10.5089 5.33686C10.5435 5.43792 10.6386 5.5058 10.7454 5.5058H15.8705C16.116 5.5058 16.2145 5.8225 16.0123 5.96169L11.8894 8.801C11.7971 8.86459 11.7584 8.9819 11.7947 9.08796L13.3749 13.6977C13.4531 13.9257 13.1951 14.1214 12.9966 13.9847L8.82128 11.1092C8.73589 11.0504 8.62307 11.0504 8.53769 11.1092L4.36234 13.9847C4.16384 14.1214 3.9059 13.9257 3.98405 13.6977L5.56422 9.08796C5.60058 8.9819 5.56187 8.86459 5.46953 8.801L1.34663 5.96169C1.14451 5.8225 1.24301 5.5058 1.48842 5.5058H6.61357C6.7204 5.5058 6.81542 5.43792 6.85006 5.33686L8.44299 0.689901Z\" fill=\"#AF9963\"></path>\n<path d=\"M26.454 0.689901C26.5312 0.464657 26.8498 0.464658 26.927 0.689902L28.52 5.33686C28.5546 5.43792 28.6496 5.5058 28.7564 5.5058H33.8816C34.127 5.5058 34.2255 5.8225 34.0234 5.96169L29.9005 8.801C29.8081 8.86459 29.7694 8.9819 29.8058 9.08796L31.386 13.6977C31.4641 13.9257 31.2062 14.1214 31.0077 13.9847L26.8323 11.1092C26.7469 11.0504 26.6341 11.0504 26.5487 11.1092L22.3734 13.9847C22.1749 14.1214 21.9169 13.9257 21.9951 13.6977L23.5753 9.08796C23.6116 8.9819 23.5729 8.86459 23.4806 8.801L19.3577 5.96169C19.1556 5.8225 19.2541 5.5058 19.4995 5.5058H24.6246C24.7314 5.5058 24.8265 5.43792 24.8611 5.33686L26.454 0.689901Z\" fill=\"#AF9963\"></path>\n<path d=\"M44.4691 0.689901C44.5463 0.464657 44.8648 0.464658 44.942 0.689902L46.535 5.33686C46.5696 5.43792 46.6646 5.5058 46.7715 5.5058H51.8966C52.142 5.5058 52.2405 5.8225 52.0384 5.96169L47.9155 8.801C47.8232 8.86459 47.7844 8.9819 47.8208 9.08796L49.401 13.6977C49.4791 13.9257 49.2212 14.1214 49.0227 13.9847L44.8473 11.1092C44.762 11.0504 44.6491 11.0504 44.5637 11.1092L40.3884 13.9847C40.1899 14.1214 39.932 13.9257 40.0101 13.6977L41.5903 9.08796C41.6266 8.9819 41.5879 8.86459 41.4956 8.801L37.3727 5.96169C37.1706 5.8225 37.2691 5.5058 37.5145 5.5058H42.6396C42.7465 5.5058 42.8415 5.43792 42.8761 5.33686L44.4691 0.689901Z\" fill=\"#AF9963\"></path>\n<path d=\"M62.4843 0.689901C62.5615 0.464657 62.8801 0.464658 62.9573 0.689902L64.5502 5.33686C64.5849 5.43792 64.6799 5.5058 64.7867 5.5058H69.9119C70.1573 5.5058 70.2558 5.8225 70.0537 5.96169L65.9308 8.801C65.8384 8.86459 65.7997 8.9819 65.8361 9.08796L67.4162 13.6977C67.4944 13.9257 67.2364 14.1214 67.0379 13.9847L62.8626 11.1092C62.7772 11.0504 62.6644 11.0504 62.579 11.1092L58.4037 13.9847C58.2052 14.1214 57.9472 13.9257 58.0254 13.6977L59.6055 9.08796C59.6419 8.9819 59.6032 8.86459 59.5108 8.801L55.3879 5.96169C55.1858 5.8225 55.2843 5.5058 55.5297 5.5058H60.6549C60.7617 5.5058 60.8567 5.43792 60.8914 5.33686L62.4843 0.689901Z\" fill=\"#AF9963\"></path>\n<path d=\"M80.4955 0.689901C80.5727 0.464657 80.8913 0.464658 80.9685 0.689902L82.5614 5.33686C82.596 5.43792 82.6911 5.5058 82.7979 5.5058H87.923C88.1684 5.5058 88.2669 5.8225 88.0648 5.96169L83.9419 8.801C83.8496 8.86459 83.8109 8.9819 83.8472 9.08796L85.4274 13.6977C85.5056 13.9257 85.2476 14.1214 85.0491 13.9847L80.8738 11.1092C80.7884 11.0504 80.6756 11.0504 80.5902 11.1092L76.4148 13.9847C76.2163 14.1214 75.9584 13.9257 76.0365 13.6977L77.6167 9.08796C77.6531 8.9819 77.6144 8.86459 77.522 8.801L73.3991 5.96169C73.197 5.8225 73.2955 5.5058 73.5409 5.5058H78.6661C78.7729 5.5058 78.8679 5.43792 78.9026 5.33686L80.4955 0.689901Z\" fill=\"#AF9963\"></path>\n</svg>"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_tLgtiH",
-                "text_XFh7aC",
-                "custom_liquid_43M9kN"
-              ]
-            }
-          },
-          "block_order": [
-            "group_pU6adf",
-            "group_pro_KeDJFU",
-            "group_rjp8dR"
-          ]
-        },
-        "group_pro_7eWnbB": {
-          "type": "group-pro",
-          "name": "Group pro",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "position_mode": "relative",
-            "position_top": 0,
-            "position_left": 0,
-            "position_right": 0,
-            "position_bottom": 0,
-            "position_z_index": 1,
-            "absolute_size_enabled": false,
-            "absolute_width_mode": "fit",
-            "absolute_width_custom": 60,
-            "absolute_aspect_ratio": "none",
-            "outer_glow_enabled": false,
-            "outer_glow_color": "#af996380",
-            "outer_glow_blur": 20,
-            "outer_glow_spread": 0
-          },
-          "blocks": {
-            "group_4N8aLm": {
-              "type": "group",
-              "name": "t:names.group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 15,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 20
-              },
-              "blocks": {
-                "group_X6LAxn": {
-                  "type": "group",
-                  "name": "t:names.group",
-                  "settings": {
-                    "content_direction": "column",
-                    "vertical_on_mobile": true,
-                    "horizontal_alignment": "flex-start",
-                    "vertical_alignment": "center",
-                    "align_baseline": false,
-                    "horizontal_alignment_flex_direction_column": "flex-start",
-                    "vertical_alignment_flex_direction_column": "center",
-                    "gap": 0,
-                    "width": "fill",
-                    "custom_width": 100,
-                    "width_mobile": "fill",
-                    "custom_width_mobile": 100,
-                    "height": "fill",
-                    "custom_height": 100,
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
-                    "background_media": "image",
-                    "video_position": "cover",
-                    "background_image": "shopify://shop_images/HexClad_HybridPizzaSteel_CWPS16-C_Pizza_011525_GIF.gif",
-                    "background_image_position": "cover",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_radius": 0,
-                    "toggle_overlay": true,
-                    "overlay_color": "#00000005",
-                    "overlay_style": "solid",
-                    "gradient_direction": "to top",
-                    "link": "",
-                    "open_in_new_tab": false,
-                    "placeholder": "",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {
-                    "spacer_JULaGj": {
-                      "type": "spacer",
-                      "name": "t:names.spacer",
-                      "settings": {
-                        "size": "pixel",
-                        "percent_size": 100,
-                        "pixel_size": 324,
-                        "custom_mobile_size": false,
-                        "size_mobile": "percent",
-                        "percent_size_mobile": 100,
-                        "pixel_size_mobile": 120
-                      },
-                      "blocks": {}
-                    },
-                    "text_eL9QVx": {
-                      "type": "text",
-                      "name": "t:names.heading",
-                      "settings": {
-                        "text": "<h1><strong>Steel Yourself for Pizza Glory</strong></h1>",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1.125rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    },
-                    "text_687Pg6": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<p>Crispier crust plus no pre-heating required. Boom.</p>",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "0.875rem",
-                        "line_height": "tight",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 13,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    },
-                    "group_GFrpYm": {
-                      "type": "group",
-                      "name": "t:names.group",
-                      "settings": {
-                        "content_direction": "column",
-                        "vertical_on_mobile": true,
-                        "horizontal_alignment": "flex-start",
-                        "vertical_alignment": "center",
-                        "align_baseline": false,
-                        "horizontal_alignment_flex_direction_column": "flex-start",
-                        "vertical_alignment_flex_direction_column": "center",
-                        "gap": 12,
-                        "width": "fill",
-                        "custom_width": 100,
-                        "width_mobile": "fill",
-                        "custom_width_mobile": 100,
-                        "height": "fit",
-                        "custom_height": 100,
-                        "inherit_color_scheme": true,
-                        "color_scheme": "",
-                        "background_media": "none",
-                        "video_position": "cover",
-                        "background_image_position": "cover",
-                        "border": "none",
-                        "border_width": 1,
-                        "border_opacity": 100,
-                        "border_radius": 0,
-                        "toggle_overlay": false,
-                        "overlay_color": "#00000026",
-                        "overlay_style": "solid",
-                        "gradient_direction": "to top",
-                        "link": "",
-                        "open_in_new_tab": false,
-                        "placeholder": "",
-                        "padding-block-start": 0,
-                        "padding-block-end": 10,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {
-                        "button_rHbgin": {
-                          "type": "button",
-                          "name": "t:names.button",
-                          "settings": {
-                            "label": "Shop Pizza Steel",
-                            "link": "shopify://collections/all",
-                            "open_in_new_tab": false,
-                            "style_class": "button",
-                            "width": "fit-content",
-                            "custom_width": 100,
-                            "width_mobile": "fit-content",
-                            "custom_width_mobile": 100
-                          },
-                          "blocks": {}
-                        }
-                      },
-                      "block_order": [
-                        "button_rHbgin"
-                      ]
-                    }
-                  },
-                  "block_order": [
-                    "spacer_JULaGj",
-                    "text_eL9QVx",
-                    "text_687Pg6",
-                    "group_GFrpYm"
-                  ]
-                }
-              },
-              "block_order": [
-                "group_X6LAxn"
-              ]
-            },
-            "group_pro_RqAC9d": {
-              "type": "group-pro",
-              "name": "Group pro",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "center",
-                "vertical_alignment_flex_direction_column": "flex-end",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "scheme-58084d4c-a86e-4d0a-855e-a0966e5043f7",
-                "background_media": "image",
-                "video_position": "cover",
-                "background_image": "shopify://shop_images/Pizza_Steel_Accesories_93636082-b3fd-4db2-a20b-47dac1bbd1bb.jpg",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 15,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "position_mode": "absolute",
-                "position_top": 50,
-                "position_left": 130,
-                "position_right": 0,
-                "position_bottom": 0,
-                "position_z_index": 3,
-                "absolute_size_enabled": true,
-                "absolute_width_mode": "custom",
-                "absolute_width_custom": 57,
-                "absolute_aspect_ratio": "1_1",
-                "outer_glow_enabled": true,
-                "outer_glow_color": "#00000054",
-                "outer_glow_blur": 8,
-                "outer_glow_spread": 5
-              },
-              "blocks": {
-                "button_yTC9e4": {
-                  "type": "button",
-                  "name": "t:names.button",
-                  "settings": {
-                    "label": "Pizza Steel Accessory Set",
-                    "link": "shopify://collections/all",
-                    "open_in_new_tab": false,
-                    "style_class": "button-secondary",
-                    "width": "fit-content",
-                    "custom_width": 100,
-                    "width_mobile": "fit-content",
-                    "custom_width_mobile": 100
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "button_yTC9e4"
-              ]
-            },
-            "group_yAXXig": {
-              "type": "group",
-              "name": "t:names.group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "center",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-2c121584-e3b0-4e2d-967e-6bda20e0d930",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 71,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_4LhB8w": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p>Throw away your pizza stones!</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-accent--family)",
-                    "font_size": "1.125rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_mcp6Em": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>-Terence F. </p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-accent--family)",
-                    "font_size": "0.875rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "custom_liquid_YE3YGn": {
-                  "type": "custom-liquid",
-                  "name": "t:names.custom_liquid",
-                  "settings": {
-                    "custom_liquid": "<svg width=\"90\" height=\"16\" viewBox=\"0 0 90 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M8.44299 0.689901C8.5202 0.464657 8.83876 0.464658 8.91597 0.689902L10.5089 5.33686C10.5435 5.43792 10.6386 5.5058 10.7454 5.5058H15.8705C16.116 5.5058 16.2145 5.8225 16.0123 5.96169L11.8894 8.801C11.7971 8.86459 11.7584 8.9819 11.7947 9.08796L13.3749 13.6977C13.4531 13.9257 13.1951 14.1214 12.9966 13.9847L8.82128 11.1092C8.73589 11.0504 8.62307 11.0504 8.53769 11.1092L4.36234 13.9847C4.16384 14.1214 3.9059 13.9257 3.98405 13.6977L5.56422 9.08796C5.60058 8.9819 5.56187 8.86459 5.46953 8.801L1.34663 5.96169C1.14451 5.8225 1.24301 5.5058 1.48842 5.5058H6.61357C6.7204 5.5058 6.81542 5.43792 6.85006 5.33686L8.44299 0.689901Z\" fill=\"#AF9963\"></path>\n<path d=\"M26.454 0.689901C26.5312 0.464657 26.8498 0.464658 26.927 0.689902L28.52 5.33686C28.5546 5.43792 28.6496 5.5058 28.7564 5.5058H33.8816C34.127 5.5058 34.2255 5.8225 34.0234 5.96169L29.9005 8.801C29.8081 8.86459 29.7694 8.9819 29.8058 9.08796L31.386 13.6977C31.4641 13.9257 31.2062 14.1214 31.0077 13.9847L26.8323 11.1092C26.7469 11.0504 26.6341 11.0504 26.5487 11.1092L22.3734 13.9847C22.1749 14.1214 21.9169 13.9257 21.9951 13.6977L23.5753 9.08796C23.6116 8.9819 23.5729 8.86459 23.4806 8.801L19.3577 5.96169C19.1556 5.8225 19.2541 5.5058 19.4995 5.5058H24.6246C24.7314 5.5058 24.8265 5.43792 24.8611 5.33686L26.454 0.689901Z\" fill=\"#AF9963\"></path>\n<path d=\"M44.4691 0.689901C44.5463 0.464657 44.8648 0.464658 44.942 0.689902L46.535 5.33686C46.5696 5.43792 46.6646 5.5058 46.7715 5.5058H51.8966C52.142 5.5058 52.2405 5.8225 52.0384 5.96169L47.9155 8.801C47.8232 8.86459 47.7844 8.9819 47.8208 9.08796L49.401 13.6977C49.4791 13.9257 49.2212 14.1214 49.0227 13.9847L44.8473 11.1092C44.762 11.0504 44.6491 11.0504 44.5637 11.1092L40.3884 13.9847C40.1899 14.1214 39.932 13.9257 40.0101 13.6977L41.5903 9.08796C41.6266 8.9819 41.5879 8.86459 41.4956 8.801L37.3727 5.96169C37.1706 5.8225 37.2691 5.5058 37.5145 5.5058H42.6396C42.7465 5.5058 42.8415 5.43792 42.8761 5.33686L44.4691 0.689901Z\" fill=\"#AF9963\"></path>\n<path d=\"M62.4843 0.689901C62.5615 0.464657 62.8801 0.464658 62.9573 0.689902L64.5502 5.33686C64.5849 5.43792 64.6799 5.5058 64.7867 5.5058H69.9119C70.1573 5.5058 70.2558 5.8225 70.0537 5.96169L65.9308 8.801C65.8384 8.86459 65.7997 8.9819 65.8361 9.08796L67.4162 13.6977C67.4944 13.9257 67.2364 14.1214 67.0379 13.9847L62.8626 11.1092C62.7772 11.0504 62.6644 11.0504 62.579 11.1092L58.4037 13.9847C58.2052 14.1214 57.9472 13.9257 58.0254 13.6977L59.6055 9.08796C59.6419 8.9819 59.6032 8.86459 59.5108 8.801L55.3879 5.96169C55.1858 5.8225 55.2843 5.5058 55.5297 5.5058H60.6549C60.7617 5.5058 60.8567 5.43792 60.8914 5.33686L62.4843 0.689901Z\" fill=\"#AF9963\"></path>\n<path d=\"M80.4955 0.689901C80.5727 0.464657 80.8913 0.464658 80.9685 0.689902L82.5614 5.33686C82.596 5.43792 82.6911 5.5058 82.7979 5.5058H87.923C88.1684 5.5058 88.2669 5.8225 88.0648 5.96169L83.9419 8.801C83.8496 8.86459 83.8109 8.9819 83.8472 9.08796L85.4274 13.6977C85.5056 13.9257 85.2476 14.1214 85.0491 13.9847L80.8738 11.1092C80.7884 11.0504 80.6756 11.0504 80.5902 11.1092L76.4148 13.9847C76.2163 14.1214 75.9584 13.9257 76.0365 13.6977L77.6167 9.08796C77.6531 8.9819 77.6144 8.86459 77.522 8.801L73.3991 5.96169C73.197 5.8225 73.2955 5.5058 73.5409 5.5058H78.6661C78.7729 5.5058 78.8679 5.43792 78.9026 5.33686L80.4955 0.689901Z\" fill=\"#AF9963\"></path>\n</svg>"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_4LhB8w",
-                "text_mcp6Em",
-                "custom_liquid_YE3YGn"
-              ]
-            }
-          },
-          "block_order": [
-            "group_4N8aLm",
-            "group_pro_RqAC9d",
-            "group_yAXXig"
+            "group_gBWdhT",
+            "group_pro_4YVJrK",
+            "group_UW6Cir"
           ]
         }
       },
       "block_order": [
-        "group_pro_V9Bzza",
-        "group_pro_V4hmB6",
-        "group_pro_7eWnbB"
+        "group_pro_QMBD8m"
       ],
-      "custom_css": [
-        ".button {background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 14px; font-weight: 600;}",
-        ".button-secondary,.button.button-secondary,a.button-secondary {background: #fff; border-radius: 30px; color: #000; height: 30px; font-size: 12px; font-weight: 600; padding: 6px 10px; border: none !important; box-shadow: none !important; outline: none !important;}"
-      ],
-      "name": "Groop carousel pro",
+      "name": "t:names.multicolumn",
       "settings": {
+        "visibility": "",
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 0,
         "section_width": "page-width",
-        "gap": 28,
+        "section_height": "",
+        "section_height_custom": 50,
         "color_scheme": "",
-        "nav_width": 60,
-        "nav_scale": 80,
-        "nav_vertical_position": 79,
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000047",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     }
   },
@@ -5510,6 +4596,6 @@
     "product_list_YGAkfA",
     "section_TEYQyD",
     "section_Ywzn3n",
-    "lifestyle_carousel_h7DMQt"
+    "section_wnnYzX"
   ]
 }
