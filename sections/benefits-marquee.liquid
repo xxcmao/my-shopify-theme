@@ -1,20 +1,58 @@
 {%- comment -%}
-Icon text strip — v1.4.0
+Icon text strip — v1.5.1
 - v1.0.0 初始版本：支持 Color scheme + 动画开关 + 速度设置 + temp 占位文案
 - v1.0.1 将 color_scheme 设置改为 select，以提高主题兼容性
 - v1.0.3 使用内联 style 根据 color_scheme 设置背景/文字颜色
 - v1.1.0 新增设置：Icon size、Space between icon and text
 - v1.1.1 新增设置：Uppercase text（启用时将文本转为大写）
-- v1.2.x 开始使用 type: color_scheme + 主题配色变量
+- v1.2.x 开始使用 type: color_scheme
 - v1.4.0 新增 layout_mode：图标+文字（横向）、图+文（上下）、仅图标、仅文字
+- v1.5.0 新增 section 上下左右 padding 设置
+- v1.5.1 背景 & 字体颜色直接读取 color_scheme.settings.background / text，完全跟随主题配色
 {%- endcomment -%}
 
 {%- liquid
   assign layout_mode = section.settings.layout_mode | default: 'icon-text'
+
+  assign padding_top = section.settings.padding_top | default: 20
+  assign padding_bottom = section.settings.padding_bottom | default: 20
+  assign padding_left = section.settings.padding_left | default: 16
+  assign padding_right = section.settings.padding_right | default: 16
+
+  assign scheme = section.settings.color_scheme
+  assign bg_color = ''
+  assign bg_gradient = ''
+  assign text_color = ''
+
+  if scheme and scheme.settings
+    if scheme.settings.background != blank
+      assign bg_color = scheme.settings.background
+    endif
+    if scheme.settings.background_gradient != blank
+      assign bg_gradient = scheme.settings.background_gradient
+    endif
+    if scheme.settings.text != blank
+      assign text_color = scheme.settings.text
+    endif
+  endif
 -%}
 
 <section
   class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }} benefits-marquee--layout-{{ layout_mode }}"
+  style="
+    padding-top: {{ padding_top }}px;
+    padding-bottom: {{ padding_bottom }}px;
+    padding-left: {{ padding_left }}px;
+    padding-right: {{ padding_right }}px;
+    {% if bg_gradient != blank %}
+      background: {{ bg_gradient }};
+    {% elsif bg_color != blank %}
+      background-color: {{ bg_color }};
+    {% endif %}
+    {% if text_color != blank %}
+      color: {{ text_color }};
+    {% endif %}
+  "
 >
   <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
     <div class="benefits-marquee__track">
@@ -75,11 +113,8 @@ Icon text strip — v1.4.0
 </section>
 
 {% style %}
+/* 不再在这里写 background/color，完全交给上面的 inline style + color scheme */
 .benefits-marquee--{{ section.id }} {
-  /* 内边距，颜色由主题 Scheme 控制 */
-  padding-block: 1.25rem;
-  background-color: rgb(var(--color-background));
-  color: rgb(var(--color-foreground));
 }
 
 /* 外层容器：只负责裁剪和宽度 */
@@ -136,9 +171,7 @@ Icon text strip — v1.4.0
   justify-content: center;
 }
 
-/* 布局模式：仅文字（gap 对单个元素其实没有影响，这里不特别处理也 OK） */
-/* 如需特别样式可以在这里加 */
-/*
+/* 布局模式：仅文字（如需特殊样式可以在这里加）
 .benefits-marquee--{{ section.id }}.benefits-marquee--layout-text-only .benefits-marquee__item {
 }
 */
@@ -262,6 +295,50 @@ Icon text strip — v1.4.0
       "step": 2,
       "unit": "px",
       "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "Padding left",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "Padding right",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 16
     },
     {
       "type": "checkbox",
