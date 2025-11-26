@@ -4521,7 +4521,7 @@
       ],
       "custom_css": [
         ".button {background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 14px; font-weight: 600;}",
-        ".button.button--secondary{background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 14px; font-weight: 600;}"
+        ".button-secondary,.button.button-secondary,a.button-secondary {background: #fff; border-radius: 30px; color: #000; height: 30px; font-size: 12px; font-weight: 600; padding: 6px 10px;}"
       ],
       "name": "t:names.multicolumn",
       "settings": {
