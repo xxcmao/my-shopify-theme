@@ -5,11 +5,41 @@ Icon text strip — v1.2.0
 - v1.0.3 使用内联 style 根据 color_scheme 设置背景/文字颜色
 - v1.1.0 新增设置：Icon size、Space between icon and text
 - v1.1.1 新增设置：Uppercase text（启用时将文本转为大写）
-- v1.2.0 使用主题内置 color_scheme 控件（Scheme 1/2…），通过 color-{{ section.settings.color_scheme }} 继承主题配色
+- v1.2.0 改用 type: color_scheme，背景 & 字体颜色跟随主题 Scheme 1/2/... 变化
 {%- endcomment -%}
 
+{%- liquid
+  assign scheme = section.settings.color_scheme
+
+  assign bg_color = '#ffffff'
+  assign text_color = '#111111'
+  assign bg_gradient = ''
+
+  if scheme and scheme.settings
+    if scheme.settings.background != blank
+      assign bg_color = scheme.settings.background
+    endif
+
+    if scheme.settings.text != blank
+      assign text_color = scheme.settings.text
+    endif
+
+    if scheme.settings.background_gradient != blank
+      assign bg_gradient = scheme.settings.background_gradient
+    endif
+  endif
+-%}
+
 <section
-  class="section section-benefits-marquee color-{{ section.settings.color_scheme }} benefits-marquee--{{ section.id }}"
+  class="section section-benefits-marquee benefits-marquee--{{ section.id }}"
+  style="
+    {% if bg_gradient != blank %}
+      background: {{ bg_gradient }};
+    {% else %}
+      background-color: {{ bg_color }};
+    {% endif %}
+    color: {{ text_color }};
+  "
 >
   <div class="benefits-marquee__wrapper{% if section.settings.enable_animation %} benefits-marquee__wrapper--animated{% endif %}">
     <div class="benefits-marquee__track">
@@ -55,10 +85,6 @@ Icon text strip — v1.2.0
 {% style %}
 .benefits-marquee--{{ section.id }} {
   padding-block: 1.25rem;
-
-  /* 继承主题当前 color scheme 的背景和前景色 */
-  background-color: rgb(var(--color-background));
-  color: rgb(var(--color-foreground));
 }
 
 /* 外层容器：只负责裁剪和宽度 */
@@ -151,7 +177,7 @@ Icon text strip — v1.2.0
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
-      "default": "scheme-1"
+      "default": "scheme_1"
     },
     {
       "type": "checkbox",
