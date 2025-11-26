@@ -4453,7 +4453,7 @@
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
-                "color_scheme": "",
+                "color_scheme": "scheme-58084d4c-a86e-4d0a-855e-a0966e5043f7",
                 "background_media": "image",
                 "video_position": "cover",
                 "background_image": "shopify://shop_images/Pizza_Steel_Accesories_93636082-b3fd-4db2-a20b-47dac1bbd1bb.jpg",
@@ -4521,7 +4521,7 @@
       ],
       "custom_css": [
         ".button {background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 14px; font-weight: 600;}",
-        ".button-secondary,.button.button-secondary,a.button-secondary {background: #fff; border-radius: 30px; color: #000; height: 30px; font-size: 12px; font-weight: 600; padding: 6px 10px;}"
+        ".button-secondary,.button.button-secondary,a.button-secondary {background: #fff; border-radius: 30px; color: #000; height: 30px; font-size: 12px; font-weight: 600; padding: 6px 10px; border-color: #FFF;}"
       ],
       "name": "t:names.multicolumn",
       "settings": {
