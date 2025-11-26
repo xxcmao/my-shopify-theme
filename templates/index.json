@@ -4550,7 +4550,8 @@
         "group_pro_QMBD8m"
       ],
       "custom_css": [
-        ".button {background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 14px; font-weight: 600; }"
+        ".button {background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 14px; font-weight: 600;}",
+        ".button--secondary,.button.button--secondary,a.button--secondary {border: none !important; box-shadow: none !important; outline: none !important; background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 14px; font-weight: 600;}"
       ],
       "name": "t:names.multicolumn",
       "settings": {
