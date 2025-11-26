@@ -1,552 +1,234 @@
-{%- comment -%}
-  Lifestyle carousel — v1.4.0 (group layout)
-  - article.lifestyle-carousel__slide 作为 Group 容器，内部纵向排列
-  - slide-top 里有两个叠加的 Group：
-      · lifestyle-carousel__group_one    （全铺背景层，主图）
-      · lifestyle-carousel__group_second （前景层，可调整大小和位置，用来放小卡片等）
-  - slide-group-bottom 作为底部 Group，内部再分：
-      · slide-big   主文案（标题 + 副标题 + 主按钮）
-      · slide-small 次文案（quote + 作者 + 星星）
-{%- endcomment -%}
+{% comment %}
+  Lifestyle carousel — vLC-2.0.0
+  - 每个 slide = 一个 block（建议使用 Group / Group pro）
+  - 只保留圆点 + 左右箭头导航
+  - 导航条整体 absolute 居中，支持宽度 / 大小 / 纵向位置控制
+  - 使用 transform + transition 滑动切换
+{% endcomment %}
 
-<style>
-  .lifestyle-carousel {
-    position: relative;
-  }
+{% liquid
+  assign slide_count = section.blocks.size
+%}
 
-  .lifestyle-carousel__container {
-    position: relative;
-    overflow: hidden;
-    background-color: {{ section.settings.background_color | default: '#ffffff' }};
-    --lifestyle-accent: {{ section.settings.accent_color | default: '#af9963' }};
-  }
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
 
-  .lifestyle-carousel__track {
-    position: relative;
-    width: 100%;
-  }
-
-  .lifestyle-carousel__slide {
-    width: 100%;
-    display: none;
-    position: relative;
-  }
-
-  .lifestyle-carousel__slide.is-active {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* 顶部区域：两个叠加的 Group */
-  .lifestyle-carousel__slide-top {
-    position: relative;
-    width: 100%;
-    min-height: 22rem;
-    overflow: hidden;
-  }
-
-  /* 背景层：主大图 */
-  .lifestyle-carousel__group_one {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background-color: #757575; /* 没图时的底色 */
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  /* 前景层：可调大小和位置的 Group */
-  .lifestyle-carousel__group_second {
-    position: absolute;
-    z-index: 2;
-    /* 默认铺满，你可以在 custom css 里通过这些变量调大小和位置 */
-    top: var(--lifestyle-group-second-top, 0);
-    left: var(--lifestyle-group-second-left, 0);
-    width: var(--lifestyle-group-second-width, 100%);
-    height: var(--lifestyle-group-second-height, 100%);
-    pointer-events: auto;
-  }
-
-  /* group_second 里默认放一个小卡片（可以理解成 overlay 内容） */
-  .lifestyle-carousel__slide-small-card {
-    background-color: #a7a8a9;
-    width: 12.1875rem;
-    height: 12.1875rem;
-    padding: .5625rem;
-    position: absolute;
-    top: 1.25rem;
-    right: 0;
-    overflow: hidden;
-    box-shadow: 0 0 1.25rem #0000003b;
-  }
-
-  .lifestyle-carousel__slide-small-card-image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-  }
-
-  .lifestyle-carousel__slide-small-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .lifestyle-carousel__slide-small-card-button {
-    color: #0a0a0a;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 1.875rem;
-    width: calc(100% - 1.25rem);
-    padding: .625rem;
-    font-size: .875rem;
-    font-weight: 400;
-    line-height: 110%;
-    text-decoration: none;
-    transition: all .3s;
-    display: block;
-    position: absolute;
-    bottom: .625rem;
-    left: .625rem;
-  }
-
-  .lifestyle-carousel__slide-small-card-button:hover,
-  .lifestyle-carousel__slide-small-card-button:focus,
-  .lifestyle-carousel__slide-small-card-button:active {
-    color: #0a0a0a;
-    background-color: #d9d8d6;
-  }
-
-  /* 底部 Group：big + small 两块内容 */
-  .lifestyle-carousel__slide-group-bottom {
-    width: 100%;
-    padding: 1.5rem 1.5rem 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .lifestyle-carousel__slide-big {
-    width: 100%;
-  }
-
-  .lifestyle-carousel__slide-big-text {
-    width: 100%;
-  }
-
-  .lifestyle-carousel__slide-big-text h2 {
-    color: inherit;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 110%;
-  }
-
-  .lifestyle-carousel__slide-big-text p {
-    color: inherit;
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 110%;
-  }
-
-  .lifestyle-carousel__slide-big-link {
-    color: #0a0a0a;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 1.875rem;
-    width: fit-content;
-    padding: .625rem 1.25rem;
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 110%;
-    text-decoration: none;
-    transition: all .3s;
-    display: block;
-    margin-top: 1rem;
-  }
-
-  .lifestyle-carousel__slide-big-link:hover,
-  .lifestyle-carousel__slide-big-link:focus,
-  .lifestyle-carousel__slide-big-link:active {
-    color: #0a0a0a;
-    background-color: #d9d8d6;
-  }
-
-  .lifestyle-carousel__slide-small {
-    width: 100%;
-  }
-
-  .lifestyle-carousel__slide-small-quote {
-    color: var(--lifestyle-accent);
-    max-width: 24rem;
-  }
-
-  .lifestyle-carousel__slide-small-quote-text {
-    text-align: left;
-    margin-bottom: .625rem;
-    font-family: Canela, "Times New Roman", serif;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 110%;
-  }
-
-  .lifestyle-carousel__slide-small-quote-author {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: .625rem;
-    font-family: Canela, "Times New Roman", serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 110%;
-  }
-
-  /* content_position = bottom 变体：可以稍微往下挪 */
-  .lifestyle-carousel__slide--content-bottom .lifestyle-carousel__slide-group-bottom {
-    margin-top: 1.5rem;
-  }
-
-  .lifestyle-carousel__slide--content-bottom .lifestyle-carousel__slide-small-card {
-    top: auto;
-    bottom: 2.5rem;
-  }
-
-  /* 导航区域（和 v1.3 基本一致） */
-  .lifestyle-carousel__navigation {
-    justify-content: center;
-    align-items: center;
-    gap: .3125rem;
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 1.875rem;
-    left: 0;
-    pointer-events: none;
-  }
-
-  .lifestyle-carousel__pagination {
-    justify-content: center;
-    align-items: center;
-    gap: .625rem;
-    display: flex;
-    position: static;
-    width: auto !important;
-    pointer-events: auto;
-  }
-
-  .lifestyle-carousel__nav-arrow {
-    border: 0;
-    width: 1.875rem;
-    height: 1.875rem;
-    margin-top: 0;
-    position: static;
-    background: none;
-    padding: 0;
-    cursor: pointer;
-    pointer-events: auto;
-  }
-
-  .lifestyle-carousel__nav-arrow-icon {
-    width: 100%;
-  }
-
-  .lifestyle-carousel__nav-arrow-iconPlaceholder {
-    position: relative;
-  }
-
-  .lifestyle-carousel__nav-arrow-iconPlaceholder svg {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    overflow: hidden;
-    transform: translate(-50%, -50%);
-  }
-
-  .lifestyle-carousel__pagination-bullet {
-    cursor: pointer;
-    opacity: 1;
-    background-color: transparent;
-    border: 1px solid var(--lifestyle-accent);
-    width: 1.25rem;
-    height: 1.25rem;
-    border-radius: 999px;
-    padding: 0;
-  }
-
-  .lifestyle-carousel__pagination-bullet.is-active {
-    background-color: var(--lifestyle-accent);
-  }
-
-  .lifestyle-carousel__navigation-arrows {
-    justify-content: space-between;
-    align-items: center;
-    width: fit-content;
-    display: flex;
-    position: static;
-  }
-
-  @media print, screen and (min-width: 64em) {
-    .lifestyle-carousel__slide-top {
-      min-height: 26rem;
-    }
-
-    .lifestyle-carousel__slide-group-bottom {
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 2rem;
-      padding: 2rem 2.5rem 3.5rem;
-    }
-
-    .lifestyle-carousel__slide-big {
-      width: 60%;
-    }
-
-    .lifestyle-carousel__slide-small {
-      width: 40%;
-    }
-
-    .lifestyle-carousel__slide-small-card {
-      width: 15.625rem;
-      height: 15.625rem;
-    }
-  }
-</style>
-
-{% capture children %}
-  <div
-    class="lifestyle-carousel"
-    data-lifestyle-carousel
-    data-autoplay="{{ section.settings.enable_autoplay }}"
-    data-interval="{{ section.settings.autoplay_interval | default: 5000 }}"
-  >
-    <div class="lifestyle-carousel__container">
-      {% if section.blocks.size > 0 %}
-        <div class="lifestyle-carousel__track">
+<div
+  class="
+    section
+    section--{{ section.settings.section_width }}
+    color-{{ section.settings.color_scheme }}
+    section-lifestyle-carousel
+    spacing-style
+    gap-style
+  "
+  style="
+    {% render 'spacing-style', settings: section.settings %}
+    {% render 'gap-style', value: section.settings.gap %}
+  "
+>
+  {% if slide_count > 0 %}
+    <div
+      class="lifestyle-carousel"
+      data-lifestyle-carousel-root
+    >
+      <div class="lifestyle-carousel__viewport">
+        <div
+          class="lifestyle-carousel__track"
+          data-lifestyle-carousel-track
+        >
           {% for block in section.blocks %}
-            {%- assign text_color = block.settings.text_color | default: '#0e0e0e' -%}
-
             <article
-              class="lifestyle-carousel__slide{% if block.settings.content_position == 'bottom' %} lifestyle-carousel__slide--content-bottom{% endif %}{% if forloop.first %} is-active{% endif %}"
-              data-slide
-              data-index="{{ forloop.index0 }}"
+              class="lifestyle-carousel__slide"
+              data-lifestyle-carousel-slide
               {{ block.shopify_attributes }}
             >
-              {%- comment -%} 顶部：两个 Group（背景层 + 前景层） {%- endcomment -%}
-              <div class="lifestyle-carousel__slide-top">
-                <div
-                  class="lifestyle-carousel__group_one"
-                  {% if block.settings.big_image != blank %}
-                    style="background-image:url('{{ block.settings.big_image | image_url: width: 1400 }}');"
-                  {% endif %}
-                ></div>
-
-                <div class="lifestyle-carousel__group_second">
-                  {% if block.settings.small_image != blank or block.settings.secondary_button_label != blank %}
-                    <div class="lifestyle-carousel__slide-small-card">
-                      <div class="lifestyle-carousel__slide-small-card-image">
-                        {% if block.settings.small_image != blank %}
-                          {{ block.settings.small_image
-                            | image_url: width: 500
-                            | image_tag:
-                              loading: 'lazy',
-                              sizes: '250px',
-                              alt: block.settings.secondary_button_label | escape
-                          }}
-                        {% endif %}
-                      </div>
-
-                      {% if block.settings.secondary_button_label != blank and block.settings.secondary_button_link != blank %}
-                        <a href="{{ block.settings.secondary_button_link }}" class="lifestyle-carousel__slide-small-card-button">
-                          {{ block.settings.secondary_button_label }}
-                        </a>
-                      {% endif %}
-                    </div>
-                  {% endif %}
-                </div>
-              </div>
-
-              {%- comment -%} 底部 Group：big + small {%- endcomment -%}
-              <div class="lifestyle-carousel__slide-group-bottom">
-                <div class="lifestyle-carousel__slide-big" style="color: {{ text_color }};">
-                  <div class="lifestyle-carousel__slide-big-text">
-                    {% if block.settings.heading != blank %}
-                      <h2>{{ block.settings.heading }}</h2>
-                    {% endif %}
-
-                    {% if block.settings.subheading != blank %}
-                      <p class="lifestyle-carousel__slide-big-text">
-                        {{ block.settings.subheading }}
-                      </p>
-                    {% endif %}
-
-                    {% if block.settings.primary_button_label != blank and block.settings.primary_button_link != blank %}
-                      <a href="{{ block.settings.primary_button_link }}" class="lifestyle-carousel__slide-big-link">
-                        {{ block.settings.primary_button_label }}
-                      </a>
-                    {% endif %}
-                  </div>
-                </div>
-
-                <div class="lifestyle-carousel__slide-small">
-                  {% if block.settings.quote_text != blank or block.settings.quote_author != blank %}
-                    <div class="lifestyle-carousel__slide-small-quote">
-                      {% if block.settings.quote_text != blank %}
-                        <div class="lifestyle-carousel__slide-small-quote-text">
-                          {{ block.settings.quote_text }}
-                        </div>
-                      {% endif %}
-
-                      {% if block.settings.quote_author != blank %}
-                        <div class="lifestyle-carousel__slide-small-quote-author">
-                          {{ block.settings.quote_author }}
-                          <svg width="90" height="16" viewBox="0 0 90 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                            <path d="M8.44299 0.689901C8.5202 0.464657 8.83876 0.464658 8.91597 0.689902L10.5089 5.33686C10.5435 5.43792 10.6386 5.5058 10.7454 5.5058H15.8705C16.116 5.5058 16.2145 5.8225 16.0123 5.96169L11.8894 8.801C11.7971 8.86459 11.7584 8.9819 11.7947 9.08796L13.3749 13.6977C13.4531 13.9257 13.1951 14.1214 12.9966 13.9847L8.82128 11.1092C8.73589 11.0504 8.62307 11.0504 8.53769 11.1092L4.36234 13.9847C4.16384 14.1214 3.9059 13.9257 3.98405 13.6977L5.56422 9.08796C5.60058 8.9819 5.56187 8.86459 5.46953 8.801L1.34663 5.96169C1.14451 5.8225 1.24301 5.5058 1.48842 5.5058H6.61357C6.7204 5.5058 6.81542 5.43792 6.85006 5.33686L8.44299 0.689901Z" fill="var(--lifestyle-accent)"></path>
-                            <path d="M26.454 0.689901C26.5312 0.464657 26.8498 0.464658 26.927 0.689902L28.52 5.33686C28.5546 5.43792 28.6496 5.5058 28.7564 5.5058H33.8816C34.127 5.5058 34.2255 5.8225 34.0234 5.96169L29.9005 8.801C29.8081 8.86459 29.7694 8.9819 29.8058 9.08796L31.386 13.6977C31.4641 13.9257 31.2062 14.1214 31.0077 13.9847L26.8323 11.1092C26.7469 11.0504 26.6341 11.0504 26.5487 11.1092L22.3734 13.9847C22.1749 14.1214 21.9169 13.9257 21.9951 13.6977L23.5753 9.08796C23.6116 8.9819 23.5729 8.86459 23.4806 8.801L19.3577 5.96169C19.1556 5.8225 19.2541 5.5058 19.4995 5.5058H24.6246C24.7314 5.5058 24.8265 5.43792 24.8611 5.33686L26.454 0.689901Z" fill="var(--lifestyle-accent)"></path>
-                            <path d="M44.4691 0.689901C44.5463 0.464657 44.8648 0.464658 44.942 0.689902L46.535 5.33686C46.5696 5.43792 46.6646 5.5058 46.7715 5.5058H51.8966C52.142 5.5058 52.2405 5.8225 52.0384 5.96169L47.9155 8.801C47.8232 8.86459 47.7844 8.9819 47.8208 9.08796L49.401 13.6977C49.4791 13.9257 49.2212 14.1214 49.0227 13.9847L44.8473 11.1092C44.762 11.0504 44.6491 11.0504 44.5637 11.1092L40.3884 13.9847C40.1899 14.1214 39.932 13.9257 40.0101 13.6977L41.5903 9.08796C41.6266 8.9819 41.5879 8.86459 41.4956 8.801L37.3727 5.96169C37.1706 5.8225 37.2691 5.5058 37.5145 5.5058H42.6396C42.7465 5.5058 42.8415 5.43792 42.8761 5.33686L44.4691 0.689901Z" fill="var(--lifestyle-accent)"></path>
-                            <path d="M62.4843 0.689901C62.5615 0.464657 62.8801 0.464658 62.9573 0.689902L64.5502 5.33686C64.5849 5.43792 64.6799 5.5058 64.7867 5.5058H69.9119C70.1573 5.5058 70.2558 5.8225 70.0537 5.96169L65.9308 8.801C65.8384 8.86459 65.7997 8.9819 65.8361 9.08796L67.4162 13.6977C67.4944 13.9257 67.2364 14.1214 67.0379 13.9847L62.8626 11.1092C62.7772 11.0504 62.6644 11.0504 62.579 11.1092L58.4037 13.9847C58.2052 14.1214 57.9472 13.9257 58.0254 13.6977L59.6055 9.08796C59.6419 8.9819 59.6032 8.86459 59.5108 8.801L55.3879 5.96169C55.1858 5.8225 55.2843 5.5058 55.5297 5.5058H60.6549C60.7617 5.5058 60.8567 5.43792 60.8914 5.33686L62.4843 0.689901Z" fill="var(--lifestyle-accent)"></path>
-                            <path d="M80.4955 0.689901C80.5727 0.464657 80.8913 0.464658 80.9685 0.689902L82.5614 5.33686C82.596 5.43792 82.6911 5.5058 82.7979 5.5058H87.923C88.1684 5.5058 88.2669 5.8225 88.0648 5.96169L83.9419 8.801C83.8496 8.86459 83.8109 8.9819 83.8472 9.08796L85.4274 13.6977C85.5056 13.9257 85.2476 14.1214 85.0491 13.9847L80.8738 11.1092C80.7884 11.0504 80.6756 11.0504 80.5902 11.1092L76.4148 13.9847C76.2163 14.1214 75.9584 13.9257 76.0365 13.6977L77.6167 9.08796C77.6531 8.9819 77.6144 8.86459 77.522 8.801L73.3991 5.96169C73.197 5.8225 73.2955 5.5058 73.5409 5.5058H78.6661C78.7729 5.5058 78.8679 5.43792 78.9026 5.33686L80.4955 0.689901Z" fill="var(--lifestyle-accent)"></path>
-                          </svg>
-                        </div>
-                      {% endif %}
-                    </div>
-                  {% endif %}
-                </div>
-              </div>
+              {% render block %}
             </article>
           {% endfor %}
         </div>
+      </div>
 
-        {% if section.blocks.size > 1 %}
-          <div class="lifestyle-carousel__navigation">
-            <button class="lifestyle-carousel__nav-arrow" type="button" data-prev>
-              <div class="lifestyle-carousel__nav-arrow-iconPlaceholder">
-                <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="lifestyle-carousel__nav-arrow-icon">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.53964 9.99983L11.0398 1.32496L9.5502 0.293945L0.0397949 9.99983L9.5502 19.7057L11.0398 18.6747L2.53964 9.99983Z" fill="var(--lifestyle-accent)"></path>
-                </svg>
-              </div>
-            </button>
+      {% liquid
+        assign nav_width          = section.settings.nav_width           | default: 60
+        assign nav_scale_percent  = section.settings.nav_scale           | default: 100
+        assign nav_scale_factor   = nav_scale_percent | times: 0.01
+        assign nav_vertical       = section.settings.nav_vertical_position | default: 85
+      %}
 
-            <div class="lifestyle-carousel__pagination">
-              {% for block in section.blocks %}
-                <button
-                  type="button"
-                  class="lifestyle-carousel__pagination-bullet{% if forloop.first %} is-active{% endif %}"
-                  data-bullet="{{ forloop.index0 }}"
-                  aria-label="{{ 'general.pagination.go_to_item' | t: number: forloop.index }}"
-                ></button>
-              {% endfor %}
-            </div>
+      <div
+        class="lifestyle-carousel__nav"
+        style="
+          width: {{ nav_width }}%;
+          top: {{ nav_vertical }}%;
+          left: 50%;
+          transform: translateX(-50%) scale({{ nav_scale_factor }});
+        "
+      >
+        <button
+          type="button"
+          class="lifestyle-carousel__arrow lifestyle-carousel__arrow--prev"
+          data-lifestyle-carousel-prev
+          aria-label="Previous slide"
+        >
+          <span class="lifestyle-carousel__arrow-icon">&larr;</span>
+        </button>
 
-            <button class="lifestyle-carousel__nav-arrow" type="button" data-next>
-              <div class="lifestyle-carousel__nav-arrow-iconPlaceholder">
-                <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="lifestyle-carousel__nav-arrow-icon">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.30476 10.6986L0.0318604 1.23509L1.65687 0.110352L12.0319 10.6986L1.65687 21.2868L0.0318604 20.1621L9.30476 10.6986Z" fill="var(--lifestyle-accent)"></path>
-                </svg>
-              </div>
-            </button>
-          </div>
-        {% endif %}
-      {% endif %}
+        <div class="lifestyle-carousel__dots">
+          {% for block in section.blocks %}
+            <button
+              type="button"
+              class="lifestyle-carousel__dot{% if forloop.first %} is-active{% endif %}"
+              data-lifestyle-carousel-dot
+              data-index="{{ forloop.index0 }}"
+              aria-label="Go to slide {{ forloop.index }}"
+            ></button>
+          {% endfor %}
+        </div>
+
+        <button
+          type="button"
+          class="lifestyle-carousel__arrow lifestyle-carousel__arrow--next"
+          data-lifestyle-carousel-next
+          aria-label="Next slide"
+        >
+          <span class="lifestyle-carousel__arrow-icon">&rarr;</span>
+        </button>
+      </div>
     </div>
-  </div>
-{% endcapture %}
+  {% else %}
+    <div class="lifestyle-carousel__empty">
+      Add a Group or Group pro block to create your first slide.
+    </div>
+  {% endif %}
+</div>
 
-{% render 'section', section: section, children: children %}
+{% stylesheet %}
+  .section-lifestyle-carousel .lifestyle-carousel {
+    position: relative;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__viewport {
+    overflow: hidden;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__track {
+    display: flex;
+    transition: transform 400ms ease;
+    will-change: transform;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__slide {
+    flex: 0 0 100%;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__nav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    pointer-events: auto;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    background: transparent;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__dot.is-active {
+    opacity: 1;
+    background: currentColor;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__arrow {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__arrow-icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .section-lifestyle-carousel .lifestyle-carousel__empty {
+    text-align: center;
+    padding: 2rem 0;
+    opacity: 0.7;
+  }
+{% endstylesheet %}
 
 <script>
   (function() {
-    function initLifestyleCarousel(root) {
-      if (!root || root.dataset.carouselInitialized === 'true') return;
-      root.dataset.carouselInitialized = 'true';
+    const initLifestyleCarousel = (root) => {
+      if (!root) return;
 
-      var slides = root.querySelectorAll('[data-slide]');
-      if (!slides.length) return;
+      const track  = root.querySelector('[data-lifestyle-carousel-track]');
+      const slides = track ? track.querySelectorAll('[data-lifestyle-carousel-slide]') : [];
+      const dots   = root.querySelectorAll('[data-lifestyle-carousel-dot]');
+      const prev   = root.querySelector('[data-lifestyle-carousel-prev]');
+      const next   = root.querySelector('[data-lifestyle-carousel-next]');
 
-      var bullets = root.querySelectorAll('[data-bullet]');
-      var prev = root.querySelector('[data-prev]');
-      var next = root.querySelector('[data-next]');
-      var index = 0;
-      var autoplay = root.getAttribute('data-autoplay') === 'true';
-      var interval = parseInt(root.getAttribute('data-interval'), 10) || 5000;
-      var timer = null;
+      if (!track || !slides.length) return;
 
-      function showSlide(i) {
-        if (!slides.length) return;
-        index = (i + slides.length) % slides.length;
+      let index = 0;
+      const lastIndex = slides.length - 1;
 
-        for (var s = 0; s < slides.length; s++) {
-          slides[s].classList.toggle('is-active', s === index);
-        }
+      const update = () => {
+        track.style.transform = 'translateX(' + (-index * 100) + '%)';
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('is-active', i === index);
+        });
+      };
 
-        for (var b = 0; b < bullets.length; b++) {
-          bullets[b].classList.toggle('is-active', b === index);
-        }
-      }
-
-      function stopAutoplay() {
-        if (timer) {
-          clearInterval(timer);
-          timer = null;
-        }
-      }
-
-      function startAutoplay() {
-        if (!autoplay || slides.length <= 1) return;
-        stopAutoplay();
-        timer = setInterval(function() {
-          showSlide(index + 1);
-        }, interval);
-      }
+      dots.forEach((dot) => {
+        const target = Number(dot.getAttribute('data-index')) || 0;
+        dot.addEventListener('click', () => {
+          index = target;
+          update();
+        });
+      });
 
       if (prev) {
-        prev.addEventListener('click', function() {
-          showSlide(index - 1);
-          startAutoplay();
+        prev.addEventListener('click', () => {
+          index = index > 0 ? index - 1 : lastIndex;
+          update();
         });
       }
 
       if (next) {
-        next.addEventListener('click', function() {
-          showSlide(index + 1);
-          startAutoplay();
+        next.addEventListener('click', () => {
+          index = index < lastIndex ? index + 1 : 0;
+          update();
         });
       }
 
-      for (var i = 0; i < bullets.length; i++) {
-        (function(bulletIndex) {
-          var bullet = bullets[bulletIndex];
-          bullet.addEventListener('click', function() {
-            showSlide(bulletIndex);
-            startAutoplay();
-          });
-        })(i);
-      }
+      update();
+    };
 
-      root.addEventListener('mouseenter', stopAutoplay);
-      root.addEventListener('mouseleave', startAutoplay);
+    const initAll = () => {
+      document
+        .querySelectorAll('[data-lifestyle-carousel-root]')
+        .forEach(initLifestyleCarousel);
+    };
 
-      showSlide(0);
-      startAutoplay();
-    }
-
-    function initAllCarousels() {
-      var roots = document.querySelectorAll('[data-lifestyle-carousel]');
-      for (var i = 0; i < roots.length; i++) {
-        initLifestyleCarousel(roots[i]);
-      }
-    }
-
-    initAllCarousels();
+    document.addEventListener('DOMContentLoaded', initAll);
 
     document.addEventListener('shopify:section:load', function(event) {
-      var root = event.target.querySelector('[data-lifestyle-carousel]');
+      const root = event.target.querySelector('[data-lifestyle-carousel-root]');
       if (root) initLifestyleCarousel(root);
     });
   })();
@@ -556,135 +238,121 @@
 {
   "name": "Lifestyle carousel",
   "class": "section-lifestyle-carousel",
+  "max_blocks": 16,
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#ffffff"
+      "type": "header",
+      "content": "Section layout"
     },
     {
-      "type": "color",
-      "id": "accent_color",
-      "label": "Accent color (stars, bullets, arrows)",
-      "default": "#af9963"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_autoplay",
-      "label": "Enable autoplay",
-      "default": false
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
     },
     {
       "type": "range",
-      "id": "autoplay_interval",
-      "label": "Autoplay interval (ms)",
-      "min": 3000,
-      "max": 9000,
-      "step": 500,
-      "default": 5000
-    }
-  ],
-  "blocks": [
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
     {
-      "type": "slide",
-      "name": "Slide",
-      "settings": [
-        {
-          "type": "select",
-          "id": "content_position",
-          "label": "Content position variant",
-          "options": [
-            {
-              "value": "default",
-              "label": "Default"
-            },
-            {
-              "value": "bottom",
-              "label": "Content towards bottom"
-            }
-          ],
-          "default": "default"
-        },
-        {
-          "type": "image_picker",
-          "id": "big_image",
-          "label": "Main image (background)"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text color",
-          "default": "#0e0e0e"
-        },
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Heading",
-          "default": "Steel Yourself for Pizza Glory"
-        },
-        {
-          "type": "text",
-          "id": "subheading",
-          "label": "Subheading",
-          "default": "Crispier crust plus no pre-heating required. Boom."
-        },
-        {
-          "type": "text",
-          "id": "primary_button_label",
-          "label": "Primary button label",
-          "default": "Shop now"
-        },
-        {
-          "type": "url",
-          "id": "primary_button_link",
-          "label": "Primary button link"
-        },
-        {
-          "type": "image_picker",
-          "id": "small_image",
-          "label": "Small card image (group_second)"
-        },
-        {
-          "type": "text",
-          "id": "secondary_button_label",
-          "label": "Small card button label",
-          "default": "Learn more"
-        },
-        {
-          "type": "url",
-          "id": "secondary_button_link",
-          "label": "Small card button link"
-        },
-        {
-          "type": "text",
-          "id": "quote_text",
-          "label": "Quote text",
-          "default": "Throw away your pizza stones!"
-        },
-        {
-          "type": "text",
-          "id": "quote_author",
-          "label": "Quote author",
-          "default": "-Customer name"
-        }
-      ]
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Navigation (dots & arrows)"
+    },
+    {
+      "type": "range",
+      "id": "nav_width",
+      "label": "Navigation width",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "nav_scale",
+      "label": "Navigation size",
+      "min": 50,
+      "max": 150,
+      "step": 10,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "nav_vertical_position",
+      "label": "Navigation vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 85
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
     }
   ],
-  "max_blocks": 12,
   "presets": [
     {
       "name": "Lifestyle carousel",
-      "category": "Image",
+      "category": "t:categories.layout",
       "blocks": [
         {
-          "type": "slide"
-        },
-        {
-          "type": "slide"
-        },
-        {
-          "type": "slide"
+          "type": "group-pro"
         }
       ]
     }
