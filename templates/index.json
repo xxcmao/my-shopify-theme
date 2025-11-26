@@ -4549,6 +4549,9 @@
       "block_order": [
         "group_pro_QMBD8m"
       ],
+      "custom_css": [
+        ".button {background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 14px; font-weight: 600; }"
+      ],
       "name": "t:names.multicolumn",
       "settings": {
         "visibility": "",
