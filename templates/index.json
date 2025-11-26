@@ -4521,7 +4521,7 @@
       ],
       "custom_css": [
         ".button {background: #fff; border-radius: 30px; border: 2px solid #fff; color: #000; height: 30px; font-size: 14px; font-weight: 600;}",
-        ".button-secondary,.button.button-secondary,a.button-secondary {background: #fff; border-radius: 30px; color: #000; height: 30px; font-size: 12px; font-weight: 600; padding: 6px 10px; border-color: #FFF;}"
+        ".button-secondary,.button.button-secondary,a.button-secondary {background: #fff; border-radius: 30px; color: #000; height: 30px; font-size: 12px; font-weight: 600; padding: 6px 10px; border: none !important; /* 去掉黑色边框 */ box-shadow: none !important; /* 有些主题用阴影当描边，一起关掉 */ outline: none !important; /* 关闭聚焦时的外轮廓（如果不需要的话） */}"
       ],
       "name": "t:names.multicolumn",
       "settings": {
