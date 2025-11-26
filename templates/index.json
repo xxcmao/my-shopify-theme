@@ -3164,6 +3164,7 @@
       "name": "Selling points marquee",
       "settings": {
         "color_scheme": "background-1",
+        "layout_mode": "icon-text",
         "enable_animation": true,
         "speed": "medium",
         "icon_size": 26,
@@ -5703,7 +5704,8 @@
         "item_x9T6zt": {
           "type": "item",
           "settings": {
-            "text": "Temp benefit #1"
+            "icon": "shopify://shop_images/Paul-Hex-Gold.png",
+            "text": "Paul Ainsworth"
           }
         },
         "item_XdF7qP": {
@@ -5724,12 +5726,14 @@
         "item_XdF7qP",
         "item_DdinEX"
       ],
+      "custom_css": [],
       "name": "Icon text strip",
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
+        "layout_mode": "icon-text-vertical",
         "enable_animation": true,
         "speed": "medium",
-        "icon_size": 36,
+        "icon_size": 50,
         "icon_text_gap": 8,
         "uppercase_text": false
       }
