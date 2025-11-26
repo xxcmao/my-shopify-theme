@@ -5489,7 +5489,7 @@
         "nav_width": 60,
         "nav_scale": 80,
         "nav_vertical_position": 80,
-        "padding-block-start": 31,
+        "padding-block-start": 0,
         "padding-block-end": 48
       }
     }
