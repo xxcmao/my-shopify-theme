@@ -1,76 +1,74 @@
-{%- comment -%}
-  Snippet: group-pro — vGP-1.3.0
-  - 扩展自 snippets/group.liquid
-  - 新增：
+{%- doc -%}
+  Group Pro block — vGP-1.2.0
+  基于 group-block，增加：
     - position_mode: static / relative / absolute
-    - position_top / position_left (仅 absolute 有效)
+    - position_* 偏移 + z-index
     - absolute_size_enabled + absolute_width_mode + absolute_width_custom + absolute_aspect_ratio
-      👉 Static / Relative / Absolute 都会应用 Absolute size (pro)
-    - enable_glow + glow_color + glow_blur + glow_spread
-{%- endcomment -%}
+    - outer_glow_enabled + outer_glow_color + outer_glow_blur + outer_glow_spread
+{%- enddoc -%}
 
-{%- liquid
-  assign position_mode = settings.position_mode | default: 'static'
-  assign position_style = ''
+{%- assign position_mode = settings.position_mode | default: 'static' -%}
 
-  if position_mode == 'relative'
-    assign position_style = 'position: relative;'
-  elsif position_mode == 'absolute'
-    assign position_style = 'position: absolute;'
-  else
-    assign position_style = 'position: static;'
-  endif
+{%- capture pro_position_style -%}
+  {%- if position_mode == 'absolute' -%}
+    position: absolute;
+    top: {{ settings.position_top | default: 0 }}px;
+    left: {{ settings.position_left | default: 0 }}px;
+    {%- if settings.position_right != blank and settings.position_right != 0 -%}
+      right: {{ settings.position_right }}px;
+    {%- endif -%}
+    {%- if settings.position_bottom != blank and settings.position_bottom != 0 -%}
+      bottom: {{ settings.position_bottom }}px;
+    {%- endif -%}
+    z-index: {{ settings.position_z_index | default: 1 }};
+  {%- elsif position_mode == 'relative' -%}
+    position: relative;
+    z-index: {{ settings.position_z_index | default: 1 }};
+  {%- endif -%}
+{%- endcapture -%}
 
-  if position_mode == 'absolute'
-    if settings.position_top != blank
-      assign position_style = position_style | append: ' top: ' | append: settings.position_top | append: '%;'
-    endif
-    if settings.position_left != blank
-      assign position_style = position_style | append: ' left: ' | append: settings.position_left | append: '%;'
-    endif
-  endif
+{%- capture pro_size_style -%}
+  {%- if settings.absolute_size_enabled and position_mode == 'absolute' -%}
+    {%- case settings.absolute_width_mode -%}
+      {%- when 'fill' -%}
+        width: 100%;
+      {%- when 'custom' -%}
+        width: {{ settings.absolute_width_custom | default: 60 }}%;
+      {%- else -%}
+        {# fit: 不额外设置 width，沿用默认 #}
+    {%- endcase -%}
 
-  assign abs_size_style = ''
+    {%- case settings.absolute_aspect_ratio -%}
+      {%- when '1_1' -%}
+        aspect-ratio: 1 / 1;
+      {%- when '4_3' -%}
+        aspect-ratio: 4 / 3;
+      {%- when '3_4' -%}
+        aspect-ratio: 3 / 4;
+      {%- when '16_9' -%}
+        aspect-ratio: 16 / 9;
+      {%- when '9_16' -%}
+        aspect-ratio: 9 / 16;
+      {%- else -%}
+        {# none: 不设置 aspect-ratio #}
+    {%- endcase -%}
+  {%- endif -%}
+{%- endcapture -%}
 
-  if settings.absolute_size_enabled
-    assign width_mode = settings.absolute_width_mode | default: 'fill'
+{%- capture pro_glow_style -%}
+  {%- if settings.outer_glow_enabled -%}
+    box-shadow: 0 0 {{ settings.outer_glow_blur | default: 20 }}px {{ settings.outer_glow_spread | default: 0 }}px {{ settings.outer_glow_color | default: '#00000033' }};
+  {%- endif -%}
+{%- endcapture -%}
 
-    if width_mode == 'fill'
-      assign abs_size_style = abs_size_style | append: ' width: 100%;'
-    elsif width_mode == 'custom'
-      assign custom_w = settings.absolute_width_custom | default: 100
-      assign abs_size_style = abs_size_style | append: ' width: ' | append: custom_w | append: '%;'
-    endif
-
-    assign ar = settings.absolute_aspect_ratio | default: 'none'
-
-    case ar
-      when '1-1'
-        assign abs_size_style = abs_size_style | append: ' aspect-ratio: 1 / 1;'
-      when '4-3'
-        assign abs_size_style = abs_size_style | append: ' aspect-ratio: 4 / 3;'
-      when '3-4'
-        assign abs_size_style = abs_size_style | append: ' aspect-ratio: 3 / 4;'
-      when '16-9'
-        assign abs_size_style = abs_size_style | append: ' aspect-ratio: 16 / 9;'
-      when '9-16'
-        assign abs_size_style = abs_size_style | append: ' aspect-ratio: 9 / 16;'
-    endcase
-  endif
-
-  assign glow_style = ''
-  if settings.enable_glow
-    assign blur = settings.glow_blur | default: 30
-    assign spread = settings.glow_spread | default: 0
-    assign color = settings.glow_color | default: '#00000033'
-    assign glow_style = ' box-shadow: 0 0 ' | append: blur | append: 'px ' | append: spread | append: 'px ' | append: color | append: ';'
-  endif
--%}
+{%- assign pro_position_style_stripped = pro_position_style | strip -%}
+{%- assign pro_size_style_stripped = pro_size_style | strip -%}
+{%- assign pro_glow_style_stripped = pro_glow_style | strip -%}
 
 <div
   class="
     group-block
-    group-block-pro
+    group-block--pro
     group-block--height-{{ settings.height }}
     group-block--width-{{ settings.width }}
     border-style
@@ -83,13 +81,13 @@
     {% render 'border-override', settings: settings %}
     {% render 'spacing-style', settings: settings %}
     {% render 'size-style', settings: settings %}
-    {{ position_style }}
-    {{ abs_size_style }}
-    {{ glow_style }}
+    {{ pro_position_style_stripped }}
+    {{ pro_size_style_stripped }}
+    {{ pro_glow_style_stripped }}
     {{ style }}
   "
   {{ shopify_attributes }}
-  data-testid="group-block-pro"
+  data-testid="group-pro-block"
 >
   {%- if settings.link != blank -%}
     <a
