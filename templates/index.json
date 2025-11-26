@@ -5697,22 +5697,22 @@
         "padding-block-end": 48
       }
     },
-    "benefits_marquee_JRAN3B": {
+    "benefits_marquee_k6ie4z": {
       "type": "benefits-marquee",
       "blocks": {
-        "item_nKkbUh": {
+        "item_x9T6zt": {
           "type": "item",
           "settings": {
             "text": "Temp benefit #1"
           }
         },
-        "item_BKPaFN": {
+        "item_XdF7qP": {
           "type": "item",
           "settings": {
             "text": "Temp benefit #2"
           }
         },
-        "item_BtqYKm": {
+        "item_DdinEX": {
           "type": "item",
           "settings": {
             "text": "Temp benefit #3"
@@ -5720,9 +5720,9 @@
         }
       },
       "block_order": [
-        "item_nKkbUh",
-        "item_BKPaFN",
-        "item_BtqYKm"
+        "item_x9T6zt",
+        "item_XdF7qP",
+        "item_DdinEX"
       ],
       "name": "Icon text strip",
       "settings": {
@@ -5753,6 +5753,6 @@
     "section_Ywzn3n",
     "group_carousel_pro_bRTtPH",
     "section_nJYdpG",
-    "benefits_marquee_JRAN3B"
+    "benefits_marquee_k6ie4z"
   ]
 }
