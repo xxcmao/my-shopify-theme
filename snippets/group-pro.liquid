@@ -1,17 +1,9 @@
 {%- doc -%}
-  Group Pro block — vGP-1.0.0
-  基于 group-block，增加 position 能力。
-
-  @param {string} children - The DOM content of the group block.
-  @param {object} settings - The settings of the group block.
-  @param {string} shopify_attributes - String with Shopify attributes for the editor.
-  @param {string} [class] - Custom classes for the group block.
-  @param {string} [style] - Custom inline styles for the group block.
-
-  额外使用的 settings（由 Group Pro 对应的 block schema 提供）：
-    - position_mode: "static" | "relative" | "absolute"
-    - position_top / position_left / position_right / position_bottom
-    - position_z_index
+  Group Pro block — vGP-1.1.0
+  基于 group-block，增加：
+    - position_mode: static / relative / absolute
+    - position_* 偏移 + z-index
+    - absolute_size_enabled + absolute_width_mode + absolute_width_custom + absolute_aspect_ratio
 {%- enddoc -%}
 
 {%- assign position_mode = settings.position_mode | default: 'static' -%}
@@ -34,7 +26,36 @@
   {%- endif -%}
 {%- endcapture -%}
 
+{%- capture pro_size_style -%}
+  {%- if settings.absolute_size_enabled and position_mode == 'absolute' -%}
+    {%- case settings.absolute_width_mode -%}
+      {%- when 'fill' -%}
+        width: 100%;
+      {%- when 'custom' -%}
+        width: {{ settings.absolute_width_custom | default: 60 }}%;
+      {%- else -%}
+        {# fit: 不额外设置 width，沿用默认 #}
+    {%- endcase -%}
+
+    {%- case settings.absolute_aspect_ratio -%}
+      {%- when '1_1' -%}
+        aspect-ratio: 1 / 1;
+      {%- when '4_3' -%}
+        aspect-ratio: 4 / 3;
+      {%- when '3_4' -%}
+        aspect-ratio: 3 / 4;
+      {%- when '16_9' -%}
+        aspect-ratio: 16 / 9;
+      {%- when '9_16' -%}
+        aspect-ratio: 9 / 16;
+      {%- else -%}
+        {# none: 不设置 aspect-ratio #}
+    {%- endcase -%}
+  {%- endif -%}
+{%- endcapture -%}
+
 {%- assign pro_position_style_stripped = pro_position_style | strip -%}
+{%- assign pro_size_style_stripped = pro_size_style | strip -%}
 
 <div
   class="
@@ -53,6 +74,7 @@
     {% render 'spacing-style', settings: settings %}
     {% render 'size-style', settings: settings %}
     {{ pro_position_style_stripped }}
+    {{ pro_size_style_stripped }}
     {{ style }}
   "
   {{ shopify_attributes }}
@@ -60,7 +82,8 @@
 >
   {%- if settings.link != blank -%}
     <a
-      href="{{ settings.link }}"
+      href="{{ settings.link }}
+"
       class="group-block__link"
       {% if settings.open_in_new_tab %}
         target="_blank" rel="noopener"
