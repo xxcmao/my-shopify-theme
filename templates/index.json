@@ -3158,8 +3158,8 @@
       ],
       "custom_css": [
         "section {background-color: #11322c !important; color: #ffffff !important; padding-bottom: 30px;}",
-        ".benefits-marquee__wrapper {background-color: transparent !important;}",
-        ".benefits-marquee__text {color: #ffffff !important; font-weight: 600;}"
+        ".strip-marquee__wrapper {background-color: transparent !important;}",
+        ".strip-marquee__text {color: #ffffff !important; font-weight: 600;}"
       ],
       "name": "Selling points marquee",
       "settings": {
