@@ -1,14 +1,16 @@
 {%- comment -%}
-  Group Pro block — vGP-block-1.1.0
+  Group Pro block — vGP-block-1.2.0
   基于原生 group block：
     - 内容 & 外观设置完全复用 group
     - Position (pro)：static / relative / absolute + 偏移 + z-index
-    - Absolute size (pro)：
-        - 仅在 Position mode = absolute 时显示
+    - Absolute size (pro)：仅在 Absolute 时显示
         - absolute_size_enabled 开关
         - absolute_width_mode: fit / fill / custom（相对于父容器宽度）
         - absolute_width_custom: 自定义百分比（0–100%）
-        - absolute_aspect_ratio: 若干预设比例（1:1 / 4:3 / 3:4 / 16:9 / 9:16）
+        - absolute_aspect_ratio: 1:1 / 4:3 / 3:4 / 16:9 / 9:16
+    - Outer glow (pro)：
+        - outer_glow_enabled 开关
+        - outer_glow_color / outer_glow_blur / outer_glow_spread
 {%- endcomment -%}
 
 {%- capture children %}
@@ -665,6 +667,47 @@
       ],
       "default": "none",
       "visible_if": "{{ block.settings.position_mode == 'absolute' and block.settings.absolute_size_enabled }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Outer glow (pro)"
+    },
+    {
+      "type": "checkbox",
+      "id": "outer_glow_enabled",
+      "label": "Enable outer glow",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "outer_glow_color",
+      "label": "Glow color",
+      "alpha": true,
+      "default": "#AF996380",
+      "visible_if": "{{ block.settings.outer_glow_enabled }}"
+    },
+    {
+      "type": "range",
+      "id": "outer_glow_blur",
+      "label": "Glow blur",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20,
+      "visible_if": "{{ block.settings.outer_glow_enabled }}"
+    },
+    {
+      "type": "range",
+      "id": "outer_glow_spread",
+      "label": "Glow spread",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.outer_glow_enabled }}"
     }
   ],
   "presets": [
