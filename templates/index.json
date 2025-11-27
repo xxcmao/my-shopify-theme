@@ -75,7 +75,7 @@
             "absolute_width_custom": 60,
             "absolute_aspect_ratio": "none",
             "outer_glow_enabled": false,
-            "outer_glow_color": "#AF996380",
+            "outer_glow_color": "#af996380",
             "outer_glow_blur": 20,
             "outer_glow_spread": 0
           },
@@ -129,7 +129,7 @@
                 "absolute_width_custom": 12,
                 "absolute_aspect_ratio": "1_1",
                 "outer_glow_enabled": false,
-                "outer_glow_color": "#AF996380",
+                "outer_glow_color": "#af996380",
                 "outer_glow_blur": 20,
                 "outer_glow_spread": 0
               },
@@ -389,6 +389,9 @@
         "text_taP3ph",
         "button_rAAbjA",
         "group_fkBEeh"
+      ],
+      "custom_css": [
+        ".button {background: #fff503; border-radius: 50px; height: 40px; font-weight: 800;}"
       ],
       "name": "Hero-mb",
       "settings": {
