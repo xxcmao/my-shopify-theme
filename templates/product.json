@@ -464,7 +464,7 @@
         }
       },
       "custom_css": [
-        ".PdpProductSpecs-title {color: #111 !important; font-style: normal; font-weight: 700;}"
+        ".PdpProductSpecs-title {color: #FFF !important; font-style: normal; font-weight: 700;}"
       ],
       "settings": {
         "content_width": "content-center-aligned",
