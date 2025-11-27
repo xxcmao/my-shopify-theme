@@ -1,14 +1,19 @@
 {% comment %}
-  Group carousel section — vGC-1.0.1
+  Group carousel section — vGC-1.1.0
   - Fix: count slides from section.blocks directly
   - Fix: remove missing translation for empty state (hard-coded message)
+  - Add visibility controls (desktop / mobile)
 {% endcomment %}
 
 {% liquid
   assign slide_count = section.blocks.size
+  assign vis = section.settings.visibility
 %}
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div
+  class="section-background color-{{ section.settings.color_scheme }}"
+  {% if vis != blank %}data-vis="{{ vis }}"{% endif %}
+></div>
 
 <div
   class="
@@ -23,6 +28,7 @@
     {% render 'spacing-style', settings: section.settings %}
     {% render 'gap-style', value: section.settings.gap %}
   "
+  {% if vis != blank %}data-vis="{{ vis }}"{% endif %}
 >
   {% if slide_count > 0 %}
     {%- capture list_items -%}
@@ -58,6 +64,24 @@
     </div>
   {% endif %}
 </div>
+
+{% stylesheet %}
+  @media screen and (min-width: 990px) {
+    .hero[data-vis="mobile"],
+    .section[data-vis="mobile"],
+    .section-background[data-vis="mobile"] {
+      display: none !important;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .hero[data-vis="desktop"],
+    .section[data-vis="desktop"],
+    .section-background[data-vis="desktop"] {
+      display: none !important;
+    }
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -238,6 +262,30 @@
       "step": 1,
       "unit": "px",
       "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "select",
+      "id": "visibility",
+      "label": "Visibility",
+      "options": [
+        {
+          "value": "",
+          "label": "Inherit"
+        },
+        {
+          "value": "desktop",
+          "label": "Desktop only"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile only"
+        }
+      ],
+      "default": ""
     }
   ],
   "presets": [
