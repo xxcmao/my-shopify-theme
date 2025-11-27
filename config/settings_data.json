@@ -264,7 +264,7 @@
       "scheme-6": {
         "settings": {
           "background": "rgba(0,0,0,0)",
-          "foreground_heading": "#ffffff",
+          "foreground_heading": "#000000",
           "foreground": "#ffffff",
           "primary": "#ffffff",
           "primary_hover": "#acacac",
