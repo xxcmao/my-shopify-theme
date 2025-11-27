@@ -2869,7 +2869,7 @@
       "custom_css": [
         "/* 只作用于 Group carousel 中的第一层 Group 卡片 */.section-group-carousel .group-carousel__item > * {position: relative; border-radius: 15px; overflow: hidden; border: 0 !important; box-shadow: 0 0 0 0.1px rgba(255, 255, 255, 0.85), /* 一圈细白边 */ 0 0 15px rgba(255, 255, 255, 0.35); /* 向外扩散的白色光晕 */}"
       ],
-      "name": "t:names.group_carousel",
+      "name": "Group carousel - mb",
       "settings": {
         "layout_type": "carousel",
         "columns": 1,
@@ -2882,7 +2882,7 @@
         "color_scheme": "scheme-4",
         "padding-block-start": 5,
         "padding-block-end": 48,
-        "visibility": ""
+        "visibility": "mobile"
       }
     },
     "section_q678nz": {
