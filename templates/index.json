@@ -11216,7 +11216,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Fresh Picks: Tomatoes 101</p>",
+                "text": "<p><strong>Fresh Picks: Tomatoes 101</strong></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -11362,7 +11362,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>10 Chef Tips for Better Road Trip Food</p>",
+                "text": "<p><strong>10 Chef Tips for Better Road Trip Food</strong></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
