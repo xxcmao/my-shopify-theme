@@ -1,17 +1,22 @@
 {% comment %}
-  Group carousel pro — vGCP-2.1.0
+  Group carousel pro — vGCP-2.2.0
   - 每个 slide = 一个 block（建议使用 Group / Group pro）
   - 只保留圆点 + 左右箭头导航
   - 导航条整体 absolute 居中，支持宽度 / 大小 / 纵向位置控制
   - 使用 transform + transition 滑动切换
   - 导航样式使用 HexClad 原始金色圆点 + 金色 SVG 箭头
+  - vGCP-2.2.0 新增 Visibility 设置（Desktop only / Mobile only）
 {% endcomment %}
 
 {% liquid
   assign slide_count = section.blocks.size
+  assign vis = section.settings.visibility
 %}
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div
+  class="section-background color-{{ section.settings.color_scheme }}"
+  {% if vis != blank %}data-vis="{{ vis }}"{% endif %}
+></div>
 
 <div
   class="
@@ -26,6 +31,7 @@
     {% render 'spacing-style', settings: section.settings %}
     {% render 'gap-style', value: section.settings.gap %}
   "
+  {% if vis != blank %}data-vis="{{ vis }}"{% endif %}
 >
   {% if slide_count > 0 %}
     <div
@@ -197,6 +203,23 @@
     text-align: center;
     padding: 2rem 0;
     opacity: 0.7;
+  }
+
+  /* Visibility （桌面 / 移动） */
+  @media screen and (min-width: 990px) {
+    .hero[data-vis="mobile"],
+    .section[data-vis="mobile"],
+    .section-background[data-vis="mobile"] {
+      display: none !important;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .hero[data-vis="desktop"],
+    .section[data-vis="desktop"],
+    .section-background[data-vis="desktop"] {
+      display: none !important;
+    }
   }
 {% endstylesheet %}
 
@@ -373,6 +396,30 @@
       "step": 1,
       "unit": "px",
       "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "select",
+      "id": "visibility",
+      "label": "Visibility",
+      "options": [
+        {
+          "value": "",
+          "label": "Inherit"
+        },
+        {
+          "value": "desktop",
+          "label": "Desktop only"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile only"
+        }
+      ],
+      "default": ""
     }
   ],
   "presets": [
