@@ -8443,7 +8443,7 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 43,
+                "padding-block-start": 60,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -8921,7 +8921,7 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 43,
+                "padding-block-start": 60,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -9384,7 +9384,7 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 43,
+                "padding-block-start": 60,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -9394,7 +9394,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Throw away your pizza stones!</p>",
+                    "text": "<p>The only Salt and Pepper Mills you'll ever need!</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -9420,7 +9420,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>-Terence F. </p>",
+                    "text": "<p>-Ben R. </p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -9481,7 +9481,7 @@
         "color_scheme": "scheme-1",
         "nav_width": 60,
         "nav_scale": 80,
-        "nav_vertical_position": 80,
+        "nav_vertical_position": 76,
         "padding-block-start": 0,
         "padding-block-end": 48,
         "visibility": "mobile"
@@ -10120,7 +10120,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Aussie Burgers</p>",
+                "text": "<p>Aussie Burgers<br/></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
