@@ -1966,7 +1966,7 @@
         "color_scheme": "scheme-4",
         "padding-block-start": 17,
         "padding-block-end": 48,
-        "visibility": "mobile"
+        "visibility": "desktop"
       }
     },
     "section_7PPpjk": {
@@ -2206,7 +2206,7 @@
       ],
       "name": "Gordon Ramsay - mb",
       "settings": {
-        "visibility": "mobile",
+        "visibility": "desktop",
         "content_direction": "row",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
