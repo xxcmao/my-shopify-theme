@@ -5405,7 +5405,7 @@
                 "color_scheme": "scheme-6",
                 "background_media": "image",
                 "video_position": "cover",
-                "background_image": "shopify://shop_images/Searing_Power_Hover.jpg",
+                "background_image": "shopify://shop_images/effortless_Cleaning.jpg",
                 "background_image_position": "cover",
                 "border": "solid",
                 "border_width": 1,
@@ -5508,7 +5508,7 @@
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
-                            "text": "<p>Oven-safe up to 900°</p>",
+                            "text": "<p>Dishwasher Safe</p>",
                             "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
@@ -5579,7 +5579,7 @@
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
-                            "text": "<p>Signature Technology</p>",
+                            "text": "<p>Stainless Steel Surface</p>",
                             "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
@@ -5657,7 +5657,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Unbeatable Searing Power</p>",
+                    "text": "<p>NO HASSLE, EFFORTLESS CLEANING</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -5683,7 +5683,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>xperience the ultimate searing power—unmatched by any other pan—with HexClad.</p>",
+                    "text": "<p>Dishwasher-safe, and requiring minimal maintenance, our pans deliver great performance and easy cleanup.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -5734,7 +5734,7 @@
                 "color_scheme": "scheme-6",
                 "background_media": "image",
                 "video_position": "cover",
-                "background_image": "shopify://shop_images/Searing_Power_Hover.jpg",
+                "background_image": "shopify://shop_images/Built_to_Last_Hover.jpg",
                 "background_image_position": "cover",
                 "border": "solid",
                 "border_width": 1,
@@ -5837,7 +5837,7 @@
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
-                            "text": "<p>Oven-safe up to 900°</p>",
+                            "text": "<p>Metal Utensil Safe</p>",
                             "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
@@ -5908,7 +5908,7 @@
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
-                            "text": "<p>Signature Technology</p>",
+                            "text": "<p>Lifetime Warranty</p>",
                             "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
@@ -5986,7 +5986,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Unbeatable Searing Power</p>",
+                    "text": "<p>BUILT TO LAST</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -6012,7 +6012,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>xperience the ultimate searing power—unmatched by any other pan—with HexClad.</p>",
+                    "text": "<p> With a lifetime warranty that lives up to the promise, our Hybrid pans feature heavy gauge construction, are metal-utensil safe and almost indestructible.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -6054,8 +6054,9 @@
         "group_6acriJ"
       ],
       "custom_css": [
-        "[data-testid='section-content']>.group-block>.group-block-content.layout-panel-flex--row>.group-block.color-scheme-6{border-radius:15px; overflow:hidden; box-shadow:0 0 0 .1px rgba(255,255,255,.85),0 0 15px rgba(255,255,255,.35)}",
-        "[data-testid='section-content']>.group-block.group-block--width-custom:hover{--size-style-width:70%!important; transition:.3s}"
+        "/* 1. 卡片本身的白边+光晕（你之前那一层） */[data-testid='section-content']>.group-block>.group-block-content.layout-panel-flex--row>.group-block.color-scheme-6{border-radius:15px; overflow:hidden; box-shadow:0 0 0 .1px rgba(255,255,255,.85),0 0 15px rgba(255,255,255,.35)}",
+        "/* 2. 顶层 Column（group-block--width-custom）hover 放大 */[data-testid='section-content']>.group-block.group-block--width-custom{transition:transform .3s}",
+        "[data-testid='section-content']>.group-block.group-block--width-custom:hover{transform:scale(1.4) /* 约等于 50% → 70% */}"
       ],
       "name": "Multicolumn-pc",
       "settings": {
