@@ -7097,7 +7097,7 @@
         "group_pro_zcWay7",
         "group_pro_pA3TcB"
       ],
-      "name": "t:names.group_carousel",
+      "name": "Group carousel -mb",
       "settings": {
         "layout_type": "carousel",
         "columns": 1,
@@ -7110,7 +7110,7 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 48,
         "padding-block-end": 48,
-        "visibility": ""
+        "visibility": "mobile"
       }
     },
     "section_mWWUkD": {
