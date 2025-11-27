@@ -8479,7 +8479,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>-Terence F. </p>",
+                    "text": "<p>-Darlene P. </p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -8658,13 +8658,13 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {
-                    "spacer_pNDtTE": {
+                    "spacer_fXiPeV": {
                       "type": "spacer",
                       "name": "t:names.spacer",
                       "settings": {
                         "size": "pixel",
                         "percent_size": 100,
-                        "pixel_size": 324,
+                        "pixel_size": 20,
                         "custom_mobile_size": false,
                         "size_mobile": "percent",
                         "percent_size_mobile": 100,
@@ -8676,13 +8676,13 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h1><strong>Steel Yourself for Pizza Glory</strong></h1>",
+                        "text": "<p><strong>Tie One On</strong></p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
                         "type_preset": "custom",
                         "font": "var(--font-body--family)",
-                        "font_size": "1.125rem",
+                        "font_size": "1.25rem",
                         "line_height": "normal",
                         "letter_spacing": "normal",
                         "case": "none",
@@ -8702,7 +8702,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Crispier crust plus no pre-heating required. Boom.</p>",
+                        "text": "<p>Recycled from water bottles, with 5 pockets, in every pattern and color you could want.</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -8768,7 +8768,7 @@
                           "type": "button",
                           "name": "t:names.button",
                           "settings": {
-                            "label": "Shop Pizza Steel",
+                            "label": "Shop Aprons",
                             "link": "shopify://collections/all",
                             "open_in_new_tab": false,
                             "style_class": "button",
@@ -8783,13 +8783,28 @@
                       "block_order": [
                         "button_9Tmpwr"
                       ]
+                    },
+                    "spacer_yGYrwL": {
+                      "type": "spacer",
+                      "name": "t:names.spacer",
+                      "settings": {
+                        "size": "pixel",
+                        "percent_size": 100,
+                        "pixel_size": 304,
+                        "custom_mobile_size": false,
+                        "size_mobile": "percent",
+                        "percent_size_mobile": 100,
+                        "pixel_size_mobile": 120
+                      },
+                      "blocks": {}
                     }
                   },
                   "block_order": [
-                    "spacer_pNDtTE",
+                    "spacer_fXiPeV",
                     "text_VftJGQ",
                     "text_VBgRX4",
-                    "group_MA9wdK"
+                    "group_MA9wdK",
+                    "spacer_yGYrwL"
                   ]
                 }
               },
@@ -8837,7 +8852,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "position_mode": "absolute",
-                "position_top": 50,
+                "position_top": 220,
                 "position_left": 130,
                 "position_right": 0,
                 "position_bottom": 0,
@@ -8916,7 +8931,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Throw away your pizza stones!</p>",
+                    "text": "<p>Tough. Sharp Looking.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
