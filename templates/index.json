@@ -7920,7 +7920,7 @@
               "name": "t:names.video",
               "settings": {
                 "source": "uploaded",
-                "video": "shopify://files/videos/f2203ae585c3414d9868b6e4e520abf4.HD-1080p-2.5Mbps-54558415.mp4",
+                "video": "shopify://files/videos/3a70cfaaf04b4cbd91b76b4dabf1a6e3.HD-1080p-2.5Mbps-54558411.mp4",
                 "video_url": "",
                 "video_autoplay": false,
                 "video_loop": true,
@@ -7944,7 +7944,7 @@
               "name": "t:names.video",
               "settings": {
                 "source": "uploaded",
-                "video": "shopify://files/videos/f2203ae585c3414d9868b6e4e520abf4.HD-1080p-2.5Mbps-54558415.mp4",
+                "video": "shopify://files/videos/f717edbc56234630b93a44ac10ac4725.HD-1080p-4.8Mbps-54558412.mp4",
                 "video_url": "",
                 "video_autoplay": false,
                 "video_loop": true,
@@ -7968,7 +7968,7 @@
               "name": "t:names.video",
               "settings": {
                 "source": "uploaded",
-                "video": "shopify://files/videos/f2203ae585c3414d9868b6e4e520abf4.HD-1080p-2.5Mbps-54558415.mp4",
+                "video": "shopify://files/videos/546c9859ebeb4591912b79f0cb9b079a.HD-1080p-4.8Mbps-54558413.mp4",
                 "video_url": "",
                 "video_autoplay": false,
                 "video_loop": true,
@@ -9695,7 +9695,7 @@
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fit",
+            "height": "fill",
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -9943,7 +9943,7 @@
                   "type": "custom-liquid",
                   "name": "t:names.custom_liquid",
                   "settings": {
-                    "custom_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11\" height=\"12\" viewBox=\"0 0 11 12\" fill=\"none\">\n<g clip-path=\"url(#clip0_24465_4466)\">\n<path d=\"M1.94334 12C1.40066 12 0.959145 11.5585 0.959145 11.0158C0.959145 11.013 0.959188 11.0101 0.95927 11.0073L1.13972 4.95586C0.449539 4.68019 0 4.07326 0 3.38797V0.286868C0 0.128422 0.128444 0 0.286868 0C0.445292 0 0.573735 0.128422 0.573735 0.286868V3.38797C0.573735 3.88203 0.950069 4.31941 1.51017 4.47634C1.63708 4.51189 1.72344 4.62939 1.7195 4.76113L1.5329 11.0195C1.5349 11.2441 1.71824 11.4263 1.94334 11.4263C2.16843 11.4263 2.35178 11.2442 2.3538 11.0195L2.16717 4.76113C2.16324 4.62939 2.2496 4.51192 2.37651 4.47634C2.93665 4.31941 3.31298 3.88202 3.31298 3.38797V0.286868C3.31298 0.128422 3.44143 0 3.59985 0C3.75827 0 3.88672 0.128422 3.88672 0.286868V3.38797C3.88672 4.07324 3.4372 4.68017 2.74706 4.95584L2.92742 11.0073C2.92751 11.0101 2.92755 11.0129 2.92755 11.0158C2.92755 11.5585 2.48604 12 1.94334 12Z\" fill=\"#ffffff\"></path>\n<path d=\"M1.39575 3.27747C1.23733 3.27747 1.10889 3.14905 1.10889 2.99061V0.286868C1.10889 0.128422 1.23733 0 1.39575 0C1.55418 0 1.68262 0.128422 1.68262 0.286868V2.99061C1.68262 3.14905 1.55418 3.27747 1.39575 3.27747Z\" fill=\"#ffffff\"></path>\n<path d=\"M2.49073 3.27747C2.3323 3.27747 2.20386 3.14905 2.20386 2.99061V0.286868C2.20386 0.128422 2.3323 0 2.49073 0C2.64915 0 2.77759 0.128422 2.77759 0.286868V2.99061C2.77759 3.14905 2.64915 3.27747 2.49073 3.27747Z\" fill=\"#ffffff\"></path>\n<path d=\"M9.47548 11.9995C8.94238 11.9995 8.50866 11.5658 8.50866 11.0328C8.50866 11.0257 8.50892 11.0187 8.50944 11.0117L8.8032 7.02242H8.37934C8.22989 7.02242 8.0905 6.96328 7.98683 6.85589C7.88303 6.74833 7.8288 6.60667 7.83409 6.45701C7.89616 4.70422 8.50774 2.19175 9.03878 0.869168C9.11723 0.67372 9.28255 0.318545 9.50813 0.135916C9.6837 -0.00616483 9.9077 -0.0396345 10.0928 0.0486785C10.2233 0.110958 10.4423 0.285875 10.4423 0.757833V11.0328C10.4423 11.5658 10.0086 11.9995 9.47548 11.9995ZM9.0825 11.0419C9.08738 11.2544 9.26179 11.4258 9.47548 11.4258C9.69219 11.4258 9.86852 11.2495 9.86852 11.0328V0.757829C9.86852 0.680446 9.85921 0.630142 9.8499 0.599194C9.7775 0.670445 9.66891 0.839606 9.5712 1.08294C9.05901 2.35862 8.47231 4.81113 8.40854 6.44869H9.11198C9.19172 6.44869 9.26787 6.48187 9.32216 6.5403C9.37643 6.59871 9.40394 6.6771 9.39808 6.75663L9.0825 11.0419Z\" fill=\"#ffffff\"></path>\n</g>\n<defs>\n<clipPath id=\"clip0_24465_4466\">\n<rect width=\"10.4422\" height=\"12\" fill=\"#ffffff\"></rect>\n</clipPath>\n</defs>\n</svg>"
+                    "custom_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11\" height=\"14\" viewBox=\"0 0 11 14\" fill=\"none\">\n  <g clip-path=\"url(#clip0_24465_4473)\">\n    <path d=\"M5.5 13.0572C2.4673 13.0572 0 10.5899 0 7.55713C0 4.52442 2.4673 2.05713 5.5 2.05713C8.5327 2.05713 11 4.52443 11 7.55713C11 10.5898 8.5327 13.0572 5.5 13.0572ZM5.5 2.70912C2.8268 2.70912 0.651995 4.88393 0.651995 7.55713C0.651995 10.2303 2.8268 12.4052 5.5 12.4052C8.1732 12.4052 10.348 10.2303 10.348 7.55713C10.348 4.88391 8.1732 2.70912 5.5 2.70912Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 4.78263C5.32003 4.78263 5.17407 4.63667 5.17407 4.45664V4.3885C5.17407 4.20846 5.32003 4.0625 5.50007 4.0625C5.6801 4.0625 5.82606 4.20846 5.82606 4.3885V4.45664C5.82606 4.63668 5.6801 4.78263 5.50007 4.78263Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 11.0517C5.32003 11.0517 5.17407 10.9057 5.17407 10.7257V10.6575C5.17407 10.4775 5.32003 10.3315 5.50007 10.3315C5.6801 10.3315 5.82606 10.4775 5.82606 10.6575V10.7257C5.82606 10.9057 5.6801 11.0517 5.50007 11.0517Z\" fill=\"#ffffff\"></path>\n    <path d=\"M2.39951 7.88295H2.33137C2.15133 7.88295 2.00537 7.73699 2.00537 7.55695C2.00537 7.37692 2.15133 7.23096 2.33137 7.23096H2.39951C2.57955 7.23096 2.7255 7.37692 2.7255 7.55695C2.7255 7.73699 2.57954 7.88295 2.39951 7.88295Z\" fill=\"#ffffff\"></path>\n    <path d=\"M8.66853 7.88295H8.60041C8.42037 7.88295 8.27441 7.73699 8.27441 7.55695C8.27441 7.37692 8.42037 7.23096 8.60041 7.23096H8.66853C8.84857 7.23096 8.99452 7.37692 8.99452 7.55695C8.99452 7.73699 8.84857 7.88295 8.66853 7.88295Z\" fill=\"#ffffff\"></path>\n    <path d=\"M3.30754 5.69041C3.22413 5.69041 3.14074 5.65859 3.07708 5.59497L3.02888 5.5468C2.90154 5.41952 2.9015 5.21311 3.02878 5.08577C3.15605 4.95842 3.36244 4.95839 3.4898 5.08567L3.538 5.13385C3.66534 5.26112 3.66538 5.46754 3.5381 5.59487C3.47444 5.65855 3.39099 5.69041 3.30754 5.69041Z\" fill=\"#ffffff\"></path>\n    <path d=\"M7.74062 10.1235C7.65721 10.1235 7.57382 10.0917 7.51016 10.0281L7.46199 9.97989C7.33465 9.85262 7.33461 9.64621 7.46188 9.51887C7.58916 9.39153 7.79555 9.39149 7.92291 9.51877L7.97109 9.56693C8.09842 9.6942 8.09846 9.90061 7.97119 10.0279C7.90753 10.0916 7.82408 10.1235 7.74062 10.1235Z\" fill=\"#ffffff\"></path>\n    <path d=\"M3.25934 10.1235C3.17587 10.1235 3.09239 10.0916 3.02874 10.0279C2.90148 9.90052 2.90156 9.69413 3.02892 9.56688L3.07712 9.51872C3.20454 9.39147 3.41093 9.39157 3.53814 9.5189C3.6654 9.64628 3.66532 9.85267 3.53796 9.97993L3.48976 10.0281C3.42612 10.0917 3.3427 10.1235 3.25934 10.1235Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50006 7.88291C5.41663 7.88291 5.33322 7.85109 5.26954 7.78741C5.14225 7.66011 5.14225 7.4537 5.26956 7.32638L7.46192 5.13404C7.58924 5.00677 7.79563 5.00673 7.92295 5.13406C8.05024 5.26136 8.05024 5.46777 7.92293 5.59509L5.73056 7.78743C5.66693 7.85106 5.58347 7.88291 5.50006 7.88291Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 2.70888C5.32003 2.70888 5.17407 2.56292 5.17407 2.38289V1.26935C5.17407 1.08931 5.32003 0.943359 5.50007 0.943359C5.6801 0.943359 5.82606 1.08932 5.82606 1.26935V2.38288C5.82606 2.56292 5.6801 2.70888 5.50007 2.70888Z\" fill=\"#ffffff\"></path>\n    <path d=\"M6.34137 1.59535H4.65876C4.47872 1.59535 4.33276 1.44939 4.33276 1.26935C4.33276 1.08932 4.47872 0.943359 4.65876 0.943359H6.34137C6.52141 0.943359 6.66736 1.08932 6.66736 1.26935C6.66736 1.44939 6.5214 1.59535 6.34137 1.59535Z\" fill=\"#ffffff\"></path>\n  </g>\n  <defs>\n    <clipPath id=\"clip0_24465_4473\">\n      <rect width=\"11\" height=\"12.1136\" fill=\"#ffffff\" transform=\"translate(0 0.943359)\"></rect>\n    </clipPath>\n  </defs>\n</svg>"
                   },
                   "blocks": {}
                 },
@@ -9951,7 +9951,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Makes 4 sandwiches</p>",
+                    "text": "<p>3 hours, plus 3 days brining</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -10063,7 +10063,7 @@
                 "color_scheme": "",
                 "background_media": "image",
                 "video_position": "cover",
-                "background_image": "shopify://shop_images/HexClad_MediumWalnutBoardV2_KWWB20-V2_Cork-StyleSpicedBeefReubenSandwiches_021925_KF_02.jpg",
+                "background_image": "shopify://shop_images/HexClad_AussieBurger_100224_KF_GIF.gif",
                 "background_image_position": "cover",
                 "border": "none",
                 "border_width": 1,
@@ -10105,7 +10105,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Cork Spiced Beef Reuben Sandwiches</p>",
+                "text": "<p>Aussie Burgers</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -10179,7 +10179,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Makes 4 sandwiches</p>",
+                    "text": "<p>4</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -10251,7 +10251,7 @@
                   "type": "custom-liquid",
                   "name": "t:names.custom_liquid",
                   "settings": {
-                    "custom_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11\" height=\"12\" viewBox=\"0 0 11 12\" fill=\"none\">\n<g clip-path=\"url(#clip0_24465_4466)\">\n<path d=\"M1.94334 12C1.40066 12 0.959145 11.5585 0.959145 11.0158C0.959145 11.013 0.959188 11.0101 0.95927 11.0073L1.13972 4.95586C0.449539 4.68019 0 4.07326 0 3.38797V0.286868C0 0.128422 0.128444 0 0.286868 0C0.445292 0 0.573735 0.128422 0.573735 0.286868V3.38797C0.573735 3.88203 0.950069 4.31941 1.51017 4.47634C1.63708 4.51189 1.72344 4.62939 1.7195 4.76113L1.5329 11.0195C1.5349 11.2441 1.71824 11.4263 1.94334 11.4263C2.16843 11.4263 2.35178 11.2442 2.3538 11.0195L2.16717 4.76113C2.16324 4.62939 2.2496 4.51192 2.37651 4.47634C2.93665 4.31941 3.31298 3.88202 3.31298 3.38797V0.286868C3.31298 0.128422 3.44143 0 3.59985 0C3.75827 0 3.88672 0.128422 3.88672 0.286868V3.38797C3.88672 4.07324 3.4372 4.68017 2.74706 4.95584L2.92742 11.0073C2.92751 11.0101 2.92755 11.0129 2.92755 11.0158C2.92755 11.5585 2.48604 12 1.94334 12Z\" fill=\"#ffffff\"></path>\n<path d=\"M1.39575 3.27747C1.23733 3.27747 1.10889 3.14905 1.10889 2.99061V0.286868C1.10889 0.128422 1.23733 0 1.39575 0C1.55418 0 1.68262 0.128422 1.68262 0.286868V2.99061C1.68262 3.14905 1.55418 3.27747 1.39575 3.27747Z\" fill=\"#ffffff\"></path>\n<path d=\"M2.49073 3.27747C2.3323 3.27747 2.20386 3.14905 2.20386 2.99061V0.286868C2.20386 0.128422 2.3323 0 2.49073 0C2.64915 0 2.77759 0.128422 2.77759 0.286868V2.99061C2.77759 3.14905 2.64915 3.27747 2.49073 3.27747Z\" fill=\"#ffffff\"></path>\n<path d=\"M9.47548 11.9995C8.94238 11.9995 8.50866 11.5658 8.50866 11.0328C8.50866 11.0257 8.50892 11.0187 8.50944 11.0117L8.8032 7.02242H8.37934C8.22989 7.02242 8.0905 6.96328 7.98683 6.85589C7.88303 6.74833 7.8288 6.60667 7.83409 6.45701C7.89616 4.70422 8.50774 2.19175 9.03878 0.869168C9.11723 0.67372 9.28255 0.318545 9.50813 0.135916C9.6837 -0.00616483 9.9077 -0.0396345 10.0928 0.0486785C10.2233 0.110958 10.4423 0.285875 10.4423 0.757833V11.0328C10.4423 11.5658 10.0086 11.9995 9.47548 11.9995ZM9.0825 11.0419C9.08738 11.2544 9.26179 11.4258 9.47548 11.4258C9.69219 11.4258 9.86852 11.2495 9.86852 11.0328V0.757829C9.86852 0.680446 9.85921 0.630142 9.8499 0.599194C9.7775 0.670445 9.66891 0.839606 9.5712 1.08294C9.05901 2.35862 8.47231 4.81113 8.40854 6.44869H9.11198C9.19172 6.44869 9.26787 6.48187 9.32216 6.5403C9.37643 6.59871 9.40394 6.6771 9.39808 6.75663L9.0825 11.0419Z\" fill=\"#ffffff\"></path>\n</g>\n<defs>\n<clipPath id=\"clip0_24465_4466\">\n<rect width=\"10.4422\" height=\"12\" fill=\"#ffffff\"></rect>\n</clipPath>\n</defs>\n</svg>"
+                    "custom_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11\" height=\"14\" viewBox=\"0 0 11 14\" fill=\"none\">\n  <g clip-path=\"url(#clip0_24465_4473)\">\n    <path d=\"M5.5 13.0572C2.4673 13.0572 0 10.5899 0 7.55713C0 4.52442 2.4673 2.05713 5.5 2.05713C8.5327 2.05713 11 4.52443 11 7.55713C11 10.5898 8.5327 13.0572 5.5 13.0572ZM5.5 2.70912C2.8268 2.70912 0.651995 4.88393 0.651995 7.55713C0.651995 10.2303 2.8268 12.4052 5.5 12.4052C8.1732 12.4052 10.348 10.2303 10.348 7.55713C10.348 4.88391 8.1732 2.70912 5.5 2.70912Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 4.78263C5.32003 4.78263 5.17407 4.63667 5.17407 4.45664V4.3885C5.17407 4.20846 5.32003 4.0625 5.50007 4.0625C5.6801 4.0625 5.82606 4.20846 5.82606 4.3885V4.45664C5.82606 4.63668 5.6801 4.78263 5.50007 4.78263Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 11.0517C5.32003 11.0517 5.17407 10.9057 5.17407 10.7257V10.6575C5.17407 10.4775 5.32003 10.3315 5.50007 10.3315C5.6801 10.3315 5.82606 10.4775 5.82606 10.6575V10.7257C5.82606 10.9057 5.6801 11.0517 5.50007 11.0517Z\" fill=\"#ffffff\"></path>\n    <path d=\"M2.39951 7.88295H2.33137C2.15133 7.88295 2.00537 7.73699 2.00537 7.55695C2.00537 7.37692 2.15133 7.23096 2.33137 7.23096H2.39951C2.57955 7.23096 2.7255 7.37692 2.7255 7.55695C2.7255 7.73699 2.57954 7.88295 2.39951 7.88295Z\" fill=\"#ffffff\"></path>\n    <path d=\"M8.66853 7.88295H8.60041C8.42037 7.88295 8.27441 7.73699 8.27441 7.55695C8.27441 7.37692 8.42037 7.23096 8.60041 7.23096H8.66853C8.84857 7.23096 8.99452 7.37692 8.99452 7.55695C8.99452 7.73699 8.84857 7.88295 8.66853 7.88295Z\" fill=\"#ffffff\"></path>\n    <path d=\"M3.30754 5.69041C3.22413 5.69041 3.14074 5.65859 3.07708 5.59497L3.02888 5.5468C2.90154 5.41952 2.9015 5.21311 3.02878 5.08577C3.15605 4.95842 3.36244 4.95839 3.4898 5.08567L3.538 5.13385C3.66534 5.26112 3.66538 5.46754 3.5381 5.59487C3.47444 5.65855 3.39099 5.69041 3.30754 5.69041Z\" fill=\"#ffffff\"></path>\n    <path d=\"M7.74062 10.1235C7.65721 10.1235 7.57382 10.0917 7.51016 10.0281L7.46199 9.97989C7.33465 9.85262 7.33461 9.64621 7.46188 9.51887C7.58916 9.39153 7.79555 9.39149 7.92291 9.51877L7.97109 9.56693C8.09842 9.6942 8.09846 9.90061 7.97119 10.0279C7.90753 10.0916 7.82408 10.1235 7.74062 10.1235Z\" fill=\"#ffffff\"></path>\n    <path d=\"M3.25934 10.1235C3.17587 10.1235 3.09239 10.0916 3.02874 10.0279C2.90148 9.90052 2.90156 9.69413 3.02892 9.56688L3.07712 9.51872C3.20454 9.39147 3.41093 9.39157 3.53814 9.5189C3.6654 9.64628 3.66532 9.85267 3.53796 9.97993L3.48976 10.0281C3.42612 10.0917 3.3427 10.1235 3.25934 10.1235Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50006 7.88291C5.41663 7.88291 5.33322 7.85109 5.26954 7.78741C5.14225 7.66011 5.14225 7.4537 5.26956 7.32638L7.46192 5.13404C7.58924 5.00677 7.79563 5.00673 7.92295 5.13406C8.05024 5.26136 8.05024 5.46777 7.92293 5.59509L5.73056 7.78743C5.66693 7.85106 5.58347 7.88291 5.50006 7.88291Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 2.70888C5.32003 2.70888 5.17407 2.56292 5.17407 2.38289V1.26935C5.17407 1.08931 5.32003 0.943359 5.50007 0.943359C5.6801 0.943359 5.82606 1.08932 5.82606 1.26935V2.38288C5.82606 2.56292 5.6801 2.70888 5.50007 2.70888Z\" fill=\"#ffffff\"></path>\n    <path d=\"M6.34137 1.59535H4.65876C4.47872 1.59535 4.33276 1.44939 4.33276 1.26935C4.33276 1.08932 4.47872 0.943359 4.65876 0.943359H6.34137C6.52141 0.943359 6.66736 1.08932 6.66736 1.26935C6.66736 1.44939 6.5214 1.59535 6.34137 1.59535Z\" fill=\"#ffffff\"></path>\n  </g>\n  <defs>\n    <clipPath id=\"clip0_24465_4473\">\n      <rect width=\"11\" height=\"12.1136\" fill=\"#ffffff\" transform=\"translate(0 0.943359)\"></rect>\n    </clipPath>\n  </defs>\n</svg>"
                   },
                   "blocks": {}
                 },
@@ -10259,7 +10259,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Makes 4 sandwiches</p>",
+                    "text": "<p>30 minutes</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -10295,7 +10295,7 @@
             "group_B89Xb7"
           ]
         },
-        "group_pro_nRcVRE": {
+        "group_pro_ra4qrd": {
           "type": "group-pro",
           "name": "Group pro",
           "settings": {
@@ -10349,7 +10349,7 @@
             "outer_glow_spread": 0
           },
           "blocks": {
-            "group_wwQbtC": {
+            "group_edYVyD": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -10371,7 +10371,7 @@
                 "color_scheme": "",
                 "background_media": "image",
                 "video_position": "cover",
-                "background_image": "shopify://shop_images/HexClad_MediumWalnutBoardV2_KWWB20-V2_Cork-StyleSpicedBeefReubenSandwiches_021925_KF_02.jpg",
+                "background_image": "shopify://shop_images/HexClad_12_HybridPan_CWPN12-C_SalmonWithGingerHoneyAndChilli_061725_KF_04.jpg",
                 "background_image_position": "cover",
                 "border": "none",
                 "border_width": 1,
@@ -10390,7 +10390,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "spacer_xzBVGg": {
+                "spacer_nf896f": {
                   "type": "spacer",
                   "name": "t:names.spacer",
                   "settings": {
@@ -10406,14 +10406,14 @@
                 }
               },
               "block_order": [
-                "spacer_xzBVGg"
+                "spacer_nf896f"
               ]
             },
-            "text_J8dxrW": {
+            "text_rjBUxL": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Cork Spiced Beef Reuben Sandwiches</p>",
+                "text": "<p>Salmon with Ginger, Honey and Chile</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -10435,7 +10435,7 @@
               },
               "blocks": {}
             },
-            "group_7ndJ6N": {
+            "group_RQp7xx": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -10475,7 +10475,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "custom_liquid_ew4TfM": {
+                "custom_liquid_CE4NKK": {
                   "type": "custom-liquid",
                   "name": "t:names.custom_liquid",
                   "settings": {
@@ -10483,11 +10483,11 @@
                   },
                   "blocks": {}
                 },
-                "text_4ke9xa": {
+                "text_zx4Jam": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Makes 4 sandwiches</p>",
+                    "text": "<p>4</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -10511,11 +10511,11 @@
                 }
               },
               "block_order": [
-                "custom_liquid_ew4TfM",
-                "text_4ke9xa"
+                "custom_liquid_CE4NKK",
+                "text_zx4Jam"
               ]
             },
-            "group_g8eGgw": {
+            "group_twAkry": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -10555,19 +10555,19 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "custom_liquid_adnWDC": {
+                "custom_liquid_GGBeVN": {
                   "type": "custom-liquid",
                   "name": "t:names.custom_liquid",
                   "settings": {
-                    "custom_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11\" height=\"12\" viewBox=\"0 0 11 12\" fill=\"none\">\n<g clip-path=\"url(#clip0_24465_4466)\">\n<path d=\"M1.94334 12C1.40066 12 0.959145 11.5585 0.959145 11.0158C0.959145 11.013 0.959188 11.0101 0.95927 11.0073L1.13972 4.95586C0.449539 4.68019 0 4.07326 0 3.38797V0.286868C0 0.128422 0.128444 0 0.286868 0C0.445292 0 0.573735 0.128422 0.573735 0.286868V3.38797C0.573735 3.88203 0.950069 4.31941 1.51017 4.47634C1.63708 4.51189 1.72344 4.62939 1.7195 4.76113L1.5329 11.0195C1.5349 11.2441 1.71824 11.4263 1.94334 11.4263C2.16843 11.4263 2.35178 11.2442 2.3538 11.0195L2.16717 4.76113C2.16324 4.62939 2.2496 4.51192 2.37651 4.47634C2.93665 4.31941 3.31298 3.88202 3.31298 3.38797V0.286868C3.31298 0.128422 3.44143 0 3.59985 0C3.75827 0 3.88672 0.128422 3.88672 0.286868V3.38797C3.88672 4.07324 3.4372 4.68017 2.74706 4.95584L2.92742 11.0073C2.92751 11.0101 2.92755 11.0129 2.92755 11.0158C2.92755 11.5585 2.48604 12 1.94334 12Z\" fill=\"#ffffff\"></path>\n<path d=\"M1.39575 3.27747C1.23733 3.27747 1.10889 3.14905 1.10889 2.99061V0.286868C1.10889 0.128422 1.23733 0 1.39575 0C1.55418 0 1.68262 0.128422 1.68262 0.286868V2.99061C1.68262 3.14905 1.55418 3.27747 1.39575 3.27747Z\" fill=\"#ffffff\"></path>\n<path d=\"M2.49073 3.27747C2.3323 3.27747 2.20386 3.14905 2.20386 2.99061V0.286868C2.20386 0.128422 2.3323 0 2.49073 0C2.64915 0 2.77759 0.128422 2.77759 0.286868V2.99061C2.77759 3.14905 2.64915 3.27747 2.49073 3.27747Z\" fill=\"#ffffff\"></path>\n<path d=\"M9.47548 11.9995C8.94238 11.9995 8.50866 11.5658 8.50866 11.0328C8.50866 11.0257 8.50892 11.0187 8.50944 11.0117L8.8032 7.02242H8.37934C8.22989 7.02242 8.0905 6.96328 7.98683 6.85589C7.88303 6.74833 7.8288 6.60667 7.83409 6.45701C7.89616 4.70422 8.50774 2.19175 9.03878 0.869168C9.11723 0.67372 9.28255 0.318545 9.50813 0.135916C9.6837 -0.00616483 9.9077 -0.0396345 10.0928 0.0486785C10.2233 0.110958 10.4423 0.285875 10.4423 0.757833V11.0328C10.4423 11.5658 10.0086 11.9995 9.47548 11.9995ZM9.0825 11.0419C9.08738 11.2544 9.26179 11.4258 9.47548 11.4258C9.69219 11.4258 9.86852 11.2495 9.86852 11.0328V0.757829C9.86852 0.680446 9.85921 0.630142 9.8499 0.599194C9.7775 0.670445 9.66891 0.839606 9.5712 1.08294C9.05901 2.35862 8.47231 4.81113 8.40854 6.44869H9.11198C9.19172 6.44869 9.26787 6.48187 9.32216 6.5403C9.37643 6.59871 9.40394 6.6771 9.39808 6.75663L9.0825 11.0419Z\" fill=\"#ffffff\"></path>\n</g>\n<defs>\n<clipPath id=\"clip0_24465_4466\">\n<rect width=\"10.4422\" height=\"12\" fill=\"#ffffff\"></rect>\n</clipPath>\n</defs>\n</svg>"
+                    "custom_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11\" height=\"14\" viewBox=\"0 0 11 14\" fill=\"none\">\n  <g clip-path=\"url(#clip0_24465_4473)\">\n    <path d=\"M5.5 13.0572C2.4673 13.0572 0 10.5899 0 7.55713C0 4.52442 2.4673 2.05713 5.5 2.05713C8.5327 2.05713 11 4.52443 11 7.55713C11 10.5898 8.5327 13.0572 5.5 13.0572ZM5.5 2.70912C2.8268 2.70912 0.651995 4.88393 0.651995 7.55713C0.651995 10.2303 2.8268 12.4052 5.5 12.4052C8.1732 12.4052 10.348 10.2303 10.348 7.55713C10.348 4.88391 8.1732 2.70912 5.5 2.70912Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 4.78263C5.32003 4.78263 5.17407 4.63667 5.17407 4.45664V4.3885C5.17407 4.20846 5.32003 4.0625 5.50007 4.0625C5.6801 4.0625 5.82606 4.20846 5.82606 4.3885V4.45664C5.82606 4.63668 5.6801 4.78263 5.50007 4.78263Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 11.0517C5.32003 11.0517 5.17407 10.9057 5.17407 10.7257V10.6575C5.17407 10.4775 5.32003 10.3315 5.50007 10.3315C5.6801 10.3315 5.82606 10.4775 5.82606 10.6575V10.7257C5.82606 10.9057 5.6801 11.0517 5.50007 11.0517Z\" fill=\"#ffffff\"></path>\n    <path d=\"M2.39951 7.88295H2.33137C2.15133 7.88295 2.00537 7.73699 2.00537 7.55695C2.00537 7.37692 2.15133 7.23096 2.33137 7.23096H2.39951C2.57955 7.23096 2.7255 7.37692 2.7255 7.55695C2.7255 7.73699 2.57954 7.88295 2.39951 7.88295Z\" fill=\"#ffffff\"></path>\n    <path d=\"M8.66853 7.88295H8.60041C8.42037 7.88295 8.27441 7.73699 8.27441 7.55695C8.27441 7.37692 8.42037 7.23096 8.60041 7.23096H8.66853C8.84857 7.23096 8.99452 7.37692 8.99452 7.55695C8.99452 7.73699 8.84857 7.88295 8.66853 7.88295Z\" fill=\"#ffffff\"></path>\n    <path d=\"M3.30754 5.69041C3.22413 5.69041 3.14074 5.65859 3.07708 5.59497L3.02888 5.5468C2.90154 5.41952 2.9015 5.21311 3.02878 5.08577C3.15605 4.95842 3.36244 4.95839 3.4898 5.08567L3.538 5.13385C3.66534 5.26112 3.66538 5.46754 3.5381 5.59487C3.47444 5.65855 3.39099 5.69041 3.30754 5.69041Z\" fill=\"#ffffff\"></path>\n    <path d=\"M7.74062 10.1235C7.65721 10.1235 7.57382 10.0917 7.51016 10.0281L7.46199 9.97989C7.33465 9.85262 7.33461 9.64621 7.46188 9.51887C7.58916 9.39153 7.79555 9.39149 7.92291 9.51877L7.97109 9.56693C8.09842 9.6942 8.09846 9.90061 7.97119 10.0279C7.90753 10.0916 7.82408 10.1235 7.74062 10.1235Z\" fill=\"#ffffff\"></path>\n    <path d=\"M3.25934 10.1235C3.17587 10.1235 3.09239 10.0916 3.02874 10.0279C2.90148 9.90052 2.90156 9.69413 3.02892 9.56688L3.07712 9.51872C3.20454 9.39147 3.41093 9.39157 3.53814 9.5189C3.6654 9.64628 3.66532 9.85267 3.53796 9.97993L3.48976 10.0281C3.42612 10.0917 3.3427 10.1235 3.25934 10.1235Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50006 7.88291C5.41663 7.88291 5.33322 7.85109 5.26954 7.78741C5.14225 7.66011 5.14225 7.4537 5.26956 7.32638L7.46192 5.13404C7.58924 5.00677 7.79563 5.00673 7.92295 5.13406C8.05024 5.26136 8.05024 5.46777 7.92293 5.59509L5.73056 7.78743C5.66693 7.85106 5.58347 7.88291 5.50006 7.88291Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 2.70888C5.32003 2.70888 5.17407 2.56292 5.17407 2.38289V1.26935C5.17407 1.08931 5.32003 0.943359 5.50007 0.943359C5.6801 0.943359 5.82606 1.08932 5.82606 1.26935V2.38288C5.82606 2.56292 5.6801 2.70888 5.50007 2.70888Z\" fill=\"#ffffff\"></path>\n    <path d=\"M6.34137 1.59535H4.65876C4.47872 1.59535 4.33276 1.44939 4.33276 1.26935C4.33276 1.08932 4.47872 0.943359 4.65876 0.943359H6.34137C6.52141 0.943359 6.66736 1.08932 6.66736 1.26935C6.66736 1.44939 6.5214 1.59535 6.34137 1.59535Z\" fill=\"#ffffff\"></path>\n  </g>\n  <defs>\n    <clipPath id=\"clip0_24465_4473\">\n      <rect width=\"11\" height=\"12.1136\" fill=\"#ffffff\" transform=\"translate(0 0.943359)\"></rect>\n    </clipPath>\n  </defs>\n</svg>"
                   },
                   "blocks": {}
                 },
-                "text_rfti76": {
+                "text_VkLYAg": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Makes 4 sandwiches</p>",
+                    "text": "<p>20 minutes</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -10591,23 +10591,332 @@
                 }
               },
               "block_order": [
-                "custom_liquid_adnWDC",
-                "text_rfti76"
+                "custom_liquid_GGBeVN",
+                "text_VkLYAg"
               ]
             }
           },
           "block_order": [
-            "group_wwQbtC",
-            "text_J8dxrW",
-            "group_7ndJ6N",
-            "group_g8eGgw"
+            "group_edYVyD",
+            "text_rjBUxL",
+            "group_RQp7xx",
+            "group_twAkry"
+          ]
+        },
+        "group_pro_Yny3hR": {
+          "type": "group-pro",
+          "name": "Group pro",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 0,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "position_mode": "static",
+            "position_top": 0,
+            "position_left": 0,
+            "position_right": 0,
+            "position_bottom": 0,
+            "position_z_index": 1,
+            "absolute_size_enabled": false,
+            "absolute_width_mode": "fit",
+            "absolute_width_custom": 60,
+            "absolute_aspect_ratio": "none",
+            "outer_glow_enabled": false,
+            "outer_glow_color": "#af996380",
+            "outer_glow_blur": 20,
+            "outer_glow_spread": 0
+          },
+          "blocks": {
+            "group_rxapkY": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "image",
+                "video_position": "cover",
+                "background_image": "shopify://shop_images/HexClad_12_HybridFryingPan_CWPN12-C_RedPrawnsCookedOnABedofSalt_021925_KF_02.jpg",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "spacer_9bykkG": {
+                  "type": "spacer",
+                  "name": "t:names.spacer",
+                  "settings": {
+                    "size": "pixel",
+                    "percent_size": 100,
+                    "pixel_size": 200,
+                    "custom_mobile_size": false,
+                    "size_mobile": "percent",
+                    "percent_size_mobile": 100,
+                    "pixel_size_mobile": 120
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "spacer_9bykkG"
+              ]
+            },
+            "text_bRkT9A": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<p>Red Prawns Cooked on a Bed of Salt</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1.125rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 15,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_DArDHT": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 5,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "custom_liquid_mkabr7": {
+                  "type": "custom-liquid",
+                  "name": "t:names.custom_liquid",
+                  "settings": {
+                    "custom_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11\" height=\"12\" viewBox=\"0 0 11 12\" fill=\"none\">\n<g clip-path=\"url(#clip0_24465_4466)\">\n<path d=\"M1.94334 12C1.40066 12 0.959145 11.5585 0.959145 11.0158C0.959145 11.013 0.959188 11.0101 0.95927 11.0073L1.13972 4.95586C0.449539 4.68019 0 4.07326 0 3.38797V0.286868C0 0.128422 0.128444 0 0.286868 0C0.445292 0 0.573735 0.128422 0.573735 0.286868V3.38797C0.573735 3.88203 0.950069 4.31941 1.51017 4.47634C1.63708 4.51189 1.72344 4.62939 1.7195 4.76113L1.5329 11.0195C1.5349 11.2441 1.71824 11.4263 1.94334 11.4263C2.16843 11.4263 2.35178 11.2442 2.3538 11.0195L2.16717 4.76113C2.16324 4.62939 2.2496 4.51192 2.37651 4.47634C2.93665 4.31941 3.31298 3.88202 3.31298 3.38797V0.286868C3.31298 0.128422 3.44143 0 3.59985 0C3.75827 0 3.88672 0.128422 3.88672 0.286868V3.38797C3.88672 4.07324 3.4372 4.68017 2.74706 4.95584L2.92742 11.0073C2.92751 11.0101 2.92755 11.0129 2.92755 11.0158C2.92755 11.5585 2.48604 12 1.94334 12Z\" fill=\"#ffffff\"></path>\n<path d=\"M1.39575 3.27747C1.23733 3.27747 1.10889 3.14905 1.10889 2.99061V0.286868C1.10889 0.128422 1.23733 0 1.39575 0C1.55418 0 1.68262 0.128422 1.68262 0.286868V2.99061C1.68262 3.14905 1.55418 3.27747 1.39575 3.27747Z\" fill=\"#ffffff\"></path>\n<path d=\"M2.49073 3.27747C2.3323 3.27747 2.20386 3.14905 2.20386 2.99061V0.286868C2.20386 0.128422 2.3323 0 2.49073 0C2.64915 0 2.77759 0.128422 2.77759 0.286868V2.99061C2.77759 3.14905 2.64915 3.27747 2.49073 3.27747Z\" fill=\"#ffffff\"></path>\n<path d=\"M9.47548 11.9995C8.94238 11.9995 8.50866 11.5658 8.50866 11.0328C8.50866 11.0257 8.50892 11.0187 8.50944 11.0117L8.8032 7.02242H8.37934C8.22989 7.02242 8.0905 6.96328 7.98683 6.85589C7.88303 6.74833 7.8288 6.60667 7.83409 6.45701C7.89616 4.70422 8.50774 2.19175 9.03878 0.869168C9.11723 0.67372 9.28255 0.318545 9.50813 0.135916C9.6837 -0.00616483 9.9077 -0.0396345 10.0928 0.0486785C10.2233 0.110958 10.4423 0.285875 10.4423 0.757833V11.0328C10.4423 11.5658 10.0086 11.9995 9.47548 11.9995ZM9.0825 11.0419C9.08738 11.2544 9.26179 11.4258 9.47548 11.4258C9.69219 11.4258 9.86852 11.2495 9.86852 11.0328V0.757829C9.86852 0.680446 9.85921 0.630142 9.8499 0.599194C9.7775 0.670445 9.66891 0.839606 9.5712 1.08294C9.05901 2.35862 8.47231 4.81113 8.40854 6.44869H9.11198C9.19172 6.44869 9.26787 6.48187 9.32216 6.5403C9.37643 6.59871 9.40394 6.6771 9.39808 6.75663L9.0825 11.0419Z\" fill=\"#ffffff\"></path>\n</g>\n<defs>\n<clipPath id=\"clip0_24465_4466\">\n<rect width=\"10.4422\" height=\"12\" fill=\"#ffffff\"></rect>\n</clipPath>\n</defs>\n</svg>"
+                  },
+                  "blocks": {}
+                },
+                "text_iBBCTj": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>4</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "custom_liquid_mkabr7",
+                "text_iBBCTj"
+              ]
+            },
+            "group_GCMpCq": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 5,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "custom_liquid_YczXzE": {
+                  "type": "custom-liquid",
+                  "name": "t:names.custom_liquid",
+                  "settings": {
+                    "custom_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"11\" height=\"14\" viewBox=\"0 0 11 14\" fill=\"none\">\n  <g clip-path=\"url(#clip0_24465_4473)\">\n    <path d=\"M5.5 13.0572C2.4673 13.0572 0 10.5899 0 7.55713C0 4.52442 2.4673 2.05713 5.5 2.05713C8.5327 2.05713 11 4.52443 11 7.55713C11 10.5898 8.5327 13.0572 5.5 13.0572ZM5.5 2.70912C2.8268 2.70912 0.651995 4.88393 0.651995 7.55713C0.651995 10.2303 2.8268 12.4052 5.5 12.4052C8.1732 12.4052 10.348 10.2303 10.348 7.55713C10.348 4.88391 8.1732 2.70912 5.5 2.70912Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 4.78263C5.32003 4.78263 5.17407 4.63667 5.17407 4.45664V4.3885C5.17407 4.20846 5.32003 4.0625 5.50007 4.0625C5.6801 4.0625 5.82606 4.20846 5.82606 4.3885V4.45664C5.82606 4.63668 5.6801 4.78263 5.50007 4.78263Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 11.0517C5.32003 11.0517 5.17407 10.9057 5.17407 10.7257V10.6575C5.17407 10.4775 5.32003 10.3315 5.50007 10.3315C5.6801 10.3315 5.82606 10.4775 5.82606 10.6575V10.7257C5.82606 10.9057 5.6801 11.0517 5.50007 11.0517Z\" fill=\"#ffffff\"></path>\n    <path d=\"M2.39951 7.88295H2.33137C2.15133 7.88295 2.00537 7.73699 2.00537 7.55695C2.00537 7.37692 2.15133 7.23096 2.33137 7.23096H2.39951C2.57955 7.23096 2.7255 7.37692 2.7255 7.55695C2.7255 7.73699 2.57954 7.88295 2.39951 7.88295Z\" fill=\"#ffffff\"></path>\n    <path d=\"M8.66853 7.88295H8.60041C8.42037 7.88295 8.27441 7.73699 8.27441 7.55695C8.27441 7.37692 8.42037 7.23096 8.60041 7.23096H8.66853C8.84857 7.23096 8.99452 7.37692 8.99452 7.55695C8.99452 7.73699 8.84857 7.88295 8.66853 7.88295Z\" fill=\"#ffffff\"></path>\n    <path d=\"M3.30754 5.69041C3.22413 5.69041 3.14074 5.65859 3.07708 5.59497L3.02888 5.5468C2.90154 5.41952 2.9015 5.21311 3.02878 5.08577C3.15605 4.95842 3.36244 4.95839 3.4898 5.08567L3.538 5.13385C3.66534 5.26112 3.66538 5.46754 3.5381 5.59487C3.47444 5.65855 3.39099 5.69041 3.30754 5.69041Z\" fill=\"#ffffff\"></path>\n    <path d=\"M7.74062 10.1235C7.65721 10.1235 7.57382 10.0917 7.51016 10.0281L7.46199 9.97989C7.33465 9.85262 7.33461 9.64621 7.46188 9.51887C7.58916 9.39153 7.79555 9.39149 7.92291 9.51877L7.97109 9.56693C8.09842 9.6942 8.09846 9.90061 7.97119 10.0279C7.90753 10.0916 7.82408 10.1235 7.74062 10.1235Z\" fill=\"#ffffff\"></path>\n    <path d=\"M3.25934 10.1235C3.17587 10.1235 3.09239 10.0916 3.02874 10.0279C2.90148 9.90052 2.90156 9.69413 3.02892 9.56688L3.07712 9.51872C3.20454 9.39147 3.41093 9.39157 3.53814 9.5189C3.6654 9.64628 3.66532 9.85267 3.53796 9.97993L3.48976 10.0281C3.42612 10.0917 3.3427 10.1235 3.25934 10.1235Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50006 7.88291C5.41663 7.88291 5.33322 7.85109 5.26954 7.78741C5.14225 7.66011 5.14225 7.4537 5.26956 7.32638L7.46192 5.13404C7.58924 5.00677 7.79563 5.00673 7.92295 5.13406C8.05024 5.26136 8.05024 5.46777 7.92293 5.59509L5.73056 7.78743C5.66693 7.85106 5.58347 7.88291 5.50006 7.88291Z\" fill=\"#ffffff\"></path>\n    <path d=\"M5.50007 2.70888C5.32003 2.70888 5.17407 2.56292 5.17407 2.38289V1.26935C5.17407 1.08931 5.32003 0.943359 5.50007 0.943359C5.6801 0.943359 5.82606 1.08932 5.82606 1.26935V2.38288C5.82606 2.56292 5.6801 2.70888 5.50007 2.70888Z\" fill=\"#ffffff\"></path>\n    <path d=\"M6.34137 1.59535H4.65876C4.47872 1.59535 4.33276 1.44939 4.33276 1.26935C4.33276 1.08932 4.47872 0.943359 4.65876 0.943359H6.34137C6.52141 0.943359 6.66736 1.08932 6.66736 1.26935C6.66736 1.44939 6.5214 1.59535 6.34137 1.59535Z\" fill=\"#ffffff\"></path>\n  </g>\n  <defs>\n    <clipPath id=\"clip0_24465_4473\">\n      <rect width=\"11\" height=\"12.1136\" fill=\"#ffffff\" transform=\"translate(0 0.943359)\"></rect>\n    </clipPath>\n  </defs>\n</svg>"
+                  },
+                  "blocks": {}
+                },
+                "text_AEfitT": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>15 minutes</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "custom_liquid_YczXzE",
+                "text_AEfitT"
+              ]
+            }
+          },
+          "block_order": [
+            "group_rxapkY",
+            "text_bRkT9A",
+            "group_DArDHT",
+            "group_GCMpCq"
           ]
         }
       },
       "block_order": [
         "group_pro_zFhtAR",
         "group_pro_eefdDr",
-        "group_pro_nRcVRE"
+        "group_pro_ra4qrd",
+        "group_pro_Yny3hR"
       ],
       "name": "Group carousel - mb",
       "settings": {
@@ -10850,7 +11159,7 @@
                 "color_scheme": "",
                 "background_media": "image",
                 "video_position": "cover",
-                "background_image": "shopify://shop_images/HexClad_SimplyMalaysian_CookbookClub_073125_KF_01_1.jpg",
+                "background_image": "shopify://shop_images/HexClad_5_BreadKnife_CTBK05-GPW_Tomatoes_Elevated_061725_KF_02.jpg",
                 "background_image_position": "cover",
                 "border": "none",
                 "border_width": 1,
@@ -10892,7 +11201,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p><strong>5 Things We Learned From \"Simply Malaysian\" by Mandy Yin</strong></p>",
+                "text": "<p>Fresh Picks: Tomatoes 101</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -10996,7 +11305,7 @@
                 "color_scheme": "",
                 "background_media": "image",
                 "video_position": "cover",
-                "background_image": "shopify://shop_images/HexClad_SimplyMalaysian_CookbookClub_073125_KF_01_1.jpg",
+                "background_image": "shopify://shop_images/HexClad_LargeWalnutBoardV2_KWWB24-V2_HexHoagie_012225_KF_GIF.gif",
                 "background_image_position": "cover",
                 "border": "none",
                 "border_width": 1,
@@ -11038,7 +11347,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p><strong>5 Things We Learned From \"Simply Malaysian\" by Mandy Yin</strong></p>",
+                "text": "<p>10 Chef Tips for Better Road Trip Food</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
