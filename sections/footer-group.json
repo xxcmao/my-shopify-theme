@@ -63,7 +63,7 @@
             "width": "fill",
             "custom_width": 100,
             "inherit_color_scheme": false,
-            "color_scheme": "scheme-1",
+            "color_scheme": "scheme-3",
             "heading": "Get your seat at the table",
             "heading_preset": "h5",
             "border_style": "all",
@@ -100,25 +100,6 @@
     "utilities": {
       "type": "footer-utilities",
       "blocks": {
-        "footer_copyright_YdKQ3x": {
-          "type": "footer-copyright",
-          "name": "t:names.copyright",
-          "settings": {
-            "show_powered_by": true,
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "footer_policy_list_ErQM9U": {
-          "type": "footer-policy-list",
-          "name": "t:names.policy_list",
-          "settings": {
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
         "social_links_W6LiWP": {
           "type": "social-links",
           "name": "t:names.social_media_links",
@@ -141,8 +122,6 @@
         }
       },
       "block_order": [
-        "footer_copyright_YdKQ3x",
-        "footer_policy_list_ErQM9U",
         "social_links_W6LiWP"
       ],
       "settings": {
