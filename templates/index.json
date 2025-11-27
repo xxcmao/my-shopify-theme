@@ -6643,7 +6643,7 @@
         }
       },
       "custom_css": [
-        ".button {background: #000; border-radius: 30px; border: 0.5px solid #fff9; color: #fff; height: 40px; width:100px; font-size: 15px;}"
+        ".button {background: #000; border-radius: 30px; border: 0.5px solid #fff9; color: #fff; height: 40px; width: 110px; font-size: 15px;}"
       ],
       "name": "t:names.products_carousel",
       "settings": {
