@@ -1123,7 +1123,10 @@
     "card_corner_radius": "Card corner radius",
     "media_type_1": "Media type",
     "media_type_2": "Media 2 type",
-    "carousel_layout": "Carousel layout"
+    "carousel_layout": "Carousel layout",
+     "carousel_navigation": "Carousel navigation",
+    "section_layout": "Section layout",
+    "padding": "Padding"
   },
   "text_defaults": {
     "accordion_heading": "Accordion heading",
