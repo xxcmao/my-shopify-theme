@@ -6369,7 +6369,7 @@
       "name": "5-star Reviews -pc",
       "settings": {
         "visibility": "desktop",
-        "content_direction": "row",
+        "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "center",
         "vertical_alignment": "center",
@@ -11683,6 +11683,7 @@
         "group_k9DdRy",
         "image_gdqPUE"
       ],
+      "custom_css": [],
       "name": "Danny Winer -pc",
       "settings": {
         "visibility": "desktop",
@@ -11698,10 +11699,9 @@
         "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "scheme-4",
-        "background_media": "image",
+        "background_media": "none",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/Pan-Image-Desktop_1.png",
-        "background_image_position": "cover",
+        "background_image_position": "fit",
         "border": "none",
         "border_width": 1,
         "border_opacity": 100,
