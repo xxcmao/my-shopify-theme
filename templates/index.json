@@ -239,7 +239,7 @@
         "group_pro_PUgGkf"
       ],
       "custom_css": [
-        ".button {background: #fff503; border-radius: 50px; height: 40px; font-weight: 800;}"
+        ".button {background: #fff503; border-radius: 50px; height: 60px; font-weight: 800;}"
       ],
       "name": "Hero-pc",
       "settings": {
