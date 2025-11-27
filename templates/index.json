@@ -3128,54 +3128,50 @@
         "padding-block-end": 48
       }
     },
-    "benefits_marquee_YhQYdM": {
-      "type": "benefits-marquee",
+    "strip_marquee_yzdg9c": {
+      "type": "strip-marquee",
       "blocks": {
-        "item_mcVEeU": {
+        "item_CnhMNy": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/home-lifetime-warranty.svg",
-            "text": "Lifetime Warranty"
+            "icon": "shopify://shop_images/home-return-guarantee.svg",
+            "text": "30-Day Return Guarantee"
           }
         },
-        "item_YcX6hz": {
+        "item_HeP4Ac": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/home-free-shipping.svg",
             "text": "Free Shipping"
           }
         },
-        "item_4kyjMh": {
+        "item_APi4BR": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/home-return-guarantee.svg",
-            "text": "30-Day Return Guarantee"
+            "icon": "shopify://shop_images/home-lifetime-warranty.svg",
+            "text": "Lifetime Warranty"
           }
         }
       },
       "block_order": [
-        "item_mcVEeU",
-        "item_YcX6hz",
-        "item_4kyjMh"
+        "item_CnhMNy",
+        "item_HeP4Ac",
+        "item_APi4BR"
       ],
-      "custom_css": [
-        "section {background-color: #11322c !important; color: #ffffff !important; padding-bottom: 30px;}",
-        ".strip-marquee__wrapper {background-color: transparent !important;}",
-        ".strip-marquee__text {color: #ffffff !important; font-weight: 600;}"
-      ],
-      "name": "Selling points marquee",
+      "name": "Icon text strip - mb",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "scheme-2",
         "layout_mode": "icon-text",
         "enable_animation": true,
         "speed": "medium",
-        "icon_size": 26,
-        "icon_text_gap": 4,
+        "icon_size": 36,
+        "icon_text_gap": 8,
         "padding_top": 20,
         "padding_bottom": 20,
         "padding_left": 16,
         "padding_right": 16,
-        "uppercase_text": true
+        "uppercase_text": false,
+        "visibility": "mobile"
       }
     },
     "product_list_YGAkfA": {
@@ -3840,7 +3836,7 @@
       "custom_css": [
         ".button {background: #11322c; border-radius: 30px; color: #fff; height: 40px; font-size: 15px;}"
       ],
-      "name": "t:names.multicolumn",
+      "name": "Shop All Knives-mb",
       "settings": {
         "visibility": "",
         "content_direction": "row",
@@ -4056,9 +4052,9 @@
       "custom_css": [
         ".heading,.h1,.h2,.h3,.h4,.h5,.h6 {font-weight: 800;}"
       ],
-      "name": "t:names.multicolumn",
+      "name": "The Secret’s Out - mb",
       "settings": {
-        "visibility": "",
+        "visibility": "mobile",
         "content_direction": "row",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
@@ -5702,57 +5698,6 @@
         "gradient_direction": "to top",
         "padding-block-start": 0,
         "padding-block-end": 48
-      }
-    },
-    "benefits_marquee_k6ie4z": {
-      "type": "benefits-marquee",
-      "blocks": {
-        "item_x9T6zt": {
-          "type": "item",
-          "name": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Paul-Hex-Gold.png",
-            "text": "Paul Ainsworth"
-          }
-        },
-        "item_tTWbAD": {
-          "type": "item",
-          "name": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Paul-Hex-Gold.png",
-            "text": "Paul Ainsworth"
-          }
-        },
-        "item_GD9zYg": {
-          "type": "item",
-          "name": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Paul-Hex-Gold.png",
-            "text": "Paul Ainsworth"
-          }
-        }
-      },
-      "block_order": [
-        "item_x9T6zt",
-        "item_tTWbAD",
-        "item_GD9zYg"
-      ],
-      "custom_css": [
-        ".strip-marquee__text {color: #ffffff !important; font-weight: 600;}"
-      ],
-      "name": "Icon text strip",
-      "settings": {
-        "color_scheme": "scheme-4",
-        "layout_mode": "icon-text-vertical",
-        "enable_animation": true,
-        "speed": "medium",
-        "icon_size": 50,
-        "icon_text_gap": 8,
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "padding_left": 16,
-        "padding_right": 16,
-        "uppercase_text": false
       }
     },
     "group_carousel_qLwrwq": {
@@ -7523,13 +7468,12 @@
     "section_kAna7T",
     "group_carousel_fPEXmN",
     "section_q678nz",
-    "benefits_marquee_YhQYdM",
+    "strip_marquee_yzdg9c",
     "product_list_YGAkfA",
     "section_TEYQyD",
     "section_Ywzn3n",
     "group_carousel_pro_bRTtPH",
     "section_nJYdpG",
-    "benefits_marquee_k6ie4z",
     "group_carousel_qLwrwq",
     "group_carousel_cnrHBf",
     "section_mWWUkD"
