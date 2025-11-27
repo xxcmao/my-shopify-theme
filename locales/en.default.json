@@ -173,6 +173,12 @@
     "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy_without_discounts": "Duties included. Shipping is calculated at checkout.",
     "featured_products": "Featured products",
     "filters": "Filters",
+        // Section headers for group carousel & sections
+    "carousel_layout": "Carousel layout",
+    "carousel_navigation": "Carousel navigation",
+    "section_layout": "Section layout",
+    "padding": "Padding",
+    
     "grid_view": {
       "default_view": "Default",
       "grid_fieldset": "Column grid",
