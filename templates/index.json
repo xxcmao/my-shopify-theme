@@ -1124,7 +1124,7 @@
         "group_qikwGB",
         "group_iMTE8n"
       ],
-      "name": "t:names.group_carousel",
+      "name": "Group carousel - mb",
       "settings": {
         "layout_type": "carousel",
         "columns": 1,
@@ -1136,7 +1136,8 @@
         "gap": 28,
         "color_scheme": "scheme-4",
         "padding-block-start": 17,
-        "padding-block-end": 48
+        "padding-block-end": 48,
+        "visibility": "mobile"
       }
     },
     "section_7PPpjk": {
@@ -2880,7 +2881,8 @@
         "gap": 28,
         "color_scheme": "scheme-4",
         "padding-block-start": 5,
-        "padding-block-end": 48
+        "padding-block-end": 48,
+        "visibility": ""
       }
     },
     "section_q678nz": {
@@ -5805,7 +5807,7 @@
             "absolute_width_custom": 60,
             "absolute_aspect_ratio": "none",
             "outer_glow_enabled": false,
-            "outer_glow_color": "#AF996380",
+            "outer_glow_color": "#af996380",
             "outer_glow_blur": 20,
             "outer_glow_spread": 0
           },
@@ -6113,7 +6115,7 @@
             "absolute_width_custom": 60,
             "absolute_aspect_ratio": "none",
             "outer_glow_enabled": false,
-            "outer_glow_color": "#AF996380",
+            "outer_glow_color": "#af996380",
             "outer_glow_blur": 20,
             "outer_glow_spread": 0
           },
@@ -6421,7 +6423,7 @@
             "absolute_width_custom": 60,
             "absolute_aspect_ratio": "none",
             "outer_glow_enabled": false,
-            "outer_glow_color": "#AF996380",
+            "outer_glow_color": "#af996380",
             "outer_glow_blur": 20,
             "outer_glow_spread": 0
           },
@@ -6698,7 +6700,8 @@
         "gap": 28,
         "color_scheme": "scheme-4",
         "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-end": 48,
+        "visibility": ""
       }
     },
     "group_carousel_cnrHBf": {
@@ -6753,7 +6756,7 @@
             "absolute_width_custom": 60,
             "absolute_aspect_ratio": "none",
             "outer_glow_enabled": false,
-            "outer_glow_color": "#AF996380",
+            "outer_glow_color": "#af996380",
             "outer_glow_blur": 20,
             "outer_glow_spread": 0
           },
@@ -6899,7 +6902,7 @@
             "absolute_width_custom": 60,
             "absolute_aspect_ratio": "none",
             "outer_glow_enabled": false,
-            "outer_glow_color": "#AF996380",
+            "outer_glow_color": "#af996380",
             "outer_glow_blur": 20,
             "outer_glow_spread": 0
           },
@@ -7045,7 +7048,7 @@
             "absolute_width_custom": 60,
             "absolute_aspect_ratio": "none",
             "outer_glow_enabled": false,
-            "outer_glow_color": "#AF996380",
+            "outer_glow_color": "#af996380",
             "outer_glow_blur": 20,
             "outer_glow_spread": 0
           },
@@ -7160,7 +7163,8 @@
         "gap": 28,
         "color_scheme": "scheme-1",
         "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-end": 48,
+        "visibility": ""
       }
     },
     "section_mWWUkD": {
