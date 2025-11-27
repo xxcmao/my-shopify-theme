@@ -3169,13 +3169,13 @@
             "vertical_alignment": "center",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "flex-start",
             "gap": 12,
-            "width": "fill",
+            "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fit",
+            "height": "fill",
             "custom_height": 100,
             "inherit_color_scheme": false,
             "color_scheme": "scheme-6",
@@ -3207,7 +3207,7 @@
                 "content_direction": "row",
                 "vertical_on_mobile": false,
                 "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
+                "vertical_alignment": "flex-start",
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
@@ -3381,38 +3381,11 @@
                   "block_order": [
                     "text_3NnPeW"
                   ]
-                },
-                "text_aiXkcF": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
                 "group_hqWEmD",
-                "group_ULdeqD",
-                "text_aiXkcF"
+                "group_ULdeqD"
               ]
             },
             "spacer_DCCEaa": {
@@ -3500,7 +3473,7 @@
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
-            "width": "fill",
+            "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
@@ -3510,7 +3483,7 @@
             "color_scheme": "scheme-6",
             "background_media": "image",
             "video_position": "cover",
-            "background_image": "shopify://shop_images/Searing_Power_Hover.jpg",
+            "background_image": "shopify://shop_images/Free_From_Forever_Chemicals_Hover.jpg",
             "background_image_position": "cover",
             "border": "solid",
             "border_width": 1,
@@ -3613,7 +3586,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<p>Oven-safe up to 900°</p>",
+                        "text": "<p>Ceramic Nonstick</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -3684,7 +3657,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<p>Signature Technology</p>",
+                        "text": "<p>PFAS-Free</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -3710,38 +3683,11 @@
                   "block_order": [
                     "text_pGi996"
                   ]
-                },
-                "text_pLNzKE": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
                 "group_cU6xrm",
-                "group_8GbVMU",
-                "text_pLNzKE"
+                "group_8GbVMU"
               ]
             },
             "spacer_RrNPrC": {
@@ -3762,7 +3708,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Unbeatable Searing Power</p>",
+                "text": "<p>FREE FROM FOREVER CHEMICALS</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -3788,7 +3734,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>xperience the ultimate searing power—unmatched by any other pan—with HexClad.</p>",
+                "text": "<p>Our cookware features our proprietary TerraBond™ ceramic nonstick which is PFAS-free, ensuring a better cooking experience.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -3833,7 +3779,7 @@
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fit",
+            "height": "fill",
             "custom_height": 100,
             "inherit_color_scheme": false,
             "color_scheme": "scheme-6",
@@ -3942,7 +3888,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<p>Oven-safe up to 900°</p>",
+                        "text": "<p>Dishwasher Safe</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -4013,7 +3959,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<p>Signature Technology</p>",
+                        "text": "<p>Stainless Steel Surface</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -4039,38 +3985,11 @@
                   "block_order": [
                     "text_PmHPCe"
                   ]
-                },
-                "text_Ktmmbz": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
                 "group_kV7PDV",
-                "group_k3JMcH",
-                "text_Ktmmbz"
+                "group_k3JMcH"
               ]
             },
             "spacer_xx7mFL": {
@@ -4091,7 +4010,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Unbeatable Searing Power</p>",
+                "text": "<p>NO HASSLE, EFFORTLESS CLEANING</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -4117,7 +4036,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>xperience the ultimate searing power—unmatched by any other pan—with HexClad.</p>",
+                "text": "<p>Dishwasher-safe, and requiring minimal maintenance, our pans deliver great performance and easy cleanup.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -5230,38 +5149,11 @@
                       "block_order": [
                         "text_cBfHNt"
                       ]
-                    },
-                    "text_BKtKit": {
-                      "type": "text",
-                      "name": "t:names.heading",
-                      "settings": {
-                        "text": "",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
                     }
                   },
                   "block_order": [
                     "group_4WHxay",
-                    "group_9PWHfq",
-                    "text_BKtKit"
+                    "group_9PWHfq"
                   ]
                 },
                 "spacer_MKzCcb": {
@@ -5399,7 +5291,7 @@
                 "custom_width": 50,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
-                "height": "fit",
+                "height": "fill",
                 "custom_height": 100,
                 "inherit_color_scheme": false,
                 "color_scheme": "scheme-6",
@@ -5934,38 +5826,11 @@
                       "block_order": [
                         "text_3rNATd"
                       ]
-                    },
-                    "text_6XzXhP": {
-                      "type": "text",
-                      "name": "t:names.heading",
-                      "settings": {
-                        "text": "",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
                     }
                   },
                   "block_order": [
                     "group_Wjqc6T",
-                    "group_9VkUCe",
-                    "text_6XzXhP"
+                    "group_9VkUCe"
                   ]
                 },
                 "spacer_Ufregm": {
@@ -6054,9 +5919,7 @@
         "group_6acriJ"
       ],
       "custom_css": [
-        "/* 1. 卡片本身的白边+光晕（你之前那一层） */[data-testid='section-content']>.group-block>.group-block-content.layout-panel-flex--row>.group-block.color-scheme-6{border-radius:15px; overflow:hidden; box-shadow:0 0 0 .1px rgba(255,255,255,.85),0 0 15px rgba(255,255,255,.35)}",
-        "/* 2. 顶层 Column（group-block--width-custom）hover 放大 */[data-testid='section-content']>.group-block.group-block--width-custom{transition:transform .3s}",
-        "[data-testid='section-content']>.group-block.group-block--width-custom:hover{transform:scale(1.4) /* 约等于 50% → 70% */}"
+        "/* 命中：Multicolumn 里 Column 下这几个 Group 卡片 */[data-testid=\"section-content\"] > .group-block > .group-block-content.layout-panel-flex--row > .group-block.color-scheme-6 {position: relative; border-radius: 15px; overflow: hidden; border: 0 !important; box-shadow: 0 0 0 0.1px rgba(255, 255, 255, 0.85), /* 一圈细白边 */ 0 0 15px rgba(255, 255, 255, 0.35); /* 向外扩散的白色光晕 */}"
       ],
       "name": "Multicolumn-pc",
       "settings": {
