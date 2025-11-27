@@ -8871,7 +8871,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Pizza Steel Accessory Set",
+                    "label": "Shop Market Bags",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button-secondary",
@@ -9117,7 +9117,7 @@
                     "color_scheme": "",
                     "background_media": "image",
                     "video_position": "cover",
-                    "background_image": "shopify://shop_images/HexClad_HybridPizzaSteel_CWPS16-C_Pizza_011525_GIF.gif",
+                    "background_image": "shopify://shop_images/HexMills_Large_cf0119fa-254a-4fa8-8c54-eb8018d6fb11.jpg",
                     "background_image_position": "cover",
                     "border": "none",
                     "border_width": 1,
@@ -9154,7 +9154,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h1><strong>Steel Yourself for Pizza Glory</strong></h1>",
+                        "text": "<p><strong>Peppered With Compliments</strong></p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -9180,7 +9180,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Crispier crust plus no pre-heating required. Boom.</p>",
+                        "text": "<p>More pepper or salt, faster–plus 10 coarseness settings.</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -9246,7 +9246,7 @@
                           "type": "button",
                           "name": "t:names.button",
                           "settings": {
-                            "label": "Shop Pizza Steel",
+                            "label": "Shop HexMills",
                             "link": "shopify://collections/all",
                             "open_in_new_tab": false,
                             "style_class": "button",
@@ -9297,7 +9297,7 @@
                 "color_scheme": "scheme-58084d4c-a86e-4d0a-855e-a0966e5043f7",
                 "background_media": "image",
                 "video_position": "cover",
-                "background_image": "shopify://shop_images/Pizza_Steel_Accesories_93636082-b3fd-4db2-a20b-47dac1bbd1bb.jpg",
+                "background_image": "shopify://shop_images/HexMills_Small_80628b7d-7f91-4a09-957d-cc95857d36cd.jpg",
                 "background_image_position": "cover",
                 "border": "none",
                 "border_width": 1,
@@ -9334,7 +9334,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Pizza Steel Accessory Set",
+                    "label": "Bundle & Save",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button-secondary",
