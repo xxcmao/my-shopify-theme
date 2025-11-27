@@ -1,11 +1,12 @@
 {%- comment -%}
-Icon text strip — v1.6.0
+Icon text strip — v1.7.0
 - v1.0.0 初始版本：支持 Color scheme + 动画开关 + 速度设置 + temp 占位文案
 - v1.1.0 新增设置：Icon size、Space between icon and text
 - v1.2.x 使用 type: color_scheme
 - v1.4.0 新增 layout_mode：图标+文字（横向）、图+文（上下）、仅图标、仅文字
 - v1.5.x 新增 section 上下左右 padding 设置 + 颜色从 color_scheme 读取
 - v1.6.0 将所有 "benefits" 前缀改为 "strip"，Block 名改为 "Strip item"，默认文案改为 Sample text
+- v1.7.0 新增 Visibility 设置（Desktop only / Mobile only）
 {%- endcomment -%}
 
 {%- liquid
@@ -32,6 +33,8 @@ Icon text strip — v1.6.0
       assign text_color = scheme.settings.text
     endif
   endif
+
+  assign vis = section.settings.visibility
 -%}
 
 <section
@@ -50,6 +53,7 @@ Icon text strip — v1.6.0
       color: {{ text_color }};
     {% endif %}
   "
+  {% if vis != blank %}data-vis="{{ vis }}"{% endif %}
 >
   <div class="strip-marquee__wrapper{% if section.settings.enable_animation %} strip-marquee__wrapper--animated{% endif %}">
     <div class="strip-marquee__track">
@@ -212,6 +216,24 @@ Icon text strip — v1.6.0
 }
 {% endstyle %}
 
+{% stylesheet %}
+  @media screen and (min-width: 990px) {
+    .hero[data-vis="mobile"],
+    .section[data-vis="mobile"],
+    .section-background[data-vis="mobile"] {
+      display: none !important;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .hero[data-vis="desktop"],
+    .section[data-vis="desktop"],
+    .section-background[data-vis="desktop"] {
+      display: none !important;
+    }
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "Icon text strip",
@@ -342,6 +364,30 @@ Icon text strip — v1.6.0
       "id": "uppercase_text",
       "label": "Uppercase text (convert text to all caps)",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "select",
+      "id": "visibility",
+      "label": "Visibility",
+      "options": [
+        {
+          "value": "",
+          "label": "Inherit"
+        },
+        {
+          "value": "desktop",
+          "label": "Desktop only"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile only"
+        }
+      ],
+      "default": ""
     }
   ],
   "blocks": [
