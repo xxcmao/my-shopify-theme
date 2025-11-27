@@ -5671,7 +5671,7 @@
         "group_PqgHyX",
         "group_9cyXTx"
       ],
-      "name": "t:names.multicolumn",
+      "name": "Multicolumn-mb",
       "settings": {
         "visibility": "",
         "content_direction": "row",
@@ -6647,7 +6647,7 @@
         "color_scheme": "scheme-4",
         "padding-block-start": 48,
         "padding-block-end": 48,
-        "visibility": ""
+        "visibility": "mobile"
       }
     },
     "group_carousel_cnrHBf": {
