@@ -4651,9 +4651,9 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 8,
+            "gap": 30,
             "width": "custom",
-            "custom_width": 80,
+            "custom_width": 70,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
             "height": "fit",
@@ -4692,7 +4692,7 @@
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 12,
                 "width": "custom",
-                "custom_width": 30,
+                "custom_width": 50,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -4726,7 +4726,7 @@
                   "settings": {
                     "content_direction": "row",
                     "vertical_on_mobile": false,
-                    "horizontal_alignment": "flex-start",
+                    "horizontal_alignment": "flex-end",
                     "vertical_alignment": "center",
                     "align_baseline": false,
                     "horizontal_alignment_flex_direction_column": "flex-start",
@@ -4772,7 +4772,7 @@
                         "horizontal_alignment_flex_direction_column": "flex-start",
                         "vertical_alignment_flex_direction_column": "center",
                         "gap": 12,
-                        "width": "fill",
+                        "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fill",
                         "custom_width_mobile": 100,
@@ -4805,12 +4805,12 @@
                           "name": "t:names.heading",
                           "settings": {
                             "text": "<p>Oven-safe up to 900°</p>",
-                            "width": "100%",
+                            "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
                             "type_preset": "custom",
                             "font": "var(--font-body--family)",
-                            "font_size": "0.625rem",
+                            "font_size": "1rem",
                             "line_height": "tight",
                             "letter_spacing": "tight",
                             "case": "none",
@@ -4821,8 +4821,8 @@
                             "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
+                            "padding-inline-start": 10,
+                            "padding-inline-end": 10
                           },
                           "blocks": {}
                         }
@@ -4843,7 +4843,7 @@
                         "horizontal_alignment_flex_direction_column": "flex-start",
                         "vertical_alignment_flex_direction_column": "center",
                         "gap": 12,
-                        "width": "fill",
+                        "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fill",
                         "custom_width_mobile": 100,
@@ -4876,12 +4876,12 @@
                           "name": "t:names.heading",
                           "settings": {
                             "text": "<p>Signature Technology</p>",
-                            "width": "100%",
+                            "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
                             "type_preset": "custom",
                             "font": "var(--font-body--family)",
-                            "font_size": "0.625rem",
+                            "font_size": "1rem",
                             "line_height": "tight",
                             "letter_spacing": "tight",
                             "case": "none",
@@ -4892,8 +4892,8 @@
                             "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
+                            "padding-inline-start": 10,
+                            "padding-inline-end": 10
                           },
                           "blocks": {}
                         }
@@ -4956,10 +4956,10 @@
                     "text": "<p>Unbeatable Searing Power</p>",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "center",
+                    "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.875rem",
+                    "font_size": "1.5rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -4970,7 +4970,7 @@
                     "corner_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
-                    "padding-inline-start": 0,
+                    "padding-inline-start": 20,
                     "padding-inline-end": 0
                   },
                   "blocks": {}
@@ -4985,7 +4985,7 @@
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.625rem",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -5009,7 +5009,7 @@
                 "text_tU89Pi"
               ]
             },
-            "group_rL7kKe": {
+            "group_jiTPDX": {
               "type": "group",
               "settings": {
                 "content_direction": "column",
@@ -5020,8 +5020,8 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
+                "width": "custom",
+                "custom_width": 50,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -5030,7 +5030,7 @@
                 "color_scheme": "scheme-6",
                 "background_media": "image",
                 "video_position": "cover",
-                "background_image": "shopify://shop_images/Searing_Power_Hover.jpg",
+                "background_image": "shopify://shop_images/Free_From_Forever_Chemicals_Hover.jpg",
                 "background_image_position": "cover",
                 "border": "solid",
                 "border_width": 1,
@@ -5049,13 +5049,13 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "group_MTYcxy": {
+                "group_b3FWKE": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
                     "content_direction": "row",
                     "vertical_on_mobile": false,
-                    "horizontal_alignment": "flex-start",
+                    "horizontal_alignment": "flex-end",
                     "vertical_alignment": "center",
                     "align_baseline": false,
                     "horizontal_alignment_flex_direction_column": "flex-start",
@@ -5089,7 +5089,7 @@
                     "padding-inline-end": 5
                   },
                   "blocks": {
-                    "group_dKQUr9": {
+                    "group_4WHxay": {
                       "type": "group",
                       "name": "t:names.group",
                       "settings": {
@@ -5101,7 +5101,7 @@
                         "horizontal_alignment_flex_direction_column": "flex-start",
                         "vertical_alignment_flex_direction_column": "center",
                         "gap": 12,
-                        "width": "fill",
+                        "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fill",
                         "custom_width_mobile": 100,
@@ -5129,17 +5129,17 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {
-                        "text_DYEgUe": {
+                        "text_x4ihaB": {
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
-                            "text": "<p>Oven-safe up to 900°</p>",
-                            "width": "100%",
+                            "text": "<p>Ceramic Nonstick</p>",
+                            "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
                             "type_preset": "custom",
                             "font": "var(--font-body--family)",
-                            "font_size": "0.625rem",
+                            "font_size": "1rem",
                             "line_height": "tight",
                             "letter_spacing": "tight",
                             "case": "none",
@@ -5150,17 +5150,17 @@
                             "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
+                            "padding-inline-start": 10,
+                            "padding-inline-end": 10
                           },
                           "blocks": {}
                         }
                       },
                       "block_order": [
-                        "text_DYEgUe"
+                        "text_x4ihaB"
                       ]
                     },
-                    "group_6jBtxk": {
+                    "group_9PWHfq": {
                       "type": "group",
                       "name": "t:names.group",
                       "settings": {
@@ -5172,7 +5172,7 @@
                         "horizontal_alignment_flex_direction_column": "flex-start",
                         "vertical_alignment_flex_direction_column": "center",
                         "gap": 12,
-                        "width": "fill",
+                        "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fill",
                         "custom_width_mobile": 100,
@@ -5200,17 +5200,17 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {
-                        "text_KQMeEV": {
+                        "text_cBfHNt": {
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
-                            "text": "<p>Signature Technology</p>",
-                            "width": "100%",
+                            "text": "<p>PFAS-Free</p>",
+                            "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
                             "type_preset": "custom",
                             "font": "var(--font-body--family)",
-                            "font_size": "0.625rem",
+                            "font_size": "1rem",
                             "line_height": "tight",
                             "letter_spacing": "tight",
                             "case": "none",
@@ -5221,17 +5221,17 @@
                             "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
+                            "padding-inline-start": 10,
+                            "padding-inline-end": 10
                           },
                           "blocks": {}
                         }
                       },
                       "block_order": [
-                        "text_KQMeEV"
+                        "text_cBfHNt"
                       ]
                     },
-                    "text_4VReMR": {
+                    "text_BKtKit": {
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
@@ -5259,12 +5259,12 @@
                     }
                   },
                   "block_order": [
-                    "group_dKQUr9",
-                    "group_6jBtxk",
-                    "text_4VReMR"
+                    "group_4WHxay",
+                    "group_9PWHfq",
+                    "text_BKtKit"
                   ]
                 },
-                "spacer_WKzjfi": {
+                "spacer_MKzCcb": {
                   "type": "spacer",
                   "name": "t:names.spacer",
                   "settings": {
@@ -5278,17 +5278,17 @@
                   },
                   "blocks": {}
                 },
-                "text_AQQxWa": {
+                "text_kwX73G": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Unbeatable Searing Power</p>",
+                    "text": "<p>FREE FROM FOREVER CHEMICALS</p>",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "center",
+                    "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.875rem",
+                    "font_size": "1.5rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -5299,22 +5299,22 @@
                     "corner_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
-                    "padding-inline-start": 0,
+                    "padding-inline-start": 20,
                     "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
-                "text_ixTJAe": {
+                "text_XYDqYC": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>xperience the ultimate searing power—unmatched by any other pan—with HexClad.</p>",
+                    "text": "<p>Our cookware features our proprietary TerraBond™ ceramic nonstick which is PFAS-free, ensuring a better cooking experience.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.625rem",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -5332,16 +5332,16 @@
                 }
               },
               "block_order": [
-                "group_MTYcxy",
-                "spacer_WKzjfi",
-                "text_AQQxWa",
-                "text_ixTJAe"
+                "group_b3FWKE",
+                "spacer_MKzCcb",
+                "text_kwX73G",
+                "text_XYDqYC"
               ]
             }
           },
           "block_order": [
             "group_DkRwRW",
-            "group_rL7kKe"
+            "group_jiTPDX"
           ]
         },
         "group_6acriJ": {
@@ -5355,9 +5355,9 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 8,
+            "gap": 30,
             "width": "custom",
-            "custom_width": 80,
+            "custom_width": 70,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
             "height": "fit",
@@ -5384,7 +5384,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "group_H3cphE": {
+            "group_YjYECk": {
               "type": "group",
               "settings": {
                 "content_direction": "column",
@@ -5395,8 +5395,8 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
+                "width": "custom",
+                "custom_width": 50,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -5424,13 +5424,13 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "group_64TKew": {
+                "group_LRCqGB": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
                     "content_direction": "row",
                     "vertical_on_mobile": false,
-                    "horizontal_alignment": "flex-start",
+                    "horizontal_alignment": "flex-end",
                     "vertical_alignment": "center",
                     "align_baseline": false,
                     "horizontal_alignment_flex_direction_column": "flex-start",
@@ -5464,7 +5464,7 @@
                     "padding-inline-end": 5
                   },
                   "blocks": {
-                    "group_Q7mEGr": {
+                    "group_r8jWer": {
                       "type": "group",
                       "name": "t:names.group",
                       "settings": {
@@ -5476,7 +5476,7 @@
                         "horizontal_alignment_flex_direction_column": "flex-start",
                         "vertical_alignment_flex_direction_column": "center",
                         "gap": 12,
-                        "width": "fill",
+                        "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fill",
                         "custom_width_mobile": 100,
@@ -5504,17 +5504,17 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {
-                        "text_Pa967r": {
+                        "text_RCYkbh": {
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
                             "text": "<p>Oven-safe up to 900°</p>",
-                            "width": "100%",
+                            "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
                             "type_preset": "custom",
                             "font": "var(--font-body--family)",
-                            "font_size": "0.625rem",
+                            "font_size": "1rem",
                             "line_height": "tight",
                             "letter_spacing": "tight",
                             "case": "none",
@@ -5525,17 +5525,17 @@
                             "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
+                            "padding-inline-start": 10,
+                            "padding-inline-end": 10
                           },
                           "blocks": {}
                         }
                       },
                       "block_order": [
-                        "text_Pa967r"
+                        "text_RCYkbh"
                       ]
                     },
-                    "group_ENkhBV": {
+                    "group_FqPmRJ": {
                       "type": "group",
                       "name": "t:names.group",
                       "settings": {
@@ -5547,7 +5547,7 @@
                         "horizontal_alignment_flex_direction_column": "flex-start",
                         "vertical_alignment_flex_direction_column": "center",
                         "gap": 12,
-                        "width": "fill",
+                        "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fill",
                         "custom_width_mobile": 100,
@@ -5575,17 +5575,17 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {
-                        "text_geiMFL": {
+                        "text_BYYJKC": {
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
                             "text": "<p>Signature Technology</p>",
-                            "width": "100%",
+                            "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
                             "type_preset": "custom",
                             "font": "var(--font-body--family)",
-                            "font_size": "0.625rem",
+                            "font_size": "1rem",
                             "line_height": "tight",
                             "letter_spacing": "tight",
                             "case": "none",
@@ -5596,17 +5596,17 @@
                             "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
+                            "padding-inline-start": 10,
+                            "padding-inline-end": 10
                           },
                           "blocks": {}
                         }
                       },
                       "block_order": [
-                        "text_geiMFL"
+                        "text_BYYJKC"
                       ]
                     },
-                    "text_H9iqcB": {
+                    "text_KJirEr": {
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
@@ -5634,12 +5634,12 @@
                     }
                   },
                   "block_order": [
-                    "group_Q7mEGr",
-                    "group_ENkhBV",
-                    "text_H9iqcB"
+                    "group_r8jWer",
+                    "group_FqPmRJ",
+                    "text_KJirEr"
                   ]
                 },
-                "spacer_6mzmpt": {
+                "spacer_gTwVc7": {
                   "type": "spacer",
                   "name": "t:names.spacer",
                   "settings": {
@@ -5653,17 +5653,17 @@
                   },
                   "blocks": {}
                 },
-                "text_pFTnWp": {
+                "text_WnK6kd": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
                     "text": "<p>Unbeatable Searing Power</p>",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "center",
+                    "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.875rem",
+                    "font_size": "1.5rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -5674,12 +5674,12 @@
                     "corner_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
-                    "padding-inline-start": 0,
+                    "padding-inline-start": 20,
                     "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
-                "text_T6ETfT": {
+                "text_NUNYhh": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -5689,7 +5689,7 @@
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.625rem",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -5707,13 +5707,13 @@
                 }
               },
               "block_order": [
-                "group_64TKew",
-                "spacer_6mzmpt",
-                "text_pFTnWp",
-                "text_T6ETfT"
+                "group_LRCqGB",
+                "spacer_gTwVc7",
+                "text_WnK6kd",
+                "text_NUNYhh"
               ]
             },
-            "group_dnyCzM": {
+            "group_mNM6VN": {
               "type": "group",
               "settings": {
                 "content_direction": "column",
@@ -5724,8 +5724,8 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
+                "width": "custom",
+                "custom_width": 50,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -5753,13 +5753,13 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "group_ERie3L": {
+                "group_kbX4MQ": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
                     "content_direction": "row",
                     "vertical_on_mobile": false,
-                    "horizontal_alignment": "flex-start",
+                    "horizontal_alignment": "flex-end",
                     "vertical_alignment": "center",
                     "align_baseline": false,
                     "horizontal_alignment_flex_direction_column": "flex-start",
@@ -5793,7 +5793,7 @@
                     "padding-inline-end": 5
                   },
                   "blocks": {
-                    "group_zcNWBU": {
+                    "group_Wjqc6T": {
                       "type": "group",
                       "name": "t:names.group",
                       "settings": {
@@ -5805,7 +5805,7 @@
                         "horizontal_alignment_flex_direction_column": "flex-start",
                         "vertical_alignment_flex_direction_column": "center",
                         "gap": 12,
-                        "width": "fill",
+                        "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fill",
                         "custom_width_mobile": 100,
@@ -5833,17 +5833,17 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {
-                        "text_gHeWUA": {
+                        "text_fxEzfg": {
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
                             "text": "<p>Oven-safe up to 900°</p>",
-                            "width": "100%",
+                            "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
                             "type_preset": "custom",
                             "font": "var(--font-body--family)",
-                            "font_size": "0.625rem",
+                            "font_size": "1rem",
                             "line_height": "tight",
                             "letter_spacing": "tight",
                             "case": "none",
@@ -5854,17 +5854,17 @@
                             "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
+                            "padding-inline-start": 10,
+                            "padding-inline-end": 10
                           },
                           "blocks": {}
                         }
                       },
                       "block_order": [
-                        "text_gHeWUA"
+                        "text_fxEzfg"
                       ]
                     },
-                    "group_AjeGqT": {
+                    "group_9VkUCe": {
                       "type": "group",
                       "name": "t:names.group",
                       "settings": {
@@ -5876,7 +5876,7 @@
                         "horizontal_alignment_flex_direction_column": "flex-start",
                         "vertical_alignment_flex_direction_column": "center",
                         "gap": 12,
-                        "width": "fill",
+                        "width": "fit-content",
                         "custom_width": 100,
                         "width_mobile": "fill",
                         "custom_width_mobile": 100,
@@ -5904,17 +5904,17 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {
-                        "text_7fLxLr": {
+                        "text_3rNATd": {
                           "type": "text",
                           "name": "t:names.heading",
                           "settings": {
                             "text": "<p>Signature Technology</p>",
-                            "width": "100%",
+                            "width": "fit-content",
                             "max_width": "normal",
                             "alignment": "center",
                             "type_preset": "custom",
                             "font": "var(--font-body--family)",
-                            "font_size": "0.625rem",
+                            "font_size": "1rem",
                             "line_height": "tight",
                             "letter_spacing": "tight",
                             "case": "none",
@@ -5925,17 +5925,17 @@
                             "corner_radius": 0,
                             "padding-block-start": 0,
                             "padding-block-end": 0,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
+                            "padding-inline-start": 10,
+                            "padding-inline-end": 10
                           },
                           "blocks": {}
                         }
                       },
                       "block_order": [
-                        "text_7fLxLr"
+                        "text_3rNATd"
                       ]
                     },
-                    "text_QYQkFt": {
+                    "text_6XzXhP": {
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
@@ -5963,12 +5963,12 @@
                     }
                   },
                   "block_order": [
-                    "group_zcNWBU",
-                    "group_AjeGqT",
-                    "text_QYQkFt"
+                    "group_Wjqc6T",
+                    "group_9VkUCe",
+                    "text_6XzXhP"
                   ]
                 },
-                "spacer_rmfp3D": {
+                "spacer_Ufregm": {
                   "type": "spacer",
                   "name": "t:names.spacer",
                   "settings": {
@@ -5982,17 +5982,17 @@
                   },
                   "blocks": {}
                 },
-                "text_RwTTnE": {
+                "text_XewJxk": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
                     "text": "<p>Unbeatable Searing Power</p>",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "center",
+                    "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.875rem",
+                    "font_size": "1.5rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -6003,12 +6003,12 @@
                     "corner_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
-                    "padding-inline-start": 0,
+                    "padding-inline-start": 20,
                     "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
-                "text_8EQRFj": {
+                "text_WkB8QH": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -6018,7 +6018,7 @@
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.625rem",
+                    "font_size": "0.875rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -6036,16 +6036,16 @@
                 }
               },
               "block_order": [
-                "group_ERie3L",
-                "spacer_rmfp3D",
-                "text_RwTTnE",
-                "text_8EQRFj"
+                "group_kbX4MQ",
+                "spacer_Ufregm",
+                "text_XewJxk",
+                "text_WkB8QH"
               ]
             }
           },
           "block_order": [
-            "group_H3cphE",
-            "group_dnyCzM"
+            "group_YjYECk",
+            "group_mNM6VN"
           ]
         }
       },
@@ -6054,7 +6054,8 @@
         "group_6acriJ"
       ],
       "custom_css": [
-        "[id*=\"multicolumn-pc\"] .group {position: relative; border-radius: 15px; overflow: hidden; border: 0 !important; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85), /* 一圈细白边 */ 0 0 15px rgba(255, 255, 255, 0.35); /* 向外扩散的白色光晕 */}"
+        "[data-testid='section-content']>.group-block>.group-block-content.layout-panel-flex--row>.group-block.color-scheme-6{border-radius:15px; overflow:hidden; box-shadow:0 0 0 .1px rgba(255,255,255,.85),0 0 15px rgba(255,255,255,.35)}",
+        "[data-testid='section-content']>.group-block.group-block--width-custom:hover{--size-style-width:70%!important; transition:.3s}"
       ],
       "name": "Multicolumn-pc",
       "settings": {
@@ -6066,7 +6067,7 @@
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
+        "gap": 30,
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
