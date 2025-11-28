@@ -245,7 +245,6 @@
       "settings": {
         "visibility": "desktop",
         "media_type_1": "video",
-        "video_1": "shopify://files/videos/2e7a32165dcf47ea9f7ecbdd7ff4691d.HD-1080p-4.8Mbps-62628315.mp4",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
