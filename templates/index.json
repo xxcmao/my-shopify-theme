@@ -2975,7 +2975,6 @@
                           "name": "t:names.video",
                           "settings": {
                             "source": "uploaded",
-                            "video": "shopify://files/videos/f236567731064a27a1de2f3243dcffa6.HD-1080p-3.3Mbps-54356545.mp4",
                             "video_url": "",
                             "video_autoplay": false,
                             "video_loop": true,
